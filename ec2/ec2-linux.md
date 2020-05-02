@@ -218,6 +218,8 @@ sudo systemctl restart httpd
 
 ![](../.gitbook/assets/image%20%2826%29.png)
 
+> **위의 과정을 반복하여, 서브넷 "IMD-PUBLIC-B" - 가용영역 "ap-northeast-2c" 에 EC2 인스턴스를 한 개 더 만들어 봅니다.**
+
 ## Task3. EC2 접속하기
 
 ### 19. EC2 접속 환경 구성
@@ -248,6 +250,12 @@ https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-0.73-installer.msi
 
 ```text
 chmod 400 ~/Downloads/IMD-PUB-OPENSSH.pem
+```
+
+* SSH를 통해 접속합니다.
+
+```text
+ssh -i ~/Downloads/IMD-PUB-OPENSSH.pem ec2-user@x.x.x.x
 ```
 
 
