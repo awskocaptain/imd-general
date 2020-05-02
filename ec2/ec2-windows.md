@@ -252,7 +252,7 @@ $shell.Namespace("c:\inetpub\wwwroot\").copyhere($item)
 
 ![](../.gitbook/assets/image%20%2844%29.png)
 
-### **20. EC2 Linux Web 접속**
+### **20. EC2 Windows Server Web 접속**
 
 * 로컬 브라우저\(파이어폭스, 크롬\)에서 아래 URL로 접속합니다.아래 예제와 같이 EC2 정보들을 확인해 봅니다.
 
