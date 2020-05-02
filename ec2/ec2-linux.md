@@ -292,3 +292,5 @@ ls /var/www/html/ec2meta-webpage/
 
 ![](../.gitbook/assets/image%20%2833%29.png)
 
+
+
