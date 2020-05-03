@@ -238,6 +238,7 @@ sudo systemctl restart httpd
 ### **18. 키 페어 선택 .**
 
 * **"기존 키 페어 선택"을 선택하고 , 해당 키페어를 선택합니다.**\(예. IMD-LAB-PUTTY\)
+* **"인스턴스 시작"**을 선택해서 인스턴스를 생성합니다.
 
 ![](../.gitbook/assets/image%20%2837%29.png)
 
@@ -247,11 +248,23 @@ sudo systemctl restart httpd
 
 | EC2 인스턴스 이름 / 태그 | 서브넷 | 서브넷 주소 대역 | 가용영역 | 운영체제 |
 | :--- | :--- | :--- | :--- | :--- |
-| PUBLIC-01 | IMD-PUBLIC-A | 10.1.1.0/24 | ap-northeast-2a | AWS LINUX2 |
-| PUBLIC-02 | IMD-PUBLIC-B | 10.1.2.0/24 | ap-northeast-2c | AWS LINUX2 |
-| PRIVATE-01 | IMD-PRIVATE-A | 10.1.11.0/24 | ap-northeast-2a | AWS LINUX2 |
-| PRIVATE-02 | IMD-PRIVATE-B | 10.1.12.0/24 | ap-northeast-2c | AWS LINUX2 |
+| IMD-EC2 PUBLIC-01 | IMD-PUBLIC-A | 10.1.1.0/24 | ap-northeast-2a | AWS LINUX2 |
+| IMD-EC2 PUBLIC-02 | IMD-PUBLIC-B | 10.1.2.0/24 | ap-northeast-2c | AWS LINUX2 |
+| IMD-EC2 PRIVATE-01 | IMD-PRIVATE-A | 10.1.11.0/24 | ap-northeast-2a | AWS LINUX2 |
+| IMD-EC2 PRIVATE-02 | IMD-PRIVATE-B | 10.1.12.0/24 | ap-northeast-2c | AWS LINUX2 |
 | BASTION | IMD-PUBLIC-B | 10.1.2.0/24 | ap-northeast-2c | AWS LINUX2 |
 
-\*\*\*\*
+{% hint style="info" %}
+\*\*\*\*[**"EC2-Linux Task3:EC2 연결 및 속성 변경"**](../ec2/ec2-windows.md#task-3-ec2)을 참조하여 PUBLIC-01,02 인스턴스 접속이 정상적으로 이뤄지는 지 확인합니다.
+{% endhint %}
+
+## Task3: NAT Gateway 구성 및 Private 서브넷 연결
+
+### 19. NAT Gateway 생성
+
+20. Priavet Routing Table 구성
+
+21. Private EC2 인스턴스 외부 연결 확인
+
+Task4: Bastion Host 구성.
 
