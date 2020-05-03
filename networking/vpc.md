@@ -262,9 +262,10 @@ sudo systemctl restart httpd
 
 ### 19. NAT Gateway 생성
 
-20. Priavet Routing Table 구성
+* 
+### 20. Priavet Routing Table 구성
 
-21. Private EC2 인스턴스 외부 연결 확인
+### 21. Private EC2 인스턴스 외부 연결 확인
 
-Task4: Bastion Host 구성.
+## Task4: Bastion Host 구성.
 
