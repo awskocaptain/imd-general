@@ -393,7 +393,7 @@ df -h
 
 ![](../.gitbook/assets/image%20%2820%29.png)
 
-* 스냅샷 볼륨을 테스트 하기 위해 " PUBLIC-02" EC2 인스턴스에 SSH로 접속하고  "git" 패키지를 삭제합니다. 
+* 스냅샷으로 생성된 볼륨을 테스트 하기 위해 " PUBLIC-02" EC2 인스턴스에 SSH로 접속하고  "git" 패키지를 삭제합니다. 
 
 ```text
 yum list installed | grep "git"
