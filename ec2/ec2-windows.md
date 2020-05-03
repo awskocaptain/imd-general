@@ -14,7 +14,7 @@ description: 이 랩은 기본 VPC환경에서 EC2기반 Window Server를 설치
 
 * **"AWS Management Console - AWS 서비스"** 에서 **"서비스 찾기"** 창에 VPC를 탐색하고, VPC를 선택합니다.
 
-![](../.gitbook/assets/image%20%2834%29.png)
+![](../.gitbook/assets/image%20%2835%29.png)
 
 ### **2. VPC 선택**
 
@@ -24,12 +24,12 @@ description: 이 랩은 기본 VPC환경에서 EC2기반 Window Server를 설치
 
 ### **3. "VPC 생성" 및 값 입력**
 
-![](../.gitbook/assets/image%20%2842%29.png)
+![](../.gitbook/assets/image%20%2843%29.png)
 
 * **이름 태그** : VPC 이름 태그를 입력합니다.
 * **IPv4 CIDR 블록** : VPC에서 사용할 IPv4 주소 대역을 입력합니다.
 
-![](../.gitbook/assets/image%20%2862%29.png)
+![](../.gitbook/assets/image%20%2863%29.png)
 
 생성된 VPC 정보를 확인합니다.
 
@@ -39,7 +39,7 @@ description: 이 랩은 기본 VPC환경에서 EC2기반 Window Server를 설치
 
 ![](../.gitbook/assets/image%20%2821%29.png)
 
-![](../.gitbook/assets/image%20%2838%29.png)
+![](../.gitbook/assets/image%20%2839%29.png)
 
 ### **5.Public ,Private 서브넷 생성.**
 
@@ -73,40 +73,40 @@ description: 이 랩은 기본 VPC환경에서 EC2기반 Window Server를 설치
 
 * 각 라우팅 테이블에 서브넷을 연결합니다.  PUBLIC-RT, PRIVATE-RT 모두 구성합니다.
 
-![](../.gitbook/assets/image%20%2840%29.png)
+![](../.gitbook/assets/image%20%2841%29.png)
 
-![](../.gitbook/assets/image%20%2865%29.png)
+![](../.gitbook/assets/image%20%2866%29.png)
 
-![](../.gitbook/assets/image%20%2831%29.png)
+![](../.gitbook/assets/image%20%2832%29.png)
 
-![](../.gitbook/assets/image%20%2857%29.png)
+![](../.gitbook/assets/image%20%2858%29.png)
 
 ### **7. 인터넷 게이트웨이를 생성.**
 
 * 좌측 VPC 대시보드에서 **"가상 프라이빗 클라우드" - "인터넷 게이트웨이"** 메뉴를 선택하고, **"인터넷 게이트웨이 생성"**을 선택합니다.
 * 인터넷 게이트웨이 이름을 정의합니다.
 
-![](../.gitbook/assets/image%20%2832%29.png)
+![](../.gitbook/assets/image%20%2833%29.png)
 
 * 인터넷 게이트웨이를 VPC에 연결합니다.
 
-![](../.gitbook/assets/image%20%2844%29.png)
+![](../.gitbook/assets/image%20%2845%29.png)
 
-![](../.gitbook/assets/image%20%2855%29.png)
+![](../.gitbook/assets/image%20%2856%29.png)
 
 * 인터넷 게이트웨이의 상태가 "Attached"로 변경되었는지 확인합니다.
 
-![](../.gitbook/assets/image%20%2866%29.png)
+![](../.gitbook/assets/image%20%2867%29.png)
 
 ### 8. 라우팅 테이블 업데이트
 
 * Public-RT 라우팅 테이블에 인터넷 게이트웨이로 향하는 트래픽을 업데이트하기 위해, "**라우팅 테이블" - "PUBLIC-RT"**를 선택하고 **"라우팅 편집"**을  선택합니다.
 
-![](../.gitbook/assets/image%20%2876%29.png)
+![](../.gitbook/assets/image%20%2877%29.png)
 
 * **"라우팅 추가"**를 선택하고, "**대상"**에 "**0.0.0.0/0"**, **"생성한 IGW"**를 입력하고 선택합니다.
 
-![](../.gitbook/assets/image%20%2870%29.png)
+![](../.gitbook/assets/image%20%2871%29.png)
 
 ## **Task2. EC2 생성하기**
 
@@ -119,11 +119,11 @@ description: 이 랩은 기본 VPC환경에서 EC2기반 Window Server를 설치
 * EC2 대시보드에서 **"네트워크 및 보안" - " 키 페어"**를 선택합니다.
 * **"키페어 생성"**을 선택합니다.
 
-![](../.gitbook/assets/image%20%2851%29.png)
+![](../.gitbook/assets/image%20%2852%29.png)
 
 * 윈도우 Administrator 접속 시 사용되는 키페어를 생성합니다.
 
-![](../.gitbook/assets/image%20%2843%29.png)
+![](../.gitbook/assets/image%20%2844%29.png)
 
 * 키페어를 로컬로 다운로드 받습니다.
 
@@ -135,13 +135,13 @@ description: 이 랩은 기본 VPC환경에서 EC2기반 Window Server를 설치
 
 * **Microsoft Windows Server 2012R2 Base AMI\(Amazon Machine Image\)** 를 선택합니다. 
 
-![](../.gitbook/assets/image%20%2833%29.png)
+![](../.gitbook/assets/image%20%2834%29.png)
 
 ### **12. 인스턴스 유형을 선택.**
 
 * **인스턴스 유형 - t2.medium** 을 선택합니다.
 
-![](../.gitbook/assets/image%20%2852%29.png)
+![](../.gitbook/assets/image%20%2853%29.png)
 
 ### **13. 인스턴스 세부 정보를 구성.**
 
@@ -180,7 +180,7 @@ $shell.Namespace("c:\inetpub\wwwroot\").copyhere($item)
 
 ### 14. 스토리지 추가.
 
-![](../.gitbook/assets/image%20%2860%29.png)
+![](../.gitbook/assets/image%20%2861%29.png)
 
 * AWS에서 제공하는 볼륨 유형들을 확인합니다.
 * **범용 SSD\(gp2\) 타입**을 선택합니다.
@@ -191,7 +191,7 @@ $shell.Namespace("c:\inetpub\wwwroot\").copyhere($item)
 * 키와 값의 내용을 입력합니다.
 * **키 : IMD-EC2 , 값: PUBLIC-03**
 
-![](../.gitbook/assets/image%20%2856%29.png)
+![](../.gitbook/assets/image%20%2857%29.png)
 
 * "다음:보안그룹구성"을 선택합니다.
 
@@ -216,7 +216,7 @@ $shell.Namespace("c:\inetpub\wwwroot\").copyhere($item)
 
 * 검토를 완료하고 **"시작하기"**를 선택합니다.
 
-![](../.gitbook/assets/image%20%2847%29.png)
+![](../.gitbook/assets/image%20%2848%29.png)
 
 ### **18. 키 페어 선택 .**
 
@@ -234,15 +234,15 @@ $shell.Namespace("c:\inetpub\wwwroot\").copyhere($item)
 
 * **정상적으로 EC2 인스턴스들이 구성되었는 지 확인해 봅니다. 인스턴스를 선택하면 Meta 정보들을 확인 할 수 있습니다.**
 
-![](../.gitbook/assets/image%20%2875%29.png)
+![](../.gitbook/assets/image%20%2876%29.png)
 
 * 웹기반 클라이언트로 접속이 가능합니다. 접속하려는 **EC2 인스턴스를 선택**하고, EC2 대시보드 상단의 메뉴에서 **"연결"**을 선택합니다. 
 
-![](../.gitbook/assets/image%20%2845%29.png)
+![](../.gitbook/assets/image%20%2846%29.png)
 
 * **"독립 실행형 RDP 클라이언트"** 를 선택하고, **암호 - 암호가져오기** 를 선택합니다.
 
-![](../.gitbook/assets/image%20%2827%29.png)
+![](../.gitbook/assets/image%20%2828%29.png)
 
 * **로컬에 저장해 둔 키페어를 "키 페어 경로"** 에 선택하고, "**암호해독"** 을 선택합니다.
 
@@ -254,7 +254,7 @@ $shell.Namespace("c:\inetpub\wwwroot\").copyhere($item)
 
 * 정상적으로 접속되는 지 확인합니다.
 
-![](../.gitbook/assets/image%20%2854%29.png)
+![](../.gitbook/assets/image%20%2855%29.png)
 
 ### **20. EC2 Windows Server Web 접속**
 
@@ -264,7 +264,7 @@ $shell.Namespace("c:\inetpub\wwwroot\").copyhere($item)
 "ec2-public-ip or public DNS"
 ```
 
-![](../.gitbook/assets/image%20%2846%29.png)
+![](../.gitbook/assets/image%20%2847%29.png)
 
 ### 21. EC2 Instance Type 변경
 
@@ -287,15 +287,15 @@ $shell.Namespace("c:\inetpub\wwwroot\").copyhere($item)
 
 * **볼륨 크기를 40GB**로 증가 시킵니다. 해당 메뉴에서 볼륨 유형을 변경할 수도 있습니다. 볼륨 크기를 변경하고, "**수정"** 을 선택한 후 **"예"**를 선택하고 수정합니다.
 
-![](../.gitbook/assets/image%20%2850%29.png)
+![](../.gitbook/assets/image%20%2851%29.png)
 
 ![](../.gitbook/assets/image%20%2823%29.png)
 
 * 잠시 후 EC2 대시보드에서 확인하면 아래와 같이 볼륨이 증가 한 것을 확인 할 수 있습니다.
 
-
-
 {% hint style="danger" %}
-볼륨 변경은 시간이 10분 이상 필요합니다. EC2 인스턴스의 볼륨 상태가 "In-Use"로 활성화 될 때까지 기다린 후에 , EC2 인스턴스를 다시 시작합니다.
+볼륨 변경은 시간이 20분 이상 필요합니다. EC2 인스턴스의 볼륨 상태가 "In-Use"로 활성화 될 때까지 기다린 후에 , EC2 인스턴스를 다시 시작합니다.
 {% endhint %}
+
+![](../.gitbook/assets/image%20%2827%29.png)
 
