@@ -325,6 +325,10 @@ ls /var/www/html/ec2meta-webpage/
 
 ![](../.gitbook/assets/image%20%2873%29.png)
 
+{% hint style="danger" %}
+볼륨 변경은 시간이 10분 이상 필요합니다. EC2 인스턴스의 볼륨 상태가 "In-Use"로 활성화 될 때까지 기다린 후에 , EC2 인스턴스를 다시 시작합니다.
+{% endhint %}
+
 * Stop 했던 EC2 인스턴스를 다시 시작합니다. 인스턴스 타입과 볼륨이 정상적으로 OS에서 확인이 되는지 점검합니다. 아래 명령을 통해 메모리 용량을 EC2 인스턴스에서 확인합니다. 2GB로 변경된 것을 확인 할 수 있습니다.
 
 ```text
