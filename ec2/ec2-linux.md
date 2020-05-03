@@ -429,7 +429,7 @@ yum list installed | grep "git"
 
 ![](../.gitbook/assets/image%20%2868%29.png)
 
-* Stop 시켜둔 "PUBLIC-02" EC2 인스턴스를 다시 "시작"하고 SSH로 접속합니다. 스냅샷 이후 설치된 패키지가 보이는지 확인합니다.
+* Stop 시켜둔 "PUBLIC-02" EC2 인스턴스를 다시 "시작"하고 SSH로 접속합니다. 스냅샷 이후 삭제된 "git" 패키지가 보이는지 확인합니다.
 
 {% hint style="danger" %}
 인스턴스를 중지하고 다시 시작할 경우 IP 주소가 변경됩니다. 확인하고 SSH에 접속합니다.
