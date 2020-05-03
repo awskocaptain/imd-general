@@ -2,7 +2,7 @@
 description: EC2 Hands On LAB 소개
 ---
 
-# EC2
+# EC2 Computing
 
 ## 소개
 
