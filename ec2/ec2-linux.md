@@ -8,7 +8,7 @@ description: 이 랩은 기본 VPC환경에서 EC2기반 LINUX LAMP를 설치 �
 
 ## 목적
 
-## **Task1. VPC 생성하기**
+## **Task1 : VPC 생성하기**
 
 ### **1.AWS 서비스-VPC 탐색**
 
@@ -108,9 +108,13 @@ description: 이 랩은 기본 VPC환경에서 EC2기반 LINUX LAMP를 설치 �
 
 ![](../.gitbook/assets/image%20%2860%29.png)
 
-## **Task2. EC2 생성하기**
+## **Task2: EC2 생성하기**
 
 ### **9. EC2 키페어 생성**
+
+{% hint style="danger" %}
+**키 페어는 1회 다운로드 이후, 다시 다운로드 받을 수 없습니다. 키 페어를 통해 EC2 인스턴스에 접속하기 때문에 키페어 다운로드 위치를 반드시 파악해 두고 잘 관리해야 합니다.**
+{% endhint %}
 
 * EC2 대시보드에서 **"네트워크 및 보안" - " 키 페어"**를 선택합니다.
 * **"키페어 생성"**을 선택합니다.
@@ -222,7 +226,7 @@ sudo systemctl restart httpd
 **위의 과정을 반복하여, 서브넷 "IMD-PUBLIC-B" - 가용영역 "ap-northeast-2c"에 EC2 인스턴스를 한 개 더 만들어 봅니다.**
 {% endhint %}
 
-## Task3. EC2 접속하기
+## Task3: EC2 접속하기
 
 ### 19. EC2 접속 환경 구성
 
@@ -291,6 +295,8 @@ ls /var/www/html/ec2meta-webpage/
 ```
 
 ![](../.gitbook/assets/image%20%2849%29.png)
+
+
 
 
 
