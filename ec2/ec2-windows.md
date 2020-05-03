@@ -1,5 +1,7 @@
 ---
-description: 이 랩은 기본 VPC환경에서 EC2기반 Window Server를 설치 구성하는 랩입니다.
+description: >-
+  이 랩은 기본 VPC환경에서 EC2기반 Window Server를 설치 구성하는 랩입니다.PC Networking에 대한 기본 내용을 일부
+  포함하고 있습니다.
 ---
 
 # EC2-Windows
@@ -239,6 +241,7 @@ $shell.Namespace("c:\inetpub\wwwroot\").copyhere($item)
 ### **18. 키 페어 선택 .**
 
 * **"기존 키 페어 선택"을 선택하고 , 해당 키페어를 선택합니다.**\(예. W2K-Key\)
+* **"인스턴스 시작"**을 선택해서 인스턴스를 생성합니다.
 
 ![](../.gitbook/assets/image%20%2849%29.png)
 
