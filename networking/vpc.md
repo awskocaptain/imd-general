@@ -53,6 +53,10 @@ EC2-Linux 또는 EC2-Windows 랩을 구성한 경우, Task1을 수행할 필요 
 * 좌측 VPC 대시보드에서 **"가상 프라이빗 클라우드" - "서브넷"** 메뉴를 선택하고, **"서브넷 생성"**을 선택합니다.
 * 4개의 서브넷을 각각 생성하고, 속성을 정의합니다.
 
+{% hint style="info" %}
+Public 서브넷은 Internet Gateway와 1:1 NAT로 직접 연결 가능한 네트워크 범위를 의미합니다. Private 서브넷은 외부로 직접 노출될 수 없으며, 외부와 연동하기 위해서는 Source NAT를 사용하는 방법으로 NAT 기능을 지원하는 인스턴스 또는 NAT Gateway 등과 같은 서비스를 사용해야 합니다.
+{% endhint %}
+
 | **서브넷 이름 태그** | 가용영역 | **IPv4 CIDR 블록** |
 | :--- | :--- | :--- |
 | IMD-PUBLIC-A | ap-northeast-2a | 10.1.1.0/24 |
