@@ -248,13 +248,13 @@ sudo systemctl restart httpd
 **위의 과정을 반복하여, 아래표의 인스턴스들을 추가로 생성합니다.**
 {% endhint %}
 
-| EC2 인스턴스 이름 / 태그 | 서브넷 | 서브넷 주소 대역 | 가용영역 | 보안그룹 | 운영체제 |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| IMD-EC2 PUBLIC-01 | IMD-PUBLIC-A | 10.1.1.0/24 | ap-northeast-2a | IMD-PUB-SG | AWS LINUX2 |
-| IMD-EC2 PUBLIC-02 | IMD-PUBLIC-B | 10.1.2.0/24 | ap-northeast-2c | IMD-PUB-SG | AWS LINUX2 |
-| IMD-EC2 PRIVATE-01 | IMD-PRIVATE-A | 10.1.11.0/24 | ap-northeast-2a | IMD-PRI-SG | AWS LINUX2 |
-| IMD-EC2 PRIVATE-02 | IMD-PRIVATE-B | 10.1.12.0/24 | ap-northeast-2c | IMD-PRI-SG | AWS LINUX2 |
-| BASTION | IMD-PUBLIC-B | 10.1.2.0/24 | ap-northeast-2c | IMD-BASTION-SG | AWS LINUX2 |
+| EC2 인스턴스 이름 / 태그 | 서브넷 | 서브넷 주소 대역 | 가용영역 | 보안그룹 |
+| :--- | :--- | :--- | :--- | :--- |
+| IMD-EC2 PUBLIC-01 | IMD-PUBLIC-A | 10.1.1.0/24 | ap-northeast-2a | IMD-PUB-SG |
+| IMD-EC2 PUBLIC-02 | IMD-PUBLIC-B | 10.1.2.0/24 | ap-northeast-2c | IMD-PUB-SG |
+| IMD-EC2 PRIVATE-01 | IMD-PRIVATE-A | 10.1.11.0/24 | ap-northeast-2a | IMD-PRI-SG |
+| IMD-EC2 PRIVATE-02 | IMD-PRIVATE-B | 10.1.12.0/24 | ap-northeast-2c | IMD-PRI-SG |
+| BASTION | IMD-PUBLIC-B | 10.1.2.0/24 | ap-northeast-2c | IMD-BASTION-SG |
 
 {% hint style="info" %}
 \*\*\*\*[**"EC2-Linux Task3:EC2 연결 및 속성 변경"**](../ec2/ec2-windows.md#task-3-ec2)을 참조하여 PUBLIC-01,02 인스턴스 접속이 정상적으로 이뤄지는 지 확인합니다.
