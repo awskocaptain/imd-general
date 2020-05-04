@@ -295,6 +295,18 @@ Private Network은 외부에서 직접 접속이 불가능 하기 때문에 , �
 
 ![](../.gitbook/assets/image%20%2830%29.png)
 
+* SSH Client에서 아래와 같은 명령으로 Bastion Server에 접속합니다. "-A" 옵션은 SSH Agent Forwarding을 사용하겠다는 옵션입니다.
+
+```text
+ssh -i IMD-PUB-OPENSSH.pem ec2-user@54.180.97.179 -A
+```
+
+* Bastion Server에 정상적으로 접속이 완료되면 연결을 원하는 Private EC2 인스턴스에 SSH로 접속합니다.
+
+```text
+ssh 
+```
+
 ## **Task5: VPC EndPoint**
 
 ### 23. Session Manager를 통한 Private Network 연결 구성 \(web\)
