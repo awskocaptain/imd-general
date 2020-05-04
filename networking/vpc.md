@@ -11,6 +11,10 @@ Amazon VPC의 네트워크 구성을 손쉽게 사용자 지정할 수 있습니
 
 본 랩은 아래와 같은 구성을 통해 VPC 기반의 네트워킹을 통해 클라우드 자원을 효과적으로 연결, 제어하고 모니터링하는 방법을 익히도록 합니다.
 
+![](../.gitbook/assets/image%20%28122%29.png)
+
+
+
 ## **Task1 : VPC 생성하기**
 
 {% hint style="info" %}
@@ -36,7 +40,7 @@ EC2-Linux 또는 EC2-Windows 랩을 구성한 경우, Task1을 수행할 필요 
 * **이름 태그** : VPC 이름 태그를 입력합니다.
 * **IPv4 CIDR 블록** : VPC에서 사용할 IPv4 주소 대역을 입력합니다.
 
-![](../.gitbook/assets/image%20%28138%29.png)
+![](../.gitbook/assets/image%20%28139%29.png)
 
 생성된 VPC 정보를 확인합니다.
 
@@ -44,7 +48,7 @@ EC2-Linux 또는 EC2-Windows 랩을 구성한 경우, Task1을 수행할 필요 
 
 * 생성되는 EC2 인스턴스의 DNS Name 서비스 활성화를 위해, **"작업"**을 선택하고 **"DNS 호스트 이름 편집"**을 선택합니다. **DNS 호스트 이름을 활성화**합니다. ****
 
-![](../.gitbook/assets/image%20%28153%29.png)
+![](../.gitbook/assets/image%20%28154%29.png)
 
 ![](../.gitbook/assets/image%20%28108%29.png)
 
@@ -84,7 +88,7 @@ Public 서브넷은 Internet Gateway와 1:1 NAT로 직접 연결 가능한 네�
 라우팅 테이블은 서브넷과 연동하여 구성됩니다. 각 서브넷이 목적지로 가기 위한 경로들의 정보를 담고 있습니다. 여러개의 서브넷을 묶어서 연동할 수도 있고, 개별로 구성할 수도 있습니다.
 {% endhint %}
 
-![](../.gitbook/assets/image%20%28186%29.png)
+![](../.gitbook/assets/image%20%28187%29.png)
 
 * 각 라우팅 테이블에 서브넷을 연결합니다.  PUBLIC-RT, PRIVATE-RT 모두 구성합니다.
 
@@ -111,7 +115,7 @@ Public 서브넷은 Internet Gateway와 1:1 NAT로 직접 연결 가능한 네�
 
 * 인터넷 게이트웨이를 VPC에 연결합니다.
 
-![](../.gitbook/assets/image%20%28126%29.png)
+![](../.gitbook/assets/image%20%28127%29.png)
 
 ![](../.gitbook/assets/image%20%28116%29.png)
 
@@ -119,7 +123,7 @@ Public 서브넷은 Internet Gateway와 1:1 NAT로 직접 연결 가능한 네�
 
 * Public-RT 라우팅 테이블에 인터넷 게이트웨이로 향하는 트래픽을 업데이트하기 위해, "**라우팅 테이블" - "PUBLIC-RT"**를 선택하고 **"라우팅 편집"**을  선택합니다.
 
-![](../.gitbook/assets/image%20%28184%29.png)
+![](../.gitbook/assets/image%20%28185%29.png)
 
 * **"라우팅 추가"**를 선택하고, "**대상"**에 "**0.0.0.0/0"**, **"생성한 IGW"**를 입력하고 선택합니다.
 
@@ -189,13 +193,13 @@ sudo systemctl restart httpd
 
 * 위의 "사용자 데이터 예"를 복사해서 값을 입력합니다.
 
-![](../.gitbook/assets/image%20%28176%29.png)
+![](../.gitbook/assets/image%20%28177%29.png)
 
 * "다음:스토리지 추가"를 선택합니다.
 
 ### 14. 스토리지 추가.
 
-![](../.gitbook/assets/image%20%28152%29.png)
+![](../.gitbook/assets/image%20%28153%29.png)
 
 * AWS에서 제공하는 볼륨 유형들을 확인합니다.
 * **범용 SSD\(gp2\) 타입**을 선택합니다.
@@ -231,7 +235,7 @@ sudo systemctl restart httpd
 
 ### 17. 인스턴스 시작 검토를 확인.
 
-![](../.gitbook/assets/image%20%28150%29.png)
+![](../.gitbook/assets/image%20%28151%29.png)
 
 * 검토를 완료하고 **"시작하기"**를 선택합니다.
 
@@ -264,19 +268,19 @@ sudo systemctl restart httpd
 
 ![](../.gitbook/assets/image%20%2877%29.png)
 
-![](../.gitbook/assets/image%20%28136%29.png)
+![](../.gitbook/assets/image%20%28137%29.png)
 
-![](../.gitbook/assets/image%20%28175%29.png)
+![](../.gitbook/assets/image%20%28176%29.png)
 
 
 
 ### 20. Priavet Routing Table 구성
 
-![](../.gitbook/assets/image%20%28148%29.png)
+![](../.gitbook/assets/image%20%28149%29.png)
 
 ![](../.gitbook/assets/image%20%2865%29.png)
 
-![](../.gitbook/assets/image%20%28147%29.png)
+![](../.gitbook/assets/image%20%28148%29.png)
 
 ## Task4: Private Network 연결.
 
@@ -323,7 +327,7 @@ ssh -i "key_path/IMD-PUB-OPENSSH.pem" ec2-user@PUBLIC_DNS -A
 
 * Windows 환경의 Putty 프로그램에서는 아래와 같이 Bastion Host 접속을 위해 설정합니다.
 
-![](../.gitbook/assets/image%20%28166%29.png)
+![](../.gitbook/assets/image%20%28167%29.png)
 
 ![](../.gitbook/assets/image%20%2883%29.png)
 
@@ -353,7 +357,7 @@ ssh -i "target-key.pem" -p 22001 ec2-user@localhost
 
 ![](../.gitbook/assets/image%20%2887%29.png)
 
-![](../.gitbook/assets/image%20%28143%29.png)
+![](../.gitbook/assets/image%20%28144%29.png)
 
 ### 22. Session Manager를 통한 Private Network 연결 구성 \(web\)
 
@@ -372,7 +376,7 @@ ssh -i "target-key.pem" -p 22001 ec2-user@localhost
 
 * **역할만들기**에서 **EC2**를 선택합니다.
 
-![](../.gitbook/assets/image%20%28146%29.png)
+![](../.gitbook/assets/image%20%28147%29.png)
 
 * 정책필터에서 **SSM을 검색**합니다.**"AmazonEC2RoleforSSM"**을 선택하고, "**정책생성"**을 선택합니다.
 
@@ -406,25 +410,25 @@ SSMRole을 정의하더라도, Private EC2 인스턴스는 외부에서 접속 �
 
 
 
-![](../.gitbook/assets/image%20%28187%29.png)
+![](../.gitbook/assets/image%20%28188%29.png)
 
-![](../.gitbook/assets/image%20%28165%29.png)
+![](../.gitbook/assets/image%20%28166%29.png)
 
 
 
 ![](../.gitbook/assets/image%20%2823%29.png)
 
-![](../.gitbook/assets/image%20%28160%29.png)
+![](../.gitbook/assets/image%20%28161%29.png)
 
 ![](../.gitbook/assets/image%20%2872%29.png)
 
 ![](../.gitbook/assets/image%20%2851%29.png)
 
-![](../.gitbook/assets/image%20%28181%29.png)
+![](../.gitbook/assets/image%20%28182%29.png)
 
 ![](../.gitbook/assets/image%20%2817%29.png)
 
-![](../.gitbook/assets/image%20%28157%29.png)
+![](../.gitbook/assets/image%20%28158%29.png)
 
 ![](../.gitbook/assets/image%20%2846%29.png)
 
