@@ -21,7 +21,7 @@ EC2-Linux 또는 EC2-Windows 랩을 구성한 경우, Task1을 수행할 필요 
 
 * **"AWS Management Console - AWS 서비스"** 에서 **"서비스 찾기"** 창에 VPC를 탐색하고, VPC를 선택합니다.
 
-![](../.gitbook/assets/image%20%2886%29.png)
+![](../.gitbook/assets/image%20%2891%29.png)
 
 ### **2. VPC 선택**
 
@@ -31,12 +31,12 @@ EC2-Linux 또는 EC2-Windows 랩을 구성한 경우, Task1을 수행할 필요 
 
 ### **3. "VPC 생성" 및 값 입력**
 
-![](../.gitbook/assets/image%20%28116%29.png)
+![](../.gitbook/assets/image%20%28121%29.png)
 
 * **이름 태그** : VPC 이름 태그를 입력합니다.
 * **IPv4 CIDR 블록** : VPC에서 사용할 IPv4 주소 대역을 입력합니다.
 
-![](../.gitbook/assets/image%20%28133%29.png)
+![](../.gitbook/assets/image%20%28138%29.png)
 
 생성된 VPC 정보를 확인합니다.
 
@@ -44,9 +44,9 @@ EC2-Linux 또는 EC2-Windows 랩을 구성한 경우, Task1을 수행할 필요 
 
 * 생성되는 EC2 인스턴스의 DNS Name 서비스 활성화를 위해, **"작업"**을 선택하고 **"DNS 호스트 이름 편집"**을 선택합니다. **DNS 호스트 이름을 활성화**합니다. ****
 
-![](../.gitbook/assets/image%20%28148%29.png)
+![](../.gitbook/assets/image%20%28153%29.png)
 
-![](../.gitbook/assets/image%20%28103%29.png)
+![](../.gitbook/assets/image%20%28108%29.png)
 
 ### **5.Public ,Private 서브넷 생성.**
 
@@ -68,7 +68,7 @@ Public 서브넷은 Internet Gateway와 1:1 NAT로 직접 연결 가능한 네�
 
 * 4개의 서브넷이 정상적으로 구성되어 있는지 확인합니다.
 
-![](../.gitbook/assets/image%20%2896%29.png)
+![](../.gitbook/assets/image%20%28101%29.png)
 
 ### **6. 라우팅 테이블을 생성.**
 
@@ -84,17 +84,17 @@ Public 서브넷은 Internet Gateway와 1:1 NAT로 직접 연결 가능한 네�
 라우팅 테이블은 서브넷과 연동하여 구성됩니다. 각 서브넷이 목적지로 가기 위한 경로들의 정보를 담고 있습니다. 여러개의 서브넷을 묶어서 연동할 수도 있고, 개별로 구성할 수도 있습니다.
 {% endhint %}
 
-![](../.gitbook/assets/image%20%28177%29.png)
+![](../.gitbook/assets/image%20%28186%29.png)
 
 * 각 라우팅 테이블에 서브넷을 연결합니다.  PUBLIC-RT, PRIVATE-RT 모두 구성합니다.
 
-![](../.gitbook/assets/image%20%28102%29.png)
+![](../.gitbook/assets/image%20%28107%29.png)
 
-![](../.gitbook/assets/image%20%2821%29.png)
+![](../.gitbook/assets/image%20%2822%29.png)
 
-![](../.gitbook/assets/image%20%2854%29.png)
+![](../.gitbook/assets/image%20%2858%29.png)
 
-![](../.gitbook/assets/image%20%2885%29.png)
+![](../.gitbook/assets/image%20%2890%29.png)
 
 
 
@@ -107,23 +107,23 @@ Public 서브넷은 Internet Gateway와 1:1 NAT로 직접 연결 가능한 네�
 인터넷 게이트웨이는 VPC 내부 네트워크가 외부와 연결되는 구성을 담당합니다. 인터넷 게이트웨이는 한개의 VPC에 연결되며, 퍼블릭 서브넷의 인스턴스들과 1:1  NAT를 완전 관리형으로 제공합니다.
 {% endhint %}
 
-![](../.gitbook/assets/image%20%2895%29.png)
+![](../.gitbook/assets/image%20%28100%29.png)
 
 * 인터넷 게이트웨이를 VPC에 연결합니다.
 
-![](../.gitbook/assets/image%20%28121%29.png)
+![](../.gitbook/assets/image%20%28126%29.png)
 
-![](../.gitbook/assets/image%20%28111%29.png)
+![](../.gitbook/assets/image%20%28116%29.png)
 
 ### 8. 라우팅 테이블 업데이트
 
 * Public-RT 라우팅 테이블에 인터넷 게이트웨이로 향하는 트래픽을 업데이트하기 위해, "**라우팅 테이블" - "PUBLIC-RT"**를 선택하고 **"라우팅 편집"**을  선택합니다.
 
-![](../.gitbook/assets/image%20%28175%29.png)
+![](../.gitbook/assets/image%20%28184%29.png)
 
 * **"라우팅 추가"**를 선택하고, "**대상"**에 "**0.0.0.0/0"**, **"생성한 IGW"**를 입력하고 선택합니다.
 
-![](../.gitbook/assets/image%20%2859%29.png)
+![](../.gitbook/assets/image%20%2863%29.png)
 
 ## **Task2: EC2 생성하기**
 
@@ -140,27 +140,27 @@ Public 서브넷은 Internet Gateway와 1:1 NAT로 직접 연결 가능한 네�
 * EC2 대시보드에서 **"네트워크 및 보안" - " 키 페어"**를 선택합니다.
 * **"키페어 생성"**을 선택합니다.
 
-![](../.gitbook/assets/image%20%2890%29.png)
+![](../.gitbook/assets/image%20%2895%29.png)
 
 * Mac OS , Linux 계열의 OpenSSH 사용자는 파일형식을 pem을 선택하고, Window OS 계열의 Putty 사용자는 파일형식을 ppk를 선택합니다.
 
-![](../.gitbook/assets/image%20%2875%29.png)
+![](../.gitbook/assets/image%20%2880%29.png)
 
 ### **10. EC2 대시보드에서 인스턴스 시작을 선택.**
 
-![](../.gitbook/assets/image%20%2825%29.png)
+![](../.gitbook/assets/image%20%2827%29.png)
 
 ### **11. AMI를 선택.**
 
 * **Amazon Linux2 AMI\(Amazon Machine Image\)** 를 선택합니다. 
 
-![](../.gitbook/assets/image%20%28114%29.png)
+![](../.gitbook/assets/image%20%28119%29.png)
 
 ### **12. 인스턴스 유형을 선택.**
 
 * **인스턴스 유형 - t2.micro** 를 선택합니다.
 
-![](../.gitbook/assets/image%20%2839%29.png)
+![](../.gitbook/assets/image%20%2841%29.png)
 
 ### **13. 인스턴스 세부 정보를 구성.**
 
@@ -171,7 +171,7 @@ Public 서브넷은 Internet Gateway와 1:1 NAT로 직접 연결 가능한 네�
 | 서브넷 | IMD-PUBLIC-A \| ap-northeast-2a |
 | 퍼블릭 IP 자동할당 | 활성화 |
 
-![](../.gitbook/assets/image%20%2828%29.png)
+![](../.gitbook/assets/image%20%2830%29.png)
 
 * 사용자 데이터 예.
 
@@ -189,13 +189,13 @@ sudo systemctl restart httpd
 
 * 위의 "사용자 데이터 예"를 복사해서 값을 입력합니다.
 
-![](../.gitbook/assets/image%20%28168%29.png)
+![](../.gitbook/assets/image%20%28176%29.png)
 
 * "다음:스토리지 추가"를 선택합니다.
 
 ### 14. 스토리지 추가.
 
-![](../.gitbook/assets/image%20%28147%29.png)
+![](../.gitbook/assets/image%20%28152%29.png)
 
 * AWS에서 제공하는 볼륨 유형들을 확인합니다.
 * **범용 SSD\(gp2\) 타입**을 선택합니다.
@@ -206,7 +206,7 @@ sudo systemctl restart httpd
 * 키와 값의 내용을 입력합니다.
 * **키 : IMD-EC2 , 값: PUBLIC-01**
 
-![](../.gitbook/assets/image%20%2898%29.png)
+![](../.gitbook/assets/image%20%28103%29.png)
 
 * "다음:보안그룹구성"을 선택합니다.
 
@@ -225,13 +225,13 @@ sudo systemctl restart httpd
 * 보안 그룹 이름 : IMD-PUB-SG
 * 설명 : Security Group for IMD-PUB
 
-![](../.gitbook/assets/image%20%2880%29.png)
+![](../.gitbook/assets/image%20%2885%29.png)
 
 * "검토 및 시작"을 선택합니다. ****
 
 ### 17. 인스턴스 시작 검토를 확인.
 
-![](../.gitbook/assets/image%20%28145%29.png)
+![](../.gitbook/assets/image%20%28150%29.png)
 
 * 검토를 완료하고 **"시작하기"**를 선택합니다.
 
@@ -240,7 +240,7 @@ sudo systemctl restart httpd
 * **"기존 키 페어 선택"을 선택하고 , 해당 키페어를 선택합니다.**\(예. IMD-LAB-PUTTY\)
 * **"인스턴스 시작"**을 선택해서 인스턴스를 생성합니다.
 
-![](../.gitbook/assets/image%20%2843%29.png)
+![](../.gitbook/assets/image%20%2845%29.png)
 
 {% hint style="warning" %}
 **위의 과정을 반복하여, 아래표의 인스턴스들을 추가로 생성합니다.**
@@ -262,21 +262,21 @@ sudo systemctl restart httpd
 
 ### 19. NAT Gateway 생성
 
-![](../.gitbook/assets/image%20%2872%29.png)
+![](../.gitbook/assets/image%20%2877%29.png)
 
-![](../.gitbook/assets/image%20%28131%29.png)
+![](../.gitbook/assets/image%20%28136%29.png)
 
-![](../.gitbook/assets/image%20%28167%29.png)
+![](../.gitbook/assets/image%20%28175%29.png)
 
 
 
 ### 20. Priavet Routing Table 구성
 
-![](../.gitbook/assets/image%20%28143%29.png)
+![](../.gitbook/assets/image%20%28148%29.png)
 
-![](../.gitbook/assets/image%20%2861%29.png)
+![](../.gitbook/assets/image%20%2865%29.png)
 
-![](../.gitbook/assets/image%20%28142%29.png)
+![](../.gitbook/assets/image%20%28147%29.png)
 
 ## Task4: Private Network 연결.
 
@@ -287,13 +287,13 @@ Private Network은 외부에서 직접 접속이 불가능 하기 때문에 , �
 * Public 서브넷에 Bastion Server를 배치하여, SSH Agent Forwarding을 통한 접속
 * Public 서브넷에 Bastion Server를 배치하여, SSH Proxy Tunneling을 통한 접속
 
-![](../.gitbook/assets/image%20%2850%29.png)
+![](../.gitbook/assets/image%20%2854%29.png)
 
 ### 21. Bastion Server 기반 Private EC2 접속
 
 * Private Subnet에 위치한 EC2 인스턴스는 외부에서 직접 연결할 수 없습니다. Bastion Server는 이러한 이슈를 해결하기 위해 Public Subnet에 서버를 설치하고 SSH port를 허용하고, Bastion Server를 통해 내부의 Private EC2에 연결할 수 있습니다. 아래 그림은 외부 SSH Client에서 Private EC2 인스턴스를 Bastion Server를 통해 연결하는 논리적 흐름입니다.
 
-![](../.gitbook/assets/image%20%2831%29.png)
+![](../.gitbook/assets/image%20%2833%29.png)
 
 * 먼저 Linux/Mac OS의 OpenSSH Client를 기반으로 Bastion Host를 통해 접속하는 방법을 살펴봅니다. SSH Client에서 아래와 같은 명령으로 key를 저장합니다.\(ssh-add -K는 로컬에 Key를 저장해 두는 명령입니다.\)
 
@@ -319,19 +319,19 @@ ssh -A ec2-user@ec2-13-125-15-101.ap-northeast-2.compute.amazonaws.com
 ssh -i "key_path/IMD-PUB-OPENSSH.pem" ec2-user@PUBLIC_DNS -A
 ```
 
-![](../.gitbook/assets/image%20%28109%29.png)
+![](../.gitbook/assets/image%20%28114%29.png)
 
 * Windows 환경의 Putty 프로그램에서는 아래와 같이 Bastion Host 접속을 위해 설정합니다.
 
-![](../.gitbook/assets/image%20%28158%29.png)
+![](../.gitbook/assets/image%20%28166%29.png)
 
-![](../.gitbook/assets/image%20%2878%29.png)
+![](../.gitbook/assets/image%20%2883%29.png)
 
 {% hint style="info" %}
 Linux/Mac OS에서 처럼 로컬에 Key를 임시저장해서, Putty에서 Private key파일을 선택하지 않아도 됩니다. [Pageat](https://the.earth.li/~sgtatham/putty/latest/w64/pageant.exe) 프로그램에서 Private Key를 업로드 할 수 있습니다. 
 {% endhint %}
 
-![](../.gitbook/assets/image%20%2835%29.png)
+![](../.gitbook/assets/image%20%2837%29.png)
 
 * \(option\) SSH Tunneling을 통해 접속 할 수 있습니다. Bastion Host로 22번 포트를 연결 한 이후, 별도의 포트 번호로 터널링 하는 방식입니다. 먼저 아래와 같이 터미널에서 백그라운드 또는 포그라운드로 실행하고, 터미널을 닫지 않습니다.
 
@@ -347,34 +347,32 @@ ssh -i "target-key.pem" -p 22001 ec2-user@localhost
 
 
 
-![](../.gitbook/assets/image%20%2897%29.png)
+![](../.gitbook/assets/image%20%28102%29.png)
 
-![](../.gitbook/assets/image%20%2863%29.png)
+![](../.gitbook/assets/image%20%2867%29.png)
 
-![](../.gitbook/assets/image%20%2882%29.png)
+![](../.gitbook/assets/image%20%2887%29.png)
 
-![](../.gitbook/assets/image%20%28138%29.png)
+![](../.gitbook/assets/image%20%28143%29.png)
 
-## **Task5: VPC EndPoint**
-
-### 23. Session Manager를 통한 Private Network 연결 구성 \(web\)
+### 22. Session Manager를 통한 Private Network 연결 구성 \(web\)
 
 * Session Manager를 통한 접속을 위해서는 EC2를 위한 SSM Role이 필요합니다.
 * Private Subnet의 Private-01,02 Instance에 IAM Role을 생성해서 연결합니다. **EC2 대시보드**에서 **"Private-01**"을 선택하고, 상단 메뉴 "**작업"-"인스턴스 설정"-"IAM 역할 연결/바꾸기"**를 선택합니다.
 
-![](../.gitbook/assets/image%20%28108%29.png)
+![](../.gitbook/assets/image%20%28113%29.png)
 
 * **새 IAM 역할 생성**을 선택합니다.
 
-![](../.gitbook/assets/image%20%2865%29.png)
+![](../.gitbook/assets/image%20%2869%29.png)
 
 * **IAM 대시보드**로 이동하면, 상단의 **"역할 만들기"**를 선택합니다.
 
-![](../.gitbook/assets/image%20%2820%29.png)
+![](../.gitbook/assets/image%20%2821%29.png)
 
 * **역할만들기**에서 **EC2**를 선택합니다.
 
-![](../.gitbook/assets/image%20%28141%29.png)
+![](../.gitbook/assets/image%20%28146%29.png)
 
 * 정책필터에서 **SSM을 검색**합니다.**"AmazonEC2RoleforSSM"**을 선택하고, "**정책생성"**을 선택합니다.
 
@@ -386,19 +384,55 @@ ssh -i "target-key.pem" -p 22001 ec2-user@localhost
 
 * **역할이름**을 정의합니다.
 
-![](../.gitbook/assets/image%20%2893%29.png)
+![](../.gitbook/assets/image%20%2898%29.png)
 
 * 정상적으로 역할이 추가되었습니다.
 
-![](../.gitbook/assets/image%20%2862%29.png)
+![](../.gitbook/assets/image%20%2866%29.png)
 
 * 생성된 IAM 역할을 선택합니다.
 
-![](../.gitbook/assets/image%20%2873%29.png)
+![](../.gitbook/assets/image%20%2878%29.png)
 
 * Private-02 인스턴스에도 생성된 IAM 역할을 할당합니다.
 
+{% hint style="info" %}
+SSMRole을 정의하더라도, Private EC2 인스턴스는 외부에서 접속 할 수 없습니다. Task5에서 VPC Endpoint 설정이 완료되면 System Manager의 Session Manager 기능을 통해 연결할 수 있습니다.
+{% endhint %}
 
+## Task5. VPC Endpoint
+
+23. 
+
+
+
+![](../.gitbook/assets/image%20%28187%29.png)
+
+![](../.gitbook/assets/image%20%28165%29.png)
+
+
+
+![](../.gitbook/assets/image%20%2823%29.png)
+
+![](../.gitbook/assets/image%20%28160%29.png)
+
+![](../.gitbook/assets/image%20%2872%29.png)
+
+![](../.gitbook/assets/image%20%2851%29.png)
+
+![](../.gitbook/assets/image%20%28181%29.png)
+
+![](../.gitbook/assets/image%20%2817%29.png)
+
+![](../.gitbook/assets/image%20%28157%29.png)
+
+![](../.gitbook/assets/image%20%2846%29.png)
+
+아래에 출력된 결과와 AWS 관리콘솔 - Private-01 인스턴스의 주소를 비교해 봅니다.
+
+```text
+curl http://169.254.169.254/latest/meta-data/local-ipv4
+```
 
 
 
