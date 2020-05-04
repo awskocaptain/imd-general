@@ -425,19 +425,42 @@ SSMRole을 정의하더라도, Private EC2 인스턴스는 외부에서 접속 �
 
 ![](../.gitbook/assets/image%20%2823%29.png)
 
-
+* **"VPC 대시보드" - "가상 프라이빗 클라우드" - "엔드포인트"** 에서 **상태-사용가능으로 변경**되었는지 확인합니다. 서브넷 창을 선택하고 **2개의 ENI\(Elastic Network Interface\)가 생성**된 것을 확인합니다.
 
 ![](../.gitbook/assets/image%20%28162%29.png)
 
+* AWS 서비스에서 **"System Manager"**를 선택합니다.
+
 ![](../.gitbook/assets/image%20%2873%29.png)
 
+* **"System Manager"**에서 **"Session Manager"**를 선택합니다.
+
 ![](../.gitbook/assets/image%20%2851%29.png)
+
+* **세션 시작**을 선택합니다.
+
+{% hint style="danger" %}
+세션시작 화면에서  대상 인스턴스가 보이지 않습니다. EC2 인스턴스를 최초에 생성할 때 IAM Role 역할을 정의하지 않고, 생성 이후에 추가했기 때문입니다. **IAM Role을 추가로 연결한 Private 인스턴스들을 재시작**합니다. EC2 인스턴스를 재시작하면 **System Manager - 세션관리자**에서 정상적으로 인스턴스들이 보입니다.
+{% endhint %}
 
 ![](../.gitbook/assets/image%20%28184%29.png)
 
 ![](../.gitbook/assets/image%20%2817%29.png)
 
+* 이제 Bastion Host를 경유하지 않고 , VPC Endpoint 서비스와 Session Manager를 통해서 Private 인스턴스들에 직접 연결이 가능합니다. **EC2 대쉬보드**에서 **Private-01, Private-02 인스턴스**를 선택하고 "**인스턴스 연결" - "Session Manager"**를 선택합니다.
+
 ![](../.gitbook/assets/image%20%28159%29.png)
+
+* 정상적으로 Private 인스턴스에 연결되는 것을 확인 할 수 있습니다.
+
+{% hint style="info" %}
+Session Manager에 최초 연결될때 , Linux 계정을 확인해 봅니다.**ec2-user**로 로그인 되지 않습니다. IAM-Role에 의해 생성된 **ssm-user** 계정입니다.
+
+```text
+whoami
+sudo -u ec2-user bash
+```
+{% endhint %}
 
 ![](../.gitbook/assets/image%20%2846%29.png)
 
@@ -447,11 +470,15 @@ SSMRole을 정의하더라도, Private EC2 인스턴스는 외부에서 접속 �
 curl http://169.254.169.254/latest/meta-data/local-ipv4
 ```
 
-
-
-
-
 ## Task6: Security
+
+
+
+24.Network ACL 구성
+
+25.보안 그룹 - Security Group 구성
+
+
 
 ## \*\*\*\*
 
@@ -461,7 +488,13 @@ curl http://169.254.169.254/latest/meta-data/local-ipv4
 
 \*\*\*\*
 
+## 참조 자료
 
+* [**VPC 사용설명서**](https://docs.aws.amazon.com/ko_kr/vpc/latest/userguide/what-is-amazon-vpc.html)\*\*\*\*
+* \*\*\*\*[**VPC 구성 예**](https://docs.aws.amazon.com/ko_kr/vpc/latest/userguide/VPC_Scenarios.html)\*\*\*\*
+* \*\*\*\*[**VPC 네트워킹 구성 요소**](https://docs.aws.amazon.com/ko_kr/vpc/latest/userguide/VPC_Networking.html)\*\*\*\*
+* \*\*\*\*[**VPC Endpoint 및 VPC 엔드포인트 서비스**](https://docs.aws.amazon.com/ko_kr/vpc/latest/userguide/endpoint-services-overview.html)\*\*\*\*
+* \*\*\*\*[**VPC FAQ**](https://aws.amazon.com/ko/vpc/faqs/)\*\*\*\*
 
 
 
