@@ -404,25 +404,28 @@ Task5에서는 VPC EndPoint를 통해서 Session Manager로 연결하는 방법�
 
 ![](../.gitbook/assets/image%20%2879%29.png)
 
-* Private-02 인스턴스에도 생성된 IAM 역할을 할당합니다.
+* **Private-02** 인스턴스에도 생성된 IAM 역할을 할당합니다.
 
 {% hint style="info" %}
-SSMRole을 정의하더라도, Private EC2 인스턴스는 외부에서 접속 할 수 없습니다. Task5에서 VPC Endpoint 설정이 완료되면 System Manager의 Session Manager 기능을 통해 연결할 수 있습니다.
+SSMRole을 정의하더라도, Private EC2 인스턴스는 외부에서 접속 할 수 없습니다. VPC Endpoint 설정이 완료되면 System Manager의 Session Manager 기능을 통해 연결할 수 있습니다.
 {% endhint %}
 
-## 
+### 23. VPC EndPoint 설정 
 
-23. 
-
-
+* VPC Endpoint설정을 위해서 **"VPC 대시보드" - "가상 프라이빗 클라우드" - "엔드포인트" -"엔트포인트 생성"**을 선택합니다.
 
 ![](../.gitbook/assets/image%20%28190%29.png)
 
+* 서비스를 선택하기 위해 **"서비스 이름" - "ssmmessages"**를 선택합니다. 현재 **사용 중인 VPC**를 선택합니다. 서브넷은 **Private 서브넷 2개 \(2개의 가용영역\)**를 선택합니다.
+
 ![](../.gitbook/assets/image%20%28168%29.png)
 
-
+* 새로운 **보안그룹\(Security Group\)을 생성**하고 선택합니다. 보안 정책은 **"HTTPS"를 인바운드 허용**해 줍니다. **"IMD-SSM-SG"** 보안 그룹을 생성하고 **Search 창에서 "IMD-SSM-SG"**를 찾아서 선택합니다.
+* 적절한 **태그를 구성**하고, **엔드포인트 생성**을 완료합니다.
 
 ![](../.gitbook/assets/image%20%2823%29.png)
+
+
 
 ![](../.gitbook/assets/image%20%28162%29.png)
 
