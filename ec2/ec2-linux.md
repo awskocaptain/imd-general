@@ -238,6 +238,12 @@ sudo systemctl restart httpd
 * 보안 그룹 이름 : IMD-PUB-SG
 * 설명 : Security Group for IMD-PUB
 
+{% hint style="info" %}
+VPC LAB에서 사용할 Private EC2들을 위한 보안 그룹도 설정합니다. 인바운드,아웃바운드 규칙은 동일하게 구성합니다.
+
+**보안그룹 이름 : IMD-PRI-SG**
+{% endhint %}
+
 ![](../.gitbook/assets/image%20%2886%29.png)
 
 * "검토 및 시작"을 선택합니다.
