@@ -498,11 +498,20 @@ curl http://169.254.169.254/latest/meta-data/local-ipv4
 
 ![](../.gitbook/assets/image%20%2838%29.png)
 
+* **NACL 인바운드 규칙**을 편집 합니다. **소스 주소**를 입력하고 **모든 트래픽 유형**을 선택합니다. 또한 **허용/거부에 "ALLOW**"를 선택합니다. 이때 소스 주소는 **Public Subnet-A \(가용영역 :ap-northeast-2a\) 주소를 입력**합니다.
+
 ![](../.gitbook/assets/image%20%28177%29.png)
+
+* NACL은 상태비저장 방식으로 트래픽 반환시에도 정책이 필요합니다. 트래픽 반환은 모두 허용하기 위해 **대상을 모두로 정의**하고, **유형도 모두 트래픽을 선택**합니다.
 
 ![](../.gitbook/assets/image%20%2831%29.png)
 
+* **서브넷 연결 편집은 Private-A,B** 모두 적용합니다.
+
 ![](../.gitbook/assets/image%20%2817%29.png)
+
+* 3개의 콘솔 창을 열어서 트래픽이 어떻게 제어되는지 확인합니다. Public-01, Public-02 인스턴스에서 Private-01 인스턴스로 Ping을 적용해 봅니다. 또한 Private-01에 접속하여 외부로 Ping이 가능한지 확인합니다.
+* 아래와 같이 Public-01\(10.1.1.0/24\)는 Private-01로 Ping이 가능하고, Public-02\(10.1.2.0/24\)는 Private-01,02로 어떠한 연결도 불가능합니다. 또한 Private-01,02는 NACL로 인해서 트래픽을 받지 못합니다.
 
 ![](../.gitbook/assets/image%20%28111%29.png)
 
