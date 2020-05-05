@@ -236,3 +236,14 @@ awspassword
 RDS DB구성 랩을 모두 완료하셨습니다.
 {% endhint %}
 
+## 참조자료
+
+* [AWS DataBase](https://aws.amazon.com/ko/products/databases/)
+* [RDS 소개](https://aws.amazon.com/ko/rds/?nc2=h_ql_prod_fs_rds)
+* [Amazon Aurora 소개](https://aws.amazon.com/ko/rds/aurora/)
+* [RDS 기능](https://aws.amazon.com/ko/rds/features/)
+* [RDS 리소스](https://aws.amazon.com/ko/rds/resources/)
+* [RDS FAQ](https://aws.amazon.com/ko/rds/faqs/)
+
+
+
