@@ -1,3 +1,9 @@
+---
+description: >-
+  이 랩은 기본 VPC 네트워킹의 다양한 기능을 구성하는 환경입니다. EC2 컴퓨팅 랩을 완료하였다면, Task3 전단계에서 Private
+  EC2 인스턴스와 Bastion Host만 구성하고, Task 3를 진행하면 됩니다.
+---
+
 # VPC
 
 ## 소개
