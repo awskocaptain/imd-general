@@ -19,6 +19,15 @@ Amazon VPC의 네트워크 구성을 손쉽게 사용자 지정할 수 있습니
 
 ![](../.gitbook/assets/image%20%28220%29.png)
 
+* [ ] **VPC 생성**
+* [ ] **퍼블릭, 프라이빗 서브넷 생성**
+* [ ] **NAT Gateway 생성**
+* [ ] **라우팅 구성**
+* [ ] **System Manager 기반 Session Manager 구성**
+* [ ] **Bastion host 구성**
+* [ ] **VPC Endpoint 구성**
+* [ ] **VPC Flow 구성**
+
 ## **Task1 : VPC 생성하기**
 
 {% hint style="info" %}
