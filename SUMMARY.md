@@ -7,4 +7,8 @@
 * [Networking](networking/README.md)
   * [VPC](networking/vpc.md)
   * [ELB](networking/elb.md)
+* [Storage](storage/README.md)
+  * [S3](storage/s3.md)
+* [DataBase](db/README.md)
+  * [RDS](db/rds.md)
 
