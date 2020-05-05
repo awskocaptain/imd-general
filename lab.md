@@ -2,7 +2,7 @@
 description: Hands on Lab을 시작하기 전에 확인합니다.
 ---
 
-# LAB 소개
+# LAB 시작에 앞서
 
 ## **1.Team Dashboard 접속**
 
