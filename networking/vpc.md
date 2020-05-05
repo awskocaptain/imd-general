@@ -280,6 +280,10 @@ sudo systemctl restart httpd
 
 ![](../.gitbook/assets/image%20%28152%29.png)
 
+{% hint style="info" %}
+**Task4. Private Network 연결을 완료한 이후에는 NAT Gateway를 통해 Private EC2에서 외부망으로 연결이 가능하지 확인 할 수 있습니다.**
+{% endhint %}
+
 ## Task4: Private Network 연결.
 
 Private Network은 외부에서 직접 접속이 불가능 하기 때문에 , 여러가지 방법을 통해 접속이 가능합니다.
