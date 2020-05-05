@@ -4,6 +4,7 @@
 * [EC2 Computing](ec2/README.md)
   * [EC2-Linux](ec2/ec2-linux.md)
   * [EC2-Windows](ec2/ec2-windows.md)
+  * [AutoScale](ec2/autoscale.md)
 * [Networking](networking/README.md)
   * [VPC](networking/vpc.md)
   * [ELB](networking/elb.md)
