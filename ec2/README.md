@@ -6,7 +6,7 @@ description: EC2 Hands On LAB 소개
 
 ## 소개
 
-![](../.gitbook/assets/image%20%28112%29.png)
+![](../.gitbook/assets/image%20%28118%29.png)
 
 Amazon Elastic Compute Cloud\(EC2\)는 안전하게 자원의 크기 조정이 가능한 컴퓨팅 파워를 클라우드상에서 제공하는 웹 서비스입니다. 개발자가 더 쉽게 클라우드 컴퓨팅 작업을 할 수 있도록 설계되었습니다. Amazon EC2의 간편한 AWS Management Console을 통해 간편하게 필요하게 용량을 얻고 구성할 수 있습니다. 컴퓨팅 리소스에 대한 포괄적인 제어권을 제공하며, Amazon의 검증된 컴퓨팅 환경에서 실행할 수 있습니다.
 
