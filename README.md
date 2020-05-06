@@ -56,5 +56,5 @@ AWS Immersion Day는 AWS Solutions Architect와 Account Manager가 제공하는 
 
 \*\*\*\*
 
-**Contact Point : Woo Hyung Choi \(**[**whchoi98@gmail.com**](mailto:whchoi98@gmail.com)**\) , SangHyung Kim** 
+**Contact Point : Woo Hyung Choi \(**[**whchoi98@gmail.com**](mailto:whchoi98@gmail.com)**\) , SangHyun Kim \(**[**real23.sh@gmail.com**](mailto:real23.sh@gmail.com)**\)**
 
