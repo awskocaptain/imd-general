@@ -1,5 +1,5 @@
 ---
-description: 'update : 2020-05-05'
+description: 'update : 2020-05-13'
 ---
 
 # General Immersion Day
@@ -30,7 +30,11 @@ AWS Immersion Day는 AWS Solutions Architect와 Account Manager가 제공하는 
 
 **EC2 환경에서 Windows Server를 설치하고 구성해 봅니다.**
 
-## [Networking](networking/) \(1h 40min\)
+### [Auto Scaling \(40min\)](ec2/autoscale.md)
+
+**Auto Scaling Group을 생성하고 자원을 늘리는 환경을 구성해 봅니다.**
+
+## \*\*\*\*[Networking](networking/) \(1h 40min\)
 
 **VPC 기반의 보안, 서브넷 구성, NACL, 보안그룹 구성, VPC 엔드포인트, VPC Flow, ELB 구성 방법들에 대해 알아보고, LAB을 통해 구성해 봅니다.**
 

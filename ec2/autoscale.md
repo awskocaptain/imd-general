@@ -1,3 +1,9 @@
+---
+description: >-
+  이 랩은 기본 VPC환경에서 Auto Scaling Group을 생성하고 EC2 자원을 생성하고 축소하는 과정을 포함합니다.. 
+  (update : 2020-05-13)
+---
+
 # AutoScale
 
 ## **소개** 
