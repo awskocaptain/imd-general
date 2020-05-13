@@ -22,7 +22,7 @@ AWS Auto Scaling은 애플리케이션을 모니터링하고 용량을 자동으
 
 * Auto Scaling 구성에 포함 EC2 인스턴스의 이미지를 선택합니다. \(랩에서는 Amazon Linux 2 AMI 선택\)
 
-![](../.gitbook/assets/image%20%28245%29.png)
+![](../.gitbook/assets/image%20%28246%29.png)
 
 ### 3.인스턴스 유형 선택
 
@@ -68,7 +68,7 @@ sudo systemctl restart httpd
 
 * EC2에 포함될 키 페어를 선택합니다. \(랩에서는 앞서 EC2-LINUX랩에서 생성한 키페어를 선택합니다.\)
 
-![](../.gitbook/assets/image%20%28314%29.png)
+![](../.gitbook/assets/image%20%28315%29.png)
 
 Auto Scaling  시작 구성 생성을 선택하고, 완료합니다.
 
@@ -78,7 +78,7 @@ Auto Scaling  시작 구성 생성을 선택하고, 완료합니다.
 
 * Auto Scaling 그룹 생성을 선택합니다.
 
-![](../.gitbook/assets/image%20%28236%29.png)
+![](../.gitbook/assets/image%20%28237%29.png)
 
 ### 9. Auto Scaling 그룹 생성과 시작 구성 선
 
@@ -101,7 +101,7 @@ Auto Scaling  시작 구성 생성을 선택하고, 완료합니다.
 상태 확인 유예 기간은 초 단위입니다. 따라서 예를 들어 300초를 지정하면 5분 간격이 생깁니다.
 {% endhint %}
 
-![](../.gitbook/assets/image%20%28195%29.png)
+![](../.gitbook/assets/image%20%28196%29.png)
 
 ### 11. 조정 정책 구성
 
@@ -110,49 +110,80 @@ Auto Scaling  시작 구성 생성을 선택하고, 완료합니다.
 * EC2가 증가하는 조건 - EC2 의 1분간 평균 CPU 70% 이상이면 , 2개씩 EC2 증가
 * EC2가 감소하는 조건 - EC2 의 1분간 평균 CPU 20% 이하이면 , 1개씩 EC2 감
 
-![](../.gitbook/assets/image%20%28269%29.png)
+![](../.gitbook/assets/image%20%28270%29.png)
 
 ![](../.gitbook/assets/image%20%2867%29.png)
 
-![](../.gitbook/assets/image%20%28206%29.png)
+![](../.gitbook/assets/image%20%28207%29.png)
 
 ### 12. 알림 구성
 
 * EC2 인스턴스의 시작 또는 종료 , 시작 실패, 종료 실패에 대한 알림 전송.
 
-![](../.gitbook/assets/image%20%28291%29.png)
+![](../.gitbook/assets/image%20%28292%29.png)
 
 * 해당 이메일에서 확인하고, 알림 수신을 수락합니다.
 
 ![](../.gitbook/assets/image%20%2829%29.png)
 
-12. 태그 구성
+### 13. 태그 구성
 
+* 태그를 구성하지 않으면, EC2를 식별하기 어렵습니다. EC2에 대한 태그를 설정합니다. \(랩에서는 Key-ASG , 값-01 로 설정\)
 
+![](../.gitbook/assets/image%20%28183%29.png)
 
+* 검토를 완료합니다.
 
+### 14. Auto Scaling 그룹 확인 
 
-![](../.gitbook/assets/image%20%28246%29.png)
+* 생성된 Auto Scaling 그룹에서 EC2가 생성되는 지 확인합니다. [10번 단계](autoscale.md#10-auto-scaling)에서 최소 인스턴스 단위를 2개로 설정했기 때문에 2개의 EC2 인스턴스가 생성됩니다.
 
 ![](../.gitbook/assets/image%20%28173%29.png)
 
-![](../.gitbook/assets/image%20%28281%29.png)
+* EC2 대쉬보드에서도 정상적으로 2개의 EC2 인스턴스가 생성된 것을 확인 할 수 있습니다.
+
+![](../.gitbook/assets/image%20%28282%29.png)
+
+### 15. Auto Scaling 증가 확인
+
+* 생성된 각각의 EC2 인스턴스에서 CPU 로드를 생성합니다. "top" 명령을 통해 CPU Load를 확인합니다.
+
+{% hint style="info" %}
+생성된 EC2 인스턴스에 tmux 가 설치되어 있습니다. 화면 분할을 통해 명령을 top 를 입력해 봅니다. 
+
+화면 분할 - ctrl + b , "  
+화면 이동 - ctrl + 화살
+{% endhint %}
+
+```text
+sudo stress --cpu 1 --timeout 320
+```
 
 ![](../.gitbook/assets/image%20%2888%29.png)
 
-![](../.gitbook/assets/image%20%28262%29.png)
+* EC2 인스턴스의 모니터링에서 Cloudwatch를 통해 1분간 평균 CPU를 확인합니다.
 
-![](../.gitbook/assets/image%20%28312%29.png)
+![](../.gitbook/assets/image%20%28263%29.png)
+
+* 수분 뒤에 인스턴스가 증가하는 지 확인합니다.  \(Auto Scaling 그룹과 EC2 대쉬보드에서 확인\)
+
+![](../.gitbook/assets/image%20%28313%29.png)
 
 ![](../.gitbook/assets/image%20%2847%29.png)
 
-![](../.gitbook/assets/image%20%28237%29.png)
+![](../.gitbook/assets/image%20%28238%29.png)
 
-![](../.gitbook/assets/image%20%28289%29.png)
+![](../.gitbook/assets/image%20%28290%29.png)
 
-![](../.gitbook/assets/image%20%28218%29.png)
+* CPU Stress가 종료된 수분 뒤에 인스턴스가 감하는 지 확인합니다.  \(Auto Scaling 그룹과 EC2 대쉬보드에서 확인\)
+
+![](../.gitbook/assets/image%20%28313%29.png)
+
+![](../.gitbook/assets/image%20%28219%29.png)
 
 ![](../.gitbook/assets/image%20%2815%29.png)
 
-
+{% hint style="success" %}
+성공적으로 Auto Scaling 그룹 랩을 마치셨습니다. Auto Scaling 그룹을 삭제합니다.
+{% endhint %}
 
