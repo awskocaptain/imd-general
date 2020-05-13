@@ -193,7 +193,7 @@ Public 서브넷은 Internet Gateway와 1:1 NAT로 직접 연결 가능한 네�
 sudo yum -y update
 sudo yum -y install yum-util
 sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm 
-sudo yum -y install httpd php mysql php-mysql git stress
+sudo yum -y install httpd php mysql php-mysql git stress tmux
 sudo systemctl start httpd
 sudo systemctl enable httpd
 cd /var/www/html/
