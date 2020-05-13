@@ -17,7 +17,7 @@ Amazon VPC의 네트워크 구성을 손쉽게 사용자 지정할 수 있습니
 
 본 랩은 아래와 같은 구성을 통해 VPC 기반의 네트워킹을 통해 클라우드 자원을 효과적으로 연결, 제어하고 모니터링하는 방법을 익히도록 합니다.
 
-![](../.gitbook/assets/image%20%28275%29.png)
+![](../.gitbook/assets/image%20%28276%29.png)
 
 * [ ] **VPC 생성**
 * [ ] **퍼블릭, 프라이빗 서브넷 생성**
@@ -101,7 +101,7 @@ Public 서브넷은 Internet Gateway와 1:1 NAT로 직접 연결 가능한 네�
 라우팅 테이블은 서브넷과 연동하여 구성됩니다. 각 서브넷이 목적지로 가기 위한 경로들의 정보를 담고 있습니다. 여러개의 서브넷을 묶어서 연동할 수도 있고, 개별로 구성할 수도 있습니다.
 {% endhint %}
 
-![](../.gitbook/assets/image%20%28320%29.png)
+![](../.gitbook/assets/image%20%28321%29.png)
 
 * 각 라우팅 테이블에 서브넷을 연결합니다.  PUBLIC-RT, PRIVATE-RT 모두 구성합니다.
 
@@ -136,7 +136,7 @@ Public 서브넷은 Internet Gateway와 1:1 NAT로 직접 연결 가능한 네�
 
 * Public-RT 라우팅 테이블에 인터넷 게이트웨이로 향하는 트래픽을 업데이트하기 위해, "**라우팅 테이블" - "PUBLIC-RT"**를 선택하고 **"라우팅 편집"**을  선택합니다.
 
-![](../.gitbook/assets/image%20%28317%29.png)
+![](../.gitbook/assets/image%20%28318%29.png)
 
 * **"라우팅 추가"**를 선택하고, "**대상"**에 "**0.0.0.0/0"**, **"생성한 IGW"**를 입력하고 선택합니다.
 
@@ -206,7 +206,7 @@ sudo systemctl restart httpd
 
 * 위의 "사용자 데이터 예"를 복사해서 값을 입력합니다.
 
-![](../.gitbook/assets/image%20%28302%29.png)
+![](../.gitbook/assets/image%20%28303%29.png)
 
 * "다음:스토리지 추가"를 선택합니다.
 
@@ -283,7 +283,7 @@ sudo systemctl restart httpd
 
 ![](../.gitbook/assets/image%20%28225%29.png)
 
-![](../.gitbook/assets/image%20%28301%29.png)
+![](../.gitbook/assets/image%20%28302%29.png)
 
 
 
@@ -344,7 +344,7 @@ ssh -i "key_path/IMD-PUB-OPENSSH.pem" ec2-user@PUBLIC_DNS -A
 
 * Windows 환경의 Putty 프로그램에서는 아래와 같이 Bastion Host 접속을 위해 설정합니다.
 
-![](../.gitbook/assets/image%20%28287%29.png)
+![](../.gitbook/assets/image%20%28288%29.png)
 
 ![](../.gitbook/assets/image%20%28150%29.png)
 
@@ -433,11 +433,11 @@ SSMRole을 정의하더라도, Private EC2 인스턴스는 외부에서 접속 �
 
 * VPC Endpoint설정을 위해서 **"VPC 대시보드" - "가상 프라이빗 클라우드" - "엔드포인트" -"엔트포인트 생성"**을 선택합니다.
 
-![](../.gitbook/assets/image%20%28321%29.png)
+![](../.gitbook/assets/image%20%28322%29.png)
 
 * 서비스를 선택하기 위해 **"서비스 이름" - "ssmmessages"**를 선택합니다. 현재 **사용 중인 VPC**를 선택합니다. 서브넷은 **Private 서브넷 2개 \(2개의 가용영역\)**를 선택합니다.
 
-![](../.gitbook/assets/image%20%28284%29.png)
+![](../.gitbook/assets/image%20%28285%29.png)
 
 * 새로운 **보안그룹\(Security Group\)을 생성**하고 선택합니다. 보안 정책은 **"HTTPS"를 인바운드 허용**해 줍니다. **"IMD-SSM-SG"** 보안 그룹을 생성하고 **Search 창에서 "IMD-SSM-SG"**를 찾아서 선택합니다.
 * 적절한 **태그를 구성**하고, **엔드포인트 생성**을 완료합니다.
@@ -446,7 +446,7 @@ SSMRole을 정의하더라도, Private EC2 인스턴스는 외부에서 접속 �
 
 * **"VPC 대시보드" - "가상 프라이빗 클라우드" - "엔드포인트"** 에서 **상태-사용가능으로 변경**되었는지 확인합니다. 서브넷 창을 선택하고 **2개의 ENI\(Elastic Network Interface\)가 생성**된 것을 확인합니다.
 
-![](../.gitbook/assets/image%20%28268%29.png)
+![](../.gitbook/assets/image%20%28269%29.png)
 
 * AWS 서비스에서 **"System Manager"**를 선택합니다.
 
@@ -462,13 +462,13 @@ SSMRole을 정의하더라도, Private EC2 인스턴스는 외부에서 접속 �
 세션시작 화면에서  대상 인스턴스가 보이지 않습니다. EC2 인스턴스를 최초에 생성할 때 IAM Role 역할을 정의하지 않고, 생성 이후에 추가했기 때문입니다. **IAM Role을 추가로 연결한 Private 인스턴스들을 재시작**합니다. EC2 인스턴스를 재시작하면 **System Manager - 세션관리자**에서 정상적으로 인스턴스들이 보입니다.
 {% endhint %}
 
-![](../.gitbook/assets/image%20%28309%29.png)
+![](../.gitbook/assets/image%20%28310%29.png)
 
 ![](../.gitbook/assets/image%20%2833%29.png)
 
 * 이제 Bastion Host를 경유하지 않고 , VPC Endpoint 서비스와 Session Manager를 통해서 Private 인스턴스들에 직접 연결이 가능합니다. **EC2 대쉬보드**에서 **Private-01, Private-02 인스턴스**를 선택하고 "**인스턴스 연결" - "Session Manager"**를 선택합니다.
 
-![](../.gitbook/assets/image%20%28264%29.png)
+![](../.gitbook/assets/image%20%28265%29.png)
 
 * 정상적으로 Private 인스턴스에 연결되는 것을 확인 할 수 있습니다.
 
@@ -517,7 +517,7 @@ curl http://169.254.169.254/latest/meta-data/local-ipv4
 
 * **NACL 인바운드 규칙**을 편집 합니다. **소스 주소**를 입력하고 **모든 트래픽 유형**을 선택합니다. 또한 **허용/거부에 "ALLOW**"를 선택합니다. 이때 소스 주소는 **Public Subnet-A \(가용영역 :ap-northeast-2a\) 주소를 입력**합니다.
 
-![](../.gitbook/assets/image%20%28283%29.png)
+![](../.gitbook/assets/image%20%28284%29.png)
 
 * NACL은 상태비저장 방식으로 트래픽 반환시에도 정책이 필요합니다. 트래픽 반환은 모두 허용하기 위해 **대상을 모두로 정의**하고, **유형도 모두 트래픽을 선택**합니다.
 
@@ -544,7 +544,7 @@ curl http://169.254.169.254/latest/meta-data/local-ipv4
 
 * 네트워크 ACL을 모두 허용합니다. \(인바운드 소스 허용을 0.0.0.0/0 으로 변경합니다.\) 또는 규칙 번호를 10번 이전 번호로 만들고 모든 규칙을 허용해도 됩니다. 이것은 Network ACL이 순차적으로 보안규칙을 탐색하고, 곧바로 적용하기 때문입니다.
 
-![](../.gitbook/assets/image%20%28293%29.png)
+![](../.gitbook/assets/image%20%28294%29.png)
 
 * **VPC 대시보드 - 보안 - 보안그룹에서 "IMD-PUB-SG\(Public subnet을 위한 Security Group\)"을 수정**합니다. **인바운드 ICMP 허용을 모두 제거**합니다.
 
@@ -586,7 +586,7 @@ VPC, 서브넷 또는 네트워크 인터페이스에 대한 VPC Flow를 생성�
 
 * 로그그룹이 정상적으로 생성되었는지 확인합니다.
 
-![](../.gitbook/assets/image%20%28272%29.png)
+![](../.gitbook/assets/image%20%28273%29.png)
 
 * 다시 **VPC 대시보드**로 돌아와, V**PC를 선택하고 플로우 로그 생성**을 선택합니다.
 
@@ -610,11 +610,11 @@ VPC, 서브넷 또는 네트워크 인터페이스에 대한 VPC Flow를 생성�
 
 * 로그그룹에 스트림이 정상적으로 로그들이 쌓이는 것을 확인합니다.
 
-![](../.gitbook/assets/image%20%28277%29.png)
+![](../.gitbook/assets/image%20%28278%29.png)
 
 * **로그 그룹의 스트림 중에 한개를 선택**해서 내용을 살펴봅니다.
 
-![](../.gitbook/assets/image%20%28312%29.png)
+![](../.gitbook/assets/image%20%28313%29.png)
 
 * 상세한 VPC Flow 분석 방법은 아래 URL을 참조합니다.
 

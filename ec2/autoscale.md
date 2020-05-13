@@ -8,7 +8,14 @@ AWS Auto Scaling은 애플리케이션을 모니터링하고 용량을 자동으
 
 ## 목적 
 
+본 랩은 아래와 같은 구성을 통해 EC2 인스턴스들의 Auto Scaling을 확인하는 데 도움을 드립니다.
 
+![](../.gitbook/assets/image%20%28261%29.png)
+
+* **EC2 생성**
+* **Auto Scaling 시작 구성 방법**
+* **Auto Scaling Group 생성**
+* **Auto Scaling Group 을 통한 EC2 증가와 감소 이**
 
 ## Task1 : Auto Scaling 시작 구성 \(Auto Scaling Launch Config\)
 
@@ -68,7 +75,7 @@ sudo systemctl restart httpd
 
 * EC2에 포함될 키 페어를 선택합니다. \(랩에서는 앞서 EC2-LINUX랩에서 생성한 키페어를 선택합니다.\)
 
-![](../.gitbook/assets/image%20%28315%29.png)
+![](../.gitbook/assets/image%20%28316%29.png)
 
 Auto Scaling  시작 구성 생성을 선택하고, 완료합니다.
 
@@ -110,7 +117,7 @@ Auto Scaling  시작 구성 생성을 선택하고, 완료합니다.
 * EC2가 증가하는 조건 - EC2 의 1분간 평균 CPU 70% 이상이면 , 2개씩 EC2 증가
 * EC2가 감소하는 조건 - EC2 의 1분간 평균 CPU 20% 이하이면 , 1개씩 EC2 감
 
-![](../.gitbook/assets/image%20%28270%29.png)
+![](../.gitbook/assets/image%20%28271%29.png)
 
 ![](../.gitbook/assets/image%20%2867%29.png)
 
@@ -120,7 +127,7 @@ Auto Scaling  시작 구성 생성을 선택하고, 완료합니다.
 
 * EC2 인스턴스의 시작 또는 종료 , 시작 실패, 종료 실패에 대한 알림 전송.
 
-![](../.gitbook/assets/image%20%28292%29.png)
+![](../.gitbook/assets/image%20%28293%29.png)
 
 * 해당 이메일에서 확인하고, 알림 수신을 수락합니다.
 
@@ -142,7 +149,7 @@ Auto Scaling  시작 구성 생성을 선택하고, 완료합니다.
 
 * EC2 대쉬보드에서도 정상적으로 2개의 EC2 인스턴스가 생성된 것을 확인 할 수 있습니다.
 
-![](../.gitbook/assets/image%20%28282%29.png)
+![](../.gitbook/assets/image%20%28283%29.png)
 
 ### 15. Auto Scaling 증가 확인
 
@@ -163,21 +170,21 @@ sudo stress --cpu 1 --timeout 320
 
 * EC2 인스턴스의 모니터링에서 Cloudwatch를 통해 1분간 평균 CPU를 확인합니다.
 
-![](../.gitbook/assets/image%20%28263%29.png)
+![](../.gitbook/assets/image%20%28264%29.png)
 
 * 수분 뒤에 인스턴스가 증가하는 지 확인합니다.  \(Auto Scaling 그룹과 EC2 대쉬보드에서 확인\)
 
-![](../.gitbook/assets/image%20%28313%29.png)
+![](../.gitbook/assets/image%20%28314%29.png)
 
 ![](../.gitbook/assets/image%20%2847%29.png)
 
 ![](../.gitbook/assets/image%20%28238%29.png)
 
-![](../.gitbook/assets/image%20%28290%29.png)
+![](../.gitbook/assets/image%20%28291%29.png)
 
 * CPU Stress가 종료된 수분 뒤에 인스턴스가 감하는 지 확인합니다.  \(Auto Scaling 그룹과 EC2 대쉬보드에서 확인\)
 
-![](../.gitbook/assets/image%20%28313%29.png)
+![](../.gitbook/assets/image%20%28314%29.png)
 
 ![](../.gitbook/assets/image%20%28219%29.png)
 

@@ -49,7 +49,7 @@ Amazon EC2는 AWS Management Console을 사용해 다양한 운영 체제로 인
 * **이름 태그** : VPC 이름 태그를 입력합니다.
 * **IPv4 CIDR 블록** : VPC에서 사용할 IPv4 주소 대역을 입력합니다.
 
-![](../.gitbook/assets/image%20%28262%29.png)
+![](../.gitbook/assets/image%20%28263%29.png)
 
 생성된 VPC 정보를 확인합니다.
 
@@ -95,7 +95,7 @@ Amazon EC2는 AWS Management Console을 사용해 다양한 운영 체제로 인
 
 ![](../.gitbook/assets/image%20%28198%29.png)
 
-![](../.gitbook/assets/image%20%28288%29.png)
+![](../.gitbook/assets/image%20%28289%29.png)
 
 ![](../.gitbook/assets/image%20%28161%29.png)
 
@@ -116,17 +116,17 @@ Amazon EC2는 AWS Management Console을 사용해 다양한 운영 체제로 인
 
 * 인터넷 게이트웨이의 상태가 "Attached"로 변경되었는지 확인합니다.
 
-![](../.gitbook/assets/image%20%28296%29.png)
+![](../.gitbook/assets/image%20%28297%29.png)
 
 ### 8. 라우팅 테이블 업데이트
 
 * Public-RT 라우팅 테이블에 인터넷 게이트웨이로 향하는 트래픽을 업데이트하기 위해, "**라우팅 테이블" - "PUBLIC-RT"**를 선택하고 **"라우팅 편집"**을  선택합니다.
 
-![](../.gitbook/assets/image%20%28317%29.png)
+![](../.gitbook/assets/image%20%28318%29.png)
 
 * **"라우팅 추가"**를 선택하고, "**대상"**에 "**0.0.0.0/0"**, **"생성한 IGW"**를 입력하고 선택합니다.
 
-![](../.gitbook/assets/image%20%28303%29.png)
+![](../.gitbook/assets/image%20%28304%29.png)
 
 ## **Task2. EC2 생성하기**
 
@@ -255,7 +255,7 @@ $shell.Namespace("c:\inetpub\wwwroot\").copyhere($item)
 
 * **정상적으로 EC2 인스턴스들이 구성되었는 지 확인해 봅니다. 인스턴스를 선택하면 Meta 정보들을 확인 할 수 있습니다.**
 
-![](../.gitbook/assets/image%20%28311%29.png)
+![](../.gitbook/assets/image%20%28312%29.png)
 
 * 웹기반 클라이언트로 접속이 가능합니다. 접속하려는 **EC2 인스턴스를 선택**하고, EC2 대시보드 상단의 메뉴에서 **"연결"**을 선택합니다. 
 
@@ -323,9 +323,9 @@ $shell.Namespace("c:\inetpub\wwwroot\").copyhere($item)
 * \(Option\)Stop 했던 EC2 인스턴스를 다시 시작합니다. 인스턴스 타입과 볼륨이 정상적으로 OS에서 확인이 되는지 점검합니다. 원격 접속 터미널을 통해 Window Server EC2 인스턴스에 접속합니다.
 * **바탕화면 우측 상단**에서 인스턴스 타입이 변경된 것을 확인합니다. **Window Task Manager**를 실행하고 메모리 용량이 **8GB**로 증가한 것을 확인합니다.
 
-![](../.gitbook/assets/image%20%28294%29.png)
+![](../.gitbook/assets/image%20%28295%29.png)
 
-![](../.gitbook/assets/image%20%28267%29.png)
+![](../.gitbook/assets/image%20%28268%29.png)
 
 * **Window Server 실행** 대화 상자에 **diskmgmt.msc**를 입력하고 Enter 키를 누릅니다. 디스크 관리 유틸리티가 열립니다.
 
@@ -357,7 +357,7 @@ $shell.Namespace("c:\inetpub\wwwroot\").copyhere($item)
 
 * EC2 대시보드 좌측 메뉴에서 "ELASTIC BLOCK STORE" - "스냅샷"을 선택하고 , "스냅샷 생성"을 선택합니다.
 
-![](../.gitbook/assets/image%20%28274%29.png)
+![](../.gitbook/assets/image%20%28275%29.png)
 
 * 정상적으로 스냅샷이 구성되었는지 확인합니다.
 
@@ -389,7 +389,7 @@ $shell.Namespace("c:\inetpub\wwwroot\").copyhere($item)
 
 * EC2 대쉬보드에서 **"ELASTIC BLOCK STORE" - "볼륨"**을 선택하고 새로 만든 볼륨을 선택합니다. 상단 메뉴 **"작업"-"볼륨연결"**를 선택합니다. Stop되어 있는 **"PUBLIC-04" 인스턴스 ID**를 선택합니다. 디바이스는 **기존에 루트 디바이스 이름**을 입력합니다. **\(dev/sda1\)**
 
-![](../.gitbook/assets/image%20%28278%29.png)
+![](../.gitbook/assets/image%20%28279%29.png)
 
 ![](../.gitbook/assets/image%20%28120%29.png)
 

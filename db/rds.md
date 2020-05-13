@@ -91,7 +91,7 @@ AWS RDS를 구성하기 위해 설정하는 속성 값들을 아래에서 참조
 
 * AWS서비스에서 RDS를 선택하고 Amazon Aurora의 **데이터베이스 생성을** 선택합니다.
 
-![](../.gitbook/assets/image%20%28314%29.png)
+![](../.gitbook/assets/image%20%28315%29.png)
 
 ### **4. RDS-데이터베이스 생성**
 
@@ -148,7 +148,7 @@ awspassword
 
 * 구성이 완료되면 아래와 같이 **"사용가능"**으로 변경됩니다.
 
-![](../.gitbook/assets/image%20%28291%29.png)
+![](../.gitbook/assets/image%20%28292%29.png)
 
 {% hint style="warning" %}
 DB 생성까지는 10분 이상 시간이 발생할 수 있습니다.
@@ -184,7 +184,7 @@ password
 awspassword
 ```
 
-![](../.gitbook/assets/image%20%28280%29.png)
+![](../.gitbook/assets/image%20%28281%29.png)
 
 * Submit을 클릭하면 새로운 DB 값이 입력되는 것을 확인 할 수 있습니다.
 
@@ -230,7 +230,7 @@ awspassword
 스냅샷 사용가능 상태까지 시간이 소요 될 수 있습니다. 본랩에서는 스냅샷 복원은 하지 않습니다.
 {% endhint %}
 
-![](../.gitbook/assets/image%20%28286%29.png)
+![](../.gitbook/assets/image%20%28287%29.png)
 
 {% hint style="success" %}
 RDS DB구성 랩을 모두 완료하셨습니다.
