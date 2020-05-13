@@ -16,19 +16,19 @@ AWS Auto Scaling은 애플리케이션을 모니터링하고 용량을 자동으
 
 * **EC2 대시보드 - Auto Scaling - 시작 구성**을 선택하고, **시작 구성 생성**을 선택합니다.
 
-![](../.gitbook/assets/image%20%2860%29.png)
+![](../.gitbook/assets/image%20%2861%29.png)
 
 ### 2. AMI 선택
 
 * Auto Scaling 구성에 포함 EC2 인스턴스의 이미지를 선택합니다. \(랩에서는 Amazon Linux 2 AMI 선택\)
 
-![](../.gitbook/assets/image%20%28242%29.png)
+![](../.gitbook/assets/image%20%28245%29.png)
 
 ### 3.인스턴스 유형 선택
 
 * Auto Scaling 구성에 포함 EC2 인스턴스의 유형을 선택합니다. \(랩에서는 T2.micro를 선택\)
 
-![](../.gitbook/assets/image%20%28124%29.png)
+![](../.gitbook/assets/image%20%28126%29.png)
 
 ### 4. 세부정보 구성
 
@@ -36,7 +36,16 @@ AWS Auto Scaling은 애플리케이션을 모니터링하고 용량을 자동으
 * User Data를 작성합니다.
 
 ```text
-
+#!/bin/sh
+sudo yum -y update
+sudo yum -y install yum-util
+sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm 
+sudo yum -y install httpd php mysql php-mysql git stress tmux
+sudo systemctl start httpd
+sudo systemctl enable httpd
+cd /var/www/html/
+sudo git clone https://github.com/whchoi98/ec2meta-webpage.git
+sudo systemctl restart httpd
 ```
 
 * Public IP 할당 유무를 선택합니다. Public Subnet에 할당될 EC2 인스턴스일 경우에는 **"모든 인스턴스에 퍼블릭 IP 주소 할당"**을 선택합니다.
@@ -47,19 +56,19 @@ AWS Auto Scaling은 애플리케이션을 모니터링하고 용량을 자동으
 
 * AutoScaling 그룹에 포함되는 EC2의 디스크를 유형을 선택합니다.
 
-![](../.gitbook/assets/image%20%28134%29.png)
+![](../.gitbook/assets/image%20%28136%29.png)
 
 ### 6. 보안 그룹 구성
 
 * 새롭게 보안 그룹을 생성하거나 , **기존에 생성된 보안 그룹을 선택**합니다. \(랩에서는 앞서 EC2-LINUX 랩에서 생성한 Security Group - **IMD-PUB-SG**를 선택\)
 
-![](../.gitbook/assets/image%20%28116%29.png)
+![](../.gitbook/assets/image%20%28117%29.png)
 
 ### 7. 키페어 생성 또는 선택
 
 * EC2에 포함될 키 페어를 선택합니다. \(랩에서는 앞서 EC2-LINUX랩에서 생성한 키페어를 선택합니다.\)
 
-![](../.gitbook/assets/image%20%28310%29.png)
+![](../.gitbook/assets/image%20%28314%29.png)
 
 Auto Scaling  시작 구성 생성을 선택하고, 완료합니다.
 
@@ -69,41 +78,79 @@ Auto Scaling  시작 구성 생성을 선택하고, 완료합니다.
 
 * Auto Scaling 그룹 생성을 선택합니다.
 
-![](../.gitbook/assets/image%20%28233%29.png)
+![](../.gitbook/assets/image%20%28236%29.png)
+
+### 9. Auto Scaling 그룹 생성과 시작 구성 선
+
+* 앞서 생성한 **Auto Scaling 시작 구성 \(AS-Config01\)을 선택**하고, **시작 구성을 선택**합니다.
+
+![](../.gitbook/assets/image%20%28119%29.png)
+
+### 10. Auto Scaling 그룹 세부 정보 구성
+
+* Auto Scaling 그룹 세부 정보를 구성합니다.
+* 그룹 이름 - Auto Scaling 그룹 이름을 입력합니다.
+* 그룹 크기 - Auto Scaling 그룹에서 생성되는 최소 EC2 숫자를 입력합니다.
+* 네트워크 - 생성되어 있는 VPC를 선택합니다.
+* 서브넷 - Auto Scaling 그룹에 포함되어 있는 EC2가 배포될 서브넷을 선택합니다.
+* 상태 검사 유예 기간 - EC2 Instance가 생성 후 기본 설정이 완료될 때까지는 Health Check를 정상적으로 수행할 수 없기 때문에 설정하는 유예 시간입니다. \(랩에서는 테스트를 위해서 10초로 설정했으나, 기본값은 300초 입니다.\)
+
+{% hint style="info" %}
+대부분의 경우, 서비스 상태가 된 직후의 Auto Scaling 인스턴스는 웜 업을 거쳐야 상태 확인을 통과할 수 있습니다. Amazon EC2 Auto Scaling은 상태 확인 유예 기간이 끝날 때까지 기다린 후 인스턴스의 상태를 확인합니다. Amazon EC2 상태 확인과 Elastic Load Balancing 상태 확인은 상태 확인 유예 기간이 끝나기 전에 완료될 수 있습니다. 하지만 Amazon EC2 Auto Scaling은 상태 확인 유예 기간이 종료되기 전에는 그러한 상태를 반영하지 않습니다. 인스턴스에 충분한 웜 업 시간을 제공하려면 상태 확인 유예 기간이 애플리케이션의 예상 시작 시간을 포함하도록 해야 합니다. 수명 주기 후크를 추가할 경우 유예 기간은 수명 주기 후크 작업이 완료되고 인스턴스가 `InService` 상태로 전환되기까지 시작되지 않습니다.
+
+상태 확인 유예 기간은 초 단위입니다. 따라서 예를 들어 300초를 지정하면 5분 간격이 생깁니다.
+{% endhint %}
+
+![](../.gitbook/assets/image%20%28195%29.png)
+
+### 11. 조정 정책 구성
+
+* Auto Scaling 그룹 내의 EC2가 증가하거나 축소되는 조건을 설정합니다.
+* 최소 2개에서 최대 8개까지 증가 또는 감소 조건으로 구성합니다.
+* EC2가 증가하는 조건 - EC2 의 1분간 평균 CPU 70% 이상이면 , 2개씩 EC2 증가
+* EC2가 감소하는 조건 - EC2 의 1분간 평균 CPU 20% 이하이면 , 1개씩 EC2 감
+
+![](../.gitbook/assets/image%20%28269%29.png)
+
+![](../.gitbook/assets/image%20%2867%29.png)
+
+![](../.gitbook/assets/image%20%28206%29.png)
+
+### 12. 알림 구성
+
+* EC2 인스턴스의 시작 또는 종료 , 시작 실패, 종료 실패에 대한 알림 전송.
+
+![](../.gitbook/assets/image%20%28291%29.png)
+
+* 해당 이메일에서 확인하고, 알림 수신을 수락합니다.
+
+![](../.gitbook/assets/image%20%2829%29.png)
+
+12. 태그 구성
 
 
 
-![](../.gitbook/assets/image%20%28268%29.png)
 
-![](../.gitbook/assets/image%20%28107%29.png)
 
-![](../.gitbook/assets/image%20%2866%29.png)
+![](../.gitbook/assets/image%20%28246%29.png)
 
-![](../.gitbook/assets/image%20%28203%29.png)
+![](../.gitbook/assets/image%20%28173%29.png)
 
-![](../.gitbook/assets/image%20%2818%29.png)
+![](../.gitbook/assets/image%20%28281%29.png)
 
-![](../.gitbook/assets/image%20%28287%29.png)
+![](../.gitbook/assets/image%20%2888%29.png)
 
-![](../.gitbook/assets/image%20%28243%29.png)
+![](../.gitbook/assets/image%20%28262%29.png)
 
-![](../.gitbook/assets/image%20%28171%29.png)
+![](../.gitbook/assets/image%20%28312%29.png)
 
-![](../.gitbook/assets/image%20%28277%29.png)
+![](../.gitbook/assets/image%20%2847%29.png)
 
-![](../.gitbook/assets/image%20%2887%29.png)
+![](../.gitbook/assets/image%20%28237%29.png)
 
-![](../.gitbook/assets/image%20%28259%29.png)
+![](../.gitbook/assets/image%20%28289%29.png)
 
-![](../.gitbook/assets/image%20%28308%29.png)
-
-![](../.gitbook/assets/image%20%2846%29.png)
-
-![](../.gitbook/assets/image%20%28234%29.png)
-
-![](../.gitbook/assets/image%20%28285%29.png)
-
-![](../.gitbook/assets/image%20%28215%29.png)
+![](../.gitbook/assets/image%20%28218%29.png)
 
 ![](../.gitbook/assets/image%20%2815%29.png)
 
