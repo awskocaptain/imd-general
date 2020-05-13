@@ -6,7 +6,7 @@ description: 'update : 2020-05-05'
 
 ## 
 
-![](.gitbook/assets/image%20%2818%29.png)
+![](.gitbook/assets/image%20%2821%29.png)
 
 ## Immersion Day 소개
 

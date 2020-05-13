@@ -10,5 +10,102 @@ AWS Auto Scaling은 애플리케이션을 모니터링하고 용량을 자동으
 
 
 
+## Task1 : Auto Scaling 시작 구성 \(Auto Scaling Launch Config\)
+
+### 1.시작 구성 생성
+
+* **EC2 대시보드 - Auto Scaling - 시작 구성**을 선택하고, **시작 구성 생성**을 선택합니다.
+
+![](../.gitbook/assets/image%20%2860%29.png)
+
+### 2. AMI 선택
+
+* Auto Scaling 구성에 포함 EC2 인스턴스의 이미지를 선택합니다. \(랩에서는 Amazon Linux 2 AMI 선택\)
+
+![](../.gitbook/assets/image%20%28242%29.png)
+
+### 3.인스턴스 유형 선택
+
+* Auto Scaling 구성에 포함 EC2 인스턴스의 유형을 선택합니다. \(랩에서는 T2.micro를 선택\)
+
+![](../.gitbook/assets/image%20%28124%29.png)
+
+### 4. 세부정보 구성
+
+* Auto Scaling 시작 구성의 이름을 생성합니다.
+* User Data를 작성합니다.
+
+```text
+
+```
+
+* Public IP 할당 유무를 선택합니다. Public Subnet에 할당될 EC2 인스턴스일 경우에는 **"모든 인스턴스에 퍼블릭 IP 주소 할당"**을 선택합니다.
+
+![](../.gitbook/assets/image%20%2814%29.png)
+
+### 5. 스토리지 추가
+
+* AutoScaling 그룹에 포함되는 EC2의 디스크를 유형을 선택합니다.
+
+![](../.gitbook/assets/image%20%28134%29.png)
+
+### 6. 보안 그룹 구성
+
+* 새롭게 보안 그룹을 생성하거나 , **기존에 생성된 보안 그룹을 선택**합니다. \(랩에서는 앞서 EC2-LINUX 랩에서 생성한 Security Group - **IMD-PUB-SG**를 선택\)
+
+![](../.gitbook/assets/image%20%28116%29.png)
+
+### 7. 키페어 생성 또는 선택
+
+* EC2에 포함될 키 페어를 선택합니다. \(랩에서는 앞서 EC2-LINUX랩에서 생성한 키페어를 선택합니다.\)
+
+![](../.gitbook/assets/image%20%28310%29.png)
+
+Auto Scaling  시작 구성 생성을 선택하고, 완료합니다.
+
+## Task2: Auto Scaling 그룹
+
+### 8. Auto Scaling 그룹 생성
+
+* Auto Scaling 그룹 생성을 선택합니다.
+
+![](../.gitbook/assets/image%20%28233%29.png)
+
+
+
+![](../.gitbook/assets/image%20%28268%29.png)
+
+![](../.gitbook/assets/image%20%28107%29.png)
+
+![](../.gitbook/assets/image%20%2866%29.png)
+
+![](../.gitbook/assets/image%20%28203%29.png)
+
+![](../.gitbook/assets/image%20%2818%29.png)
+
+![](../.gitbook/assets/image%20%28287%29.png)
+
+![](../.gitbook/assets/image%20%28243%29.png)
+
+![](../.gitbook/assets/image%20%28171%29.png)
+
+![](../.gitbook/assets/image%20%28277%29.png)
+
+![](../.gitbook/assets/image%20%2887%29.png)
+
+![](../.gitbook/assets/image%20%28259%29.png)
+
+![](../.gitbook/assets/image%20%28308%29.png)
+
+![](../.gitbook/assets/image%20%2846%29.png)
+
+![](../.gitbook/assets/image%20%28234%29.png)
+
+![](../.gitbook/assets/image%20%28285%29.png)
+
+![](../.gitbook/assets/image%20%28215%29.png)
+
+![](../.gitbook/assets/image%20%2815%29.png)
+
 
 
