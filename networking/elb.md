@@ -78,17 +78,25 @@ sudo systemctl enable httpd
 가용 영역과 서브넷을 신중하게 선택하십시오. 로드 밸런서를 생성한 후에는 활성화된 서브넷을 비활성화할 수 없지만, 서브넷을 추가로 활성화할 수 있습니다.
 {% endhint %}
 
-
+* 3단계 라우팅 구성에서는 대상 그룹을 선택합니다. 대상 유형을 인스턴스를 선택합니다.
 
 ![](../.gitbook/assets/image%20%28191%29.png)
 
+* 상태검사에서는 간격을 Default 30초에서 10초로 변경합니다.
+
 ![](../.gitbook/assets/image%20%28262%29.png)
+
+* 4단계 대상 등록에서 미리 만들어 놓은 NLB 대상의 **EC2 인스턴스들의 보안그룹을 선택**합니다. **상단의 등록된 항목에 추가 버튼을 선택**해서 대상등록을 마칩니다.
 
 ![](../.gitbook/assets/image%20%28318%29.png)
 
+### 4. NLB 대상그룹 활성화 확인
+
+* NLB가 대상 그룹에 대한 Healthy 체크를 시작합니다. 대상 그룹 상태를 확인합니다.
+
 ![](../.gitbook/assets/image%20%28334%29.png)
 
-앞서 생성한 EC2 인스턴스에 아래 Script를 복사합니다.
+* 앞서 생성한 EC2 인스턴스에 SSH로 접속해서 아래 Script를 복사합니다.
 
 ```text
 sudo echo “<html><h2>My Public IP is: $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4/)</h2></html>” >> /var/www/html/index.html 
@@ -100,7 +108,11 @@ sudo echo “<html><h2>My placement/availability-zone is: $(curl -s http://169.
 
 ```
 
+* NLB가 대상 그룹에 대한 Healthy 체크가 정상인지 확인합니다.
+
 ![](../.gitbook/assets/image%20%28302%29.png)
+
+* NLB는 서로 다른 리전간의 LB를 속성 편집에서 구성해야 합니다. 비용은 ALB와 다르게 부과 됩니다.
 
 ![](../.gitbook/assets/image%20%28144%29.png)
 
