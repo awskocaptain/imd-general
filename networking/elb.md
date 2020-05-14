@@ -4,9 +4,107 @@
 
 Elastic Load Balancing은 들어오는 애플리케이션 트래픽을 Amazon EC2 인스턴스, 컨테이너, IP 주소, Lambda 함수와 같은 여러 대상에 자동으로 분산시킵니다. Elastic Load Balancing은 단일 가용 영역 또는 여러 가용 영역에서 다양한 애플리케이션 부하를 처리할 수 있습니다. Elastic Load Balancing이 제공하는 세 가지 로드 밸런서는 모두 애플리케이션의 내결함성에 필요한 고가용성, 자동 확장/축소, 강력한 보안을 갖추고 있습니다.
 
- 목적
+##  목적
+
+본 랩은 아래와 같은 구성을 통해 NLB와 ALB 구성을 통해 차이점과 구성 방
+
+![NLB &#xBAA9;&#xD45C; &#xAD6C;&#xC131;&#xB3C4;](../.gitbook/assets/image%20%28270%29.png)
+
+![ALB &#xBAA9;&#xD45C; &#xAD6C;&#xC131;&#xB3C4;](../.gitbook/assets/image%20%2894%29.png)
+
+## Task1 : NLB 구성
+
+### 1.NLB용 인스턴스 구성
+
+* NLB 시험용 인스턴스 4개를 구성합니다.
+* AMI - Amazon Linux 2
+* 인스턴스 유형 - t2.micro
+* 네트워크 - IMD-VPC / 각 Public Subnet 별 2개 EC2 인스턴스 / 퍼블릭 IP 자동할당 활성화
+* 사용자 데이터
+
+```text
+#!/bin/sh
+sudo yum -y update
+sudo yum -y install yum-utils
+sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+sudo yum -y install httpd php mysql php-mysql
+sudo usermod -a -G apache ec2-user
+sudo chown -R ec2-user:apache /var/www
+sudo chmod 2775 /var/www
+find /var/www -type f -exec sudo chmod 0664 {} \;
+sudo touch /var/www/index.html
+sudo systemctl start httpd
+sudo systemctl enable httpd
+```
+
+* 보안그룹을 새로 작성합니다. \(보안그룹 이름 - NLB-SG : 보안 정책은 22번, 80포트를 허용합니다.\)
+* 기존 키 페어 또는 새로운 키페어를 생성합니다.
+
+![](../.gitbook/assets/image%20%28234%29.png)
+
+### 2. NLB를 위한 EIP 생성
+
+* 먼저 NLB 고정 IP 부여를 위한 EIP를 생성합니다. \(NLB는 ALB와 다르게 EIP부여가 가능합니다. 필수 조건은 아니므로 생략해도 됩니다.\)
+
+![](../.gitbook/assets/image%20%28256%29.png)
+
+* EIP 할당을 위한 Amazon IP 주소풀을 선택하여 고정 IP를 할당 받습니다. 2개의 서브넷에 할당하게 되므로 2번 반복해서 2개를 할당 받습니다.
+
+![](../.gitbook/assets/image%20%2844%29.png)
+
+* 2개를 할당 받으면 아래와 같이 2개의 EIP가 생성됩니다.
+
+![](../.gitbook/assets/image%20%28343%29.png)
+
+### 3. NLB 생성
+
+* NLB 생성을 위해 로드밸런서 생성을 선택합니다.
+
+![](../.gitbook/assets/image%20%28140%29.png)
+
+* 로드밸런서 유형을 NLB를 선택합니다.
+
+![](../.gitbook/assets/image%20%28246%29.png)
+
+* 1단계  로드밸런서 구성에서 이름을 선택하고, 체계는 인터넷 연결 \(Public Subnet\)을 선택합니다. Private 의 경우에는 내부를 선택하면 됩니다.
+
+![](../.gitbook/assets/image%20%28137%29.png)
+
+* 가용영역은 2개의 서브넷을 선택합니다. 또한 IPv4 주소는 "탄력적 IP 선택"을 선택하고, 미리 할당해 놓은 EIP를 선택합니다.
+
+![](../.gitbook/assets/image%20%2838%29.png)
+
+{% hint style="info" %}
+가용 영역과 서브넷을 신중하게 선택하십시오. 로드 밸런서를 생성한 후에는 활성화된 서브넷을 비활성화할 수 없지만, 서브넷을 추가로 활성화할 수 있습니다.
+{% endhint %}
 
 
 
-Task1 - NLB 구성하기
+![](../.gitbook/assets/image%20%28191%29.png)
+
+![](../.gitbook/assets/image%20%28262%29.png)
+
+![](../.gitbook/assets/image%20%28318%29.png)
+
+![](../.gitbook/assets/image%20%28334%29.png)
+
+앞서 생성한 EC2 인스턴스에 아래 Script를 복사합니다.
+
+```text
+sudo echo “<html><h2>My Public IP is: $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4/)</h2></html>” >> /var/www/html/index.html 
+sudo echo “<html><h2>My Private IP is: $(curl -s http://169.254.169.254/latest/meta-data/local-ipv4/)</h2></html>” >> /var/www/html/index.html 
+sudo echo “<html><h2>My Host Name is: $(curl -s http://169.254.169.254/latest/meta-data/hostname/)</h2></html>” >> /var/www/html/index.html 
+sudo echo “<html><h2>My instance-id is: $(curl -s http://169.254.169.254/latest/meta-data/instance-id/)</h2></html>” >> /var/www/html/index.html 
+sudo echo “<html><h2>My instance-type is: $(curl -s http://169.254.169.254/latest/meta-data/instance-type)</h2></html>” >> /var/www/html/index.html 
+sudo echo “<html><h2>My placement/availability-zone is: $(curl -s http://169.254.169.254/latest/meta-data/placement/availability-zone)</h2></html>” >> /var/www/html/index.html 
+
+```
+
+![](../.gitbook/assets/image%20%28302%29.png)
+
+![](../.gitbook/assets/image%20%28144%29.png)
+
+![](../.gitbook/assets/image%20%28142%29.png)
+
+
 
