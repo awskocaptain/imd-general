@@ -116,6 +116,16 @@ sudo echo “<html><h2>My placement/availability-zone is: $(curl -s http://169.
 
 ![](../.gitbook/assets/image%20%28144%29.png)
 
+5. NLB 시험
+
+* NLB DNS Name 또는 EIP에 접속하여 결과를 확인합니다.
+
+{% hint style="info" %}
+로드 밸런서는 프로토콜, 원본 IP 주소, 원본 포트, 대상 IP 주소, 대상 포트, TCP 시퀀스 번호에 따라 흐름 해시 알고리즘을 사용하여 대상을 선택합니다. 클라이언트로부터의 TCP 연결은 소스 포트와 시퀀스 번호가 서로 다르므로 다른 대상에 라우팅될 수 있습니다. 각 TCP 연결은 연결 수명 동안 하나의 대상에 라우팅됩니다.
+
+따라서 ALB와 같은 결과 처럼 LB가 원하는 결과가 아닐 수 있습니다.
+{% endhint %}
+
 ![](../.gitbook/assets/image%20%28142%29.png)
 
 
