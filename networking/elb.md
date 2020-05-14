@@ -12,6 +12,11 @@ Elastic Load Balancing은 들어오는 애플리케이션 트래픽을 Amazon EC
 
 ![ALB &#xBAA9;&#xD45C; &#xAD6C;&#xC131;&#xB3C4;](../.gitbook/assets/image%20%2895%29.png)
 
+* [ ] **NLB와 ALB 구성이 차이 이해**
+* [ ] **NLB의 로드밸런싱 방식 구성과 이해**
+* [ ] **NLB EIP 할당**
+* [ ] **ALB의 로드밸런싱 방식 구성과 이해**
+
 ## Task1 : NLB 구성
 
 ### 1.NLB용 인스턴스 구성
