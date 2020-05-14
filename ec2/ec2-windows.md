@@ -18,7 +18,7 @@ Amazon EC2는 AWS Management Console을 사용해 다양한 운영 체제로 인
 
 본 랩은 아래와 같은 구성을 통해 EC2 기반의 운영체제와 어플리케이션을 구성하는 데 도움을 드립니다.
 
-![\[&#xC2DC;&#xC2A4;&#xD15C; &#xBAA9;&#xD45C; &#xAD6C;&#xC131;&#xB3C4;\]](../.gitbook/assets/image%20%28164%29.png)
+![\[&#xC2DC;&#xC2A4;&#xD15C; &#xBAA9;&#xD45C; &#xAD6C;&#xC131;&#xB3C4;\]](../.gitbook/assets/image%20%28165%29.png)
 
 * **간단한 VPC 자원의 생성과 구성**
 * **EC2 생성을 위한 키페어 생성**
@@ -34,7 +34,7 @@ Amazon EC2는 AWS Management Console을 사용해 다양한 운영 체제로 인
 
 * **"AWS Management Console - AWS 서비스"** 에서 **"서비스 찾기"** 창에 VPC를 탐색하고, VPC를 선택합니다.
 
-![](../.gitbook/assets/image%20%28177%29.png)
+![](../.gitbook/assets/image%20%28178%29.png)
 
 ### **2. VPC 선택**
 
@@ -44,12 +44,12 @@ Amazon EC2는 AWS Management Console을 사용해 다양한 운영 체제로 인
 
 ### **3. "VPC 생성" 및 값 입력**
 
-![](../.gitbook/assets/image%20%28204%29.png)
+![](../.gitbook/assets/image%20%28205%29.png)
 
 * **이름 태그** : VPC 이름 태그를 입력합니다.
 * **IPv4 CIDR 블록** : VPC에서 사용할 IPv4 주소 대역을 입력합니다.
 
-![](../.gitbook/assets/image%20%28263%29.png)
+![](../.gitbook/assets/image%20%28264%29.png)
 
 생성된 VPC 정보를 확인합니다.
 
@@ -59,7 +59,7 @@ Amazon EC2는 AWS Management Console을 사용해 다양한 운영 체제로 인
 
 ![](../.gitbook/assets/image%20%28102%29.png)
 
-![](../.gitbook/assets/image%20%28187%29.png)
+![](../.gitbook/assets/image%20%28188%29.png)
 
 ### **5.Public ,Private 서브넷 생성.**
 
@@ -93,40 +93,40 @@ Amazon EC2는 AWS Management Console을 사용해 다양한 운영 체제로 인
 
 * 각 라우팅 테이블에 서브넷을 연결합니다.  PUBLIC-RT, PRIVATE-RT 모두 구성합니다.
 
-![](../.gitbook/assets/image%20%28198%29.png)
+![](../.gitbook/assets/image%20%28199%29.png)
 
-![](../.gitbook/assets/image%20%28289%29.png)
+![](../.gitbook/assets/image%20%28290%29.png)
 
-![](../.gitbook/assets/image%20%28161%29.png)
+![](../.gitbook/assets/image%20%28162%29.png)
 
-![](../.gitbook/assets/image%20%28253%29.png)
+![](../.gitbook/assets/image%20%28254%29.png)
 
 ### **7. 인터넷 게이트웨이를 생성.**
 
 * 좌측 VPC 대시보드에서 **"가상 프라이빗 클라우드" - "인터넷 게이트웨이"** 메뉴를 선택하고, **"인터넷 게이트웨이 생성"**을 선택합니다.
 * 인터넷 게이트웨이 이름을 정의합니다.
 
-![](../.gitbook/assets/image%20%28169%29.png)
+![](../.gitbook/assets/image%20%28170%29.png)
 
 * 인터넷 게이트웨이를 VPC에 연결합니다.
 
-![](../.gitbook/assets/image%20%28208%29.png)
+![](../.gitbook/assets/image%20%28209%29.png)
 
-![](../.gitbook/assets/image%20%28239%29.png)
+![](../.gitbook/assets/image%20%28240%29.png)
 
 * 인터넷 게이트웨이의 상태가 "Attached"로 변경되었는지 확인합니다.
 
-![](../.gitbook/assets/image%20%28297%29.png)
+![](../.gitbook/assets/image%20%28298%29.png)
 
 ### 8. 라우팅 테이블 업데이트
 
 * Public-RT 라우팅 테이블에 인터넷 게이트웨이로 향하는 트래픽을 업데이트하기 위해, "**라우팅 테이블" - "PUBLIC-RT"**를 선택하고 **"라우팅 편집"**을  선택합니다.
 
-![](../.gitbook/assets/image%20%28318%29.png)
+![](../.gitbook/assets/image%20%28319%29.png)
 
 * **"라우팅 추가"**를 선택하고, "**대상"**에 "**0.0.0.0/0"**, **"생성한 IGW"**를 입력하고 선택합니다.
 
-![](../.gitbook/assets/image%20%28304%29.png)
+![](../.gitbook/assets/image%20%28305%29.png)
 
 ## **Task2. EC2 생성하기**
 
@@ -139,11 +139,11 @@ Amazon EC2는 AWS Management Console을 사용해 다양한 운영 체제로 인
 * EC2 대시보드에서 **"네트워크 및 보안" - " 키 페어"**를 선택합니다.
 * **"키페어 생성"**을 선택합니다.
 
-![](../.gitbook/assets/image%20%28223%29.png)
+![](../.gitbook/assets/image%20%28224%29.png)
 
 * 윈도우 Administrator 접속 시 사용되는 키페어를 생성합니다.
 
-![](../.gitbook/assets/image%20%28206%29.png)
+![](../.gitbook/assets/image%20%28207%29.png)
 
 * 키페어를 로컬로 다운로드 받습니다.
 
@@ -155,13 +155,13 @@ Amazon EC2는 AWS Management Console을 사용해 다양한 운영 체제로 인
 
 * **Microsoft Windows Server 2012R2 Base AMI\(Amazon Machine Image\)** 를 선택합니다. 
 
-![](../.gitbook/assets/image%20%28175%29.png)
+![](../.gitbook/assets/image%20%28176%29.png)
 
 ### **12. 인스턴스 유형을 선택.**
 
 * **인스턴스 유형 - t2.medium** 을 선택합니다.
 
-![](../.gitbook/assets/image%20%28224%29.png)
+![](../.gitbook/assets/image%20%28225%29.png)
 
 ### **13. 인스턴스 세부 정보를 구성.**
 
@@ -200,7 +200,7 @@ $shell.Namespace("c:\inetpub\wwwroot\").copyhere($item)
 
 ### 14. 스토리지 추가.
 
-![](../.gitbook/assets/image%20%28258%29.png)
+![](../.gitbook/assets/image%20%28259%29.png)
 
 * AWS에서 제공하는 볼륨 유형들을 확인합니다.
 * **범용 SSD\(gp2\) 타입**을 선택합니다.
@@ -211,7 +211,7 @@ $shell.Namespace("c:\inetpub\wwwroot\").copyhere($item)
 * 키와 값의 내용을 입력합니다.
 * **키 : IMD-EC2 , 값: PUBLIC-03**
 
-![](../.gitbook/assets/image%20%28242%29.png)
+![](../.gitbook/assets/image%20%28243%29.png)
 
 * "다음:보안그룹구성"을 선택합니다.
 
@@ -236,7 +236,7 @@ $shell.Namespace("c:\inetpub\wwwroot\").copyhere($item)
 
 * 검토를 완료하고 **"시작하기"**를 선택합니다.
 
-![](../.gitbook/assets/image%20%28215%29.png)
+![](../.gitbook/assets/image%20%28216%29.png)
 
 ### **18. 키 페어 선택 .**
 
@@ -255,11 +255,11 @@ $shell.Namespace("c:\inetpub\wwwroot\").copyhere($item)
 
 * **정상적으로 EC2 인스턴스들이 구성되었는 지 확인해 봅니다. 인스턴스를 선택하면 Meta 정보들을 확인 할 수 있습니다.**
 
-![](../.gitbook/assets/image%20%28312%29.png)
+![](../.gitbook/assets/image%20%28313%29.png)
 
 * 웹기반 클라이언트로 접속이 가능합니다. 접속하려는 **EC2 인스턴스를 선택**하고, EC2 대시보드 상단의 메뉴에서 **"연결"**을 선택합니다. 
 
-![](../.gitbook/assets/image%20%28213%29.png)
+![](../.gitbook/assets/image%20%28214%29.png)
 
 * **"독립 실행형 RDP 클라이언트"** 를 선택하고, **암호 - 암호가져오기** 를 선택합니다.
 
@@ -275,7 +275,7 @@ $shell.Namespace("c:\inetpub\wwwroot\").copyhere($item)
 
 * 정상적으로 접속되는 지 확인합니다.
 
-![](../.gitbook/assets/image%20%28235%29.png)
+![](../.gitbook/assets/image%20%28236%29.png)
 
 ### **20. EC2 Windows Server Web 접속**
 
@@ -285,7 +285,7 @@ $shell.Namespace("c:\inetpub\wwwroot\").copyhere($item)
 "ec2-public-ip or public DNS"
 ```
 
-![](../.gitbook/assets/image%20%28214%29.png)
+![](../.gitbook/assets/image%20%28215%29.png)
 
 ### 21. EC2 Instance Type 변경
 
@@ -308,7 +308,7 @@ $shell.Namespace("c:\inetpub\wwwroot\").copyhere($item)
 
 * **볼륨 크기를 40GB**로 증가 시킵니다. 해당 메뉴에서 볼륨 유형을 변경할 수도 있습니다. 볼륨 크기를 변경하고, "**수정"** 을 선택한 후 **"예"**를 선택하고 수정합니다.
 
-![](../.gitbook/assets/image%20%28221%29.png)
+![](../.gitbook/assets/image%20%28222%29.png)
 
 ![](../.gitbook/assets/image%20%28115%29.png)
 
@@ -323,18 +323,18 @@ $shell.Namespace("c:\inetpub\wwwroot\").copyhere($item)
 * \(Option\)Stop 했던 EC2 인스턴스를 다시 시작합니다. 인스턴스 타입과 볼륨이 정상적으로 OS에서 확인이 되는지 점검합니다. 원격 접속 터미널을 통해 Window Server EC2 인스턴스에 접속합니다.
 * **바탕화면 우측 상단**에서 인스턴스 타입이 변경된 것을 확인합니다. **Window Task Manager**를 실행하고 메모리 용량이 **8GB**로 증가한 것을 확인합니다.
 
-![](../.gitbook/assets/image%20%28295%29.png)
+![](../.gitbook/assets/image%20%28296%29.png)
 
-![](../.gitbook/assets/image%20%28268%29.png)
+![](../.gitbook/assets/image%20%28269%29.png)
 
 * **Window Server 실행** 대화 상자에 **diskmgmt.msc**를 입력하고 Enter 키를 누릅니다. 디스크 관리 유틸리티가 열립니다.
 
-![](../.gitbook/assets/image%20%28165%29.png)
+![](../.gitbook/assets/image%20%28166%29.png)
 
 * **디스크 관리\(Disk Management\)** 메뉴에서 **작업**, **디스크 다시 스캔\(Rescan Disks\)**을 선택합니다.
 * 확장된 드라이브를 오른쪽 클릭하여 컨텍스트 메뉴를 열고 **볼륨 확장\(Extend Volume\)**을 선택합니다.
 
-![](../.gitbook/assets/image%20%28197%29.png)
+![](../.gitbook/assets/image%20%28198%29.png)
 
 * **Extend Volume\(볼륨 확장\)** 마법사에서 **다음**을 선택합니다. **MB 단위로 공간 크기 선택\(Select the amount of space in MB\)**에 볼륨 확장에 적용할 메가바이트 수를 입력합니다. 일반적으로 최대 사용 가능한 공간을 설정합니다. **선택\(Selected\)** 아래에 강조된 텍스트는 추가되는 공간의 양이며, 볼륨의 최종 크기가 아닙니다. 마법사를 완료합니다.
 
@@ -342,7 +342,7 @@ $shell.Namespace("c:\inetpub\wwwroot\").copyhere($item)
 
 * 40GB 로 볼륨이 확장된 것을 확인합니다.
 
-![](../.gitbook/assets/image%20%28210%29.png)
+![](../.gitbook/assets/image%20%28211%29.png)
 
 ### 23. 스냅샷 생성 및 복구
 
@@ -353,15 +353,15 @@ $shell.Namespace("c:\inetpub\wwwroot\").copyhere($item)
 
 * 스냅샷을 생성할 인스턴스를 선택하고, 인스턴스 ID를 복사합니다.
 
-![](../.gitbook/assets/image%20%28155%29.png)
+![](../.gitbook/assets/image%20%28156%29.png)
 
 * EC2 대시보드 좌측 메뉴에서 "ELASTIC BLOCK STORE" - "스냅샷"을 선택하고 , "스냅샷 생성"을 선택합니다.
 
-![](../.gitbook/assets/image%20%28275%29.png)
+![](../.gitbook/assets/image%20%28276%29.png)
 
 * 정상적으로 스냅샷이 구성되었는지 확인합니다.
 
-![](../.gitbook/assets/image%20%28211%29.png)
+![](../.gitbook/assets/image%20%28212%29.png)
 
 * 생성된 스냅샷을 새로운 볼륨으로 생성합니다.
 
@@ -373,7 +373,7 @@ $shell.Namespace("c:\inetpub\wwwroot\").copyhere($item)
 
 * 스냅샷으로 생성된 볼륨을 테스트 하기 위해 " PUBLIC-04" EC2 인스턴스에 RDP로 접속하고  , 바탕화면의 "EC2 Guide" 를 삭제하고, 휴지통을 비웁니다.
 
-![](../.gitbook/assets/image%20%28229%29.png)
+![](../.gitbook/assets/image%20%28230%29.png)
 
 * 이제 "PUBLIC-04" 인스턴스에서 기존 볼륨을 제거하고, 스냅샷을 통해서 생성한 새로운 볼륨을 "PUBLIC-04" 인스턴스에 연결합니다. 먼저 "PUBLIC-04" 인스턴스를 중지합니다. 인스턴스를 중지하기 전에 해당 인스턴스 볼륨의 디바이스 이름을 확인해 둡니다.
 
@@ -389,7 +389,7 @@ $shell.Namespace("c:\inetpub\wwwroot\").copyhere($item)
 
 * EC2 대쉬보드에서 **"ELASTIC BLOCK STORE" - "볼륨"**을 선택하고 새로 만든 볼륨을 선택합니다. 상단 메뉴 **"작업"-"볼륨연결"**를 선택합니다. Stop되어 있는 **"PUBLIC-04" 인스턴스 ID**를 선택합니다. 디바이스는 **기존에 루트 디바이스 이름**을 입력합니다. **\(dev/sda1\)**
 
-![](../.gitbook/assets/image%20%28279%29.png)
+![](../.gitbook/assets/image%20%28280%29.png)
 
 ![](../.gitbook/assets/image%20%28120%29.png)
 

@@ -10,7 +10,7 @@ Amazon RDS는 여러 [데이터베이스 인스턴스 유형](https://aws.amazon
 
 본 Lab은 아래의 내용을 포함하고 있으며, 목표 구성도는 아래와 같습니다.
 
-![](../.gitbook/assets/image%20%28191%29.png)
+![](../.gitbook/assets/image%20%28192%29.png)
 
 * [ ] **RDS를 위한 보안 그룹\(Security Group\) 생성**
 * [ ] **RDS 인스턴스 생성**
@@ -24,7 +24,7 @@ Amazon RDS는 여러 [데이터베이스 인스턴스 유형](https://aws.amazon
 
 * 단계1 - Amazon Linux 2 AMI를 선택합니다.
 
-![](../.gitbook/assets/image%20%28159%29.png)
+![](../.gitbook/assets/image%20%28160%29.png)
 
 * 단계2 - T2 micro 타입을 선택합니다.
 
@@ -57,7 +57,7 @@ yum -y update
 
 ![](../.gitbook/assets/image%20%2838%29.png)
 
-![](../.gitbook/assets/image%20%28216%29.png)
+![](../.gitbook/assets/image%20%28217%29.png)
 
 * 단계4 - 스토리지를 추가합니다.
 
@@ -65,11 +65,11 @@ yum -y update
 
 * 단계5 - 태그를 추가합니다.
 
-![](../.gitbook/assets/image%20%28174%29.png)
+![](../.gitbook/assets/image%20%28175%29.png)
 
 * 단계6 - 보안그룹을 구성합니다.
 
-![](../.gitbook/assets/image%20%28230%29.png)
+![](../.gitbook/assets/image%20%28231%29.png)
 
 * 단계7 - 검토와 키페어 선택을 합니다.앞서 랩에서 만들어 둔 키페어를 선택합니다.
 
@@ -91,7 +91,7 @@ AWS RDS를 구성하기 위해 설정하는 속성 값들을 아래에서 참조
 
 * AWS서비스에서 RDS를 선택하고 Amazon Aurora의 **데이터베이스 생성을** 선택합니다.
 
-![](../.gitbook/assets/image%20%28315%29.png)
+![](../.gitbook/assets/image%20%28316%29.png)
 
 ### **4. RDS-데이터베이스 생성**
 
@@ -122,7 +122,7 @@ AWS RDS를 구성하기 위해 설정하는 속성 값들을 아래에서 참조
 | DB 파라미터 그룹 | default.aurora5.6 |
 | 옵션그룹 | default:aurora-5-6 |
 
-![](../.gitbook/assets/image%20%28244%29.png)
+![](../.gitbook/assets/image%20%28245%29.png)
 
 ![](../.gitbook/assets/image%20%28107%29.png)
 
@@ -148,7 +148,7 @@ awspassword
 
 * 구성이 완료되면 아래와 같이 **"사용가능"**으로 변경됩니다.
 
-![](../.gitbook/assets/image%20%28292%29.png)
+![](../.gitbook/assets/image%20%28293%29.png)
 
 {% hint style="warning" %}
 DB 생성까지는 10분 이상 시간이 발생할 수 있습니다.
@@ -158,7 +158,7 @@ DB 생성까지는 10분 이상 시간이 발생할 수 있습니다.
 
 * RDS연결을 위해 구성한 EC2 인스턴스의 Public DNS 주소를 확인하고 입력해서 접속합니다. 웹 화면에서 RDS를 클릭합니다.
 
-![](../.gitbook/assets/image%20%28209%29.png)
+![](../.gitbook/assets/image%20%28210%29.png)
 
 * RDS 엔드포인트 주소는 RDSCluster를 선택하면 하단에서 확인 가능하며, 쓰기 엔드포인트 이름을 복사합니다.
 
@@ -184,7 +184,7 @@ password
 awspassword
 ```
 
-![](../.gitbook/assets/image%20%28281%29.png)
+![](../.gitbook/assets/image%20%28282%29.png)
 
 * Submit을 클릭하면 새로운 DB 값이 입력되는 것을 확인 할 수 있습니다.
 
@@ -200,13 +200,13 @@ awspassword
 
 * 현재 사용중인 DB의 Master를 Failover로 넘겨봅니다. Read Mode의 DB가 정상적으로 Failover 되는지 확인합니다. 쓰기 역할의 DB를 선택하고 "작업"-"장애조치"를 선택합니다.
 
-![](../.gitbook/assets/image%20%28166%29.png)
+![](../.gitbook/assets/image%20%28167%29.png)
 
-![](../.gitbook/assets/image%20%28189%29.png)
+![](../.gitbook/assets/image%20%28190%29.png)
 
 * 정상적으로 Failover가 일어나는 지 확인합니다.
 
-![](../.gitbook/assets/image%20%28252%29.png)
+![](../.gitbook/assets/image%20%28253%29.png)
 
 ### 7. DB Snapshot
 
@@ -220,7 +220,7 @@ awspassword
 
 * DB Cluster가 백업중으로 상태가 표시됩니다.
 
-![](../.gitbook/assets/image%20%28192%29.png)
+![](../.gitbook/assets/image%20%28193%29.png)
 
 * 백업이 완료되면 스냅샷 목록에서 사용가능을 확인 할 수 있습니다. 복원을 원하면 스냅샷 작업을 선택하고 복원 할 수 있습니다.
 
@@ -230,7 +230,7 @@ awspassword
 스냅샷 사용가능 상태까지 시간이 소요 될 수 있습니다. 본랩에서는 스냅샷 복원은 하지 않습니다.
 {% endhint %}
 
-![](../.gitbook/assets/image%20%28287%29.png)
+![](../.gitbook/assets/image%20%28288%29.png)
 
 {% hint style="success" %}
 RDS DB구성 랩을 모두 완료하셨습니다.
