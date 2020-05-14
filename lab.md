@@ -8,7 +8,7 @@ description: Hands on Lab을 시작하기 전에 확인합니다.
 
 사전에 배포한 이름과 Dashboard URL을 확인하고, 웹브라우져를 통해 접속합니다.
 
-![](.gitbook/assets/image%20%28257%29.png)
+![](.gitbook/assets/image%20%28258%29.png)
 
 ## **2. AWS Console Login**
 
