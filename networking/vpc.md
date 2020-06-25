@@ -316,7 +316,7 @@ Private Network은 외부에서 직접 접속이 불가능 하기 때문에 , �
 
 ![](../.gitbook/assets/image%20%2867%29.png)
 
-* **Linux/Mac OS 환경일 경우 \(Window 사용자의 경우 생략 합니다.\)** 먼저 Linux/Mac OS의 OpenSSH Client를 기반으로 Bastion Host를 통해 접속하는 방법을 살펴봅니다. SSH Client에서 아래와 같은 명령으로 key를 저장합니다.\(ssh-add -K는 로컬에 Key를 저장해 두는 명령입니다.\)
+* 먼저 Linux/Mac OS의 OpenSSH Client를 기반으로 Bastion Host를 통해 접속하는 방법을 살펴봅니다. SSH Client에서 아래와 같은 명령으로 key를 저장합니다.\(ssh-add -K는 로컬에 Key를 저장해 두는 명령입니다.\)
 
 ```text
 ssh-add -K "key_path/key.pem"
@@ -342,7 +342,7 @@ ssh -i "key_path/IMD-PUB-OPENSSH.pem" ec2-user@PUBLIC_DNS -A
 
 ![](../.gitbook/assets/image%20%28207%29.png)
 
-* **Windows 환경의  Putty 사용자일 경우** Windows 환경의 Putty 프로그램에서는 아래와 같이 Bastion Host 접속을 위해 설정합니다.
+* Windows 환경의 Putty 프로그램에서는 아래와 같이 Bastion Host 접속을 위해 설정합니다.
 
 ![](../.gitbook/assets/image%20%28312%29.png)
 
@@ -354,7 +354,7 @@ Linux/Mac OS에서 처럼 로컬에 Key를 임시저장해서, Putty에서 Priva
 
 ![](../.gitbook/assets/image%20%2883%29.png)
 
-* \(option- Mac OS /Linux 사용자를 위한 Bastion Tunneling\)  SSH Tunneling을 통해 접속 할 수 있습니다. Bastion Host로 22번 포트를 연결 한 이후, 별도의 포트 번호로 터널링 하는 방식입니다. 먼저 아래와 같이 터미널에서 백그라운드 또는 포그라운드로 실행하고, 터미널을 닫지 않습니다.
+* \(option\) SSH Tunneling을 통해 접속 할 수 있습니다. Bastion Host로 22번 포트를 연결 한 이후, 별도의 포트 번호로 터널링 하는 방식입니다. 먼저 아래와 같이 터미널에서 백그라운드 또는 포그라운드로 실행하고, 터미널을 닫지 않습니다.
 
 ```text
 ssh -i “bastion key.pem path” -N -L 22001:"Private EC2 IP" ec2-user@"Bastion IP"
@@ -366,13 +366,11 @@ ssh -i “bastion key.pem path” -N -L 22001:"Private EC2 IP" ec2-user@"Bastion
 ssh -i "target-key.pem" -p 22001 ec2-user@localhost
 ```
 
-* \(Option - Window 사용자를 위한 Bastion Tunneling\) 앞서 구성한 Bastion 접속을 위한 Putty 구성에서 아래와 같이 추가 구성을 하고, Bastion Host에 접속합니다.
+
 
 ![](../.gitbook/assets/image%20%28184%29.png)
 
 ![](../.gitbook/assets/image%20%28135%29.png)
-
-* 터널링 구성이 완성되었으므로, 이제 다시 Putty 창을 한개 더 열고, 아래와 같이 22번 포트로 접속하면, 터널링으로 내부 접속이 가능해 집니다.
 
 ![](../.gitbook/assets/image%20%28165%29.png)
 

@@ -1,5 +1,5 @@
 ---
-description: 'update : 2020-05-13'
+description: 'update : 2020-06-25'
 ---
 
 # General Immersion Day
