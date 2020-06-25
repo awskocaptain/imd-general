@@ -6,6 +6,17 @@ description: awscli 유용한 명령
 
 ## AWS CLI 환경 구성
 
+AWS 명령줄 인터페이스\(CLI\)는 AWS 서비스를 관리하는 통합 도구입니다. 도구 하나만 다운로드하여 구성하면 여러 AWS 서비스를 명령줄에서 제어하고 스크립트를 통해 자동화할 수 있습니다.
+
+Amazon Linux를 사용하게 되면, AWS CLI가 자동으로 구성되어 있습니다.  
+명령어 자동완성을 통해서, 구성이 AWS CLI를 간편하게 사용하도록 구성할 수 있습니다.
+
+```text
+which aws_completer
+```
+
+
+
 ![](../.gitbook/assets/image%20%2873%29.png)
 
 ## Region List
