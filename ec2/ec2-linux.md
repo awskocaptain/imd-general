@@ -44,7 +44,7 @@ Amazon EC2는 AWS Management Console을 사용해 다양한 운영 체제로 인
 
 ### **3. "VPC 생성" 및 값 입력**
 
-![](../.gitbook/assets/image%20%28363%29.png)
+![](../.gitbook/assets/image%20%28364%29.png)
 
 * **이름 태그** : VPC 이름 태그를 입력합니다.
 * **IPv4 CIDR 블록** : VPC에서 사용할 IPv4 주소 대역을 입력합니다.
@@ -57,7 +57,7 @@ Amazon EC2는 AWS Management Console을 사용해 다양한 운영 체제로 인
 
 * 생성되는 EC2 인스턴스의 DNS Name 서비스 활성화를 위해, **"작업"**을 선택하고 **"DNS 호스트 이름 편집"**을 선택합니다. **DNS 호스트 이름을 활성화**합니다. ****
 
-![](../.gitbook/assets/image%20%28362%29.png)
+![](../.gitbook/assets/image%20%28363%29.png)
 
 ![](../.gitbook/assets/image%20%28353%29.png)
 
@@ -118,7 +118,7 @@ Public 서브넷은 Internet Gateway와 1:1 NAT로 직접 연결 가능한 네�
 인터넷 게이트웨이는 VPC 내부 네트워크가 외부와 연결되는 구성을 담당합니다. 인터넷 게이트웨이는 한개의 VPC에 연결되며, 퍼블릭 서브넷의 인스턴스들과 1:1  NAT를 완전 관리형으로 제공합니다.
 {% endhint %}
 
-![](../.gitbook/assets/image%20%28361%29.png)
+![](../.gitbook/assets/image%20%28362%29.png)
 
 * 인터넷 게이트웨이를 VPC에 연결합니다.
 
@@ -139,6 +139,8 @@ Public 서브넷은 Internet Gateway와 1:1 NAT로 직접 연결 가능한 네�
 * **"라우팅 추가"**를 선택하고, "**대상"**에 "**0.0.0.0/0"**, **"생성한 IGW"**를 입력하고 선택합니다.
 
 ![](../.gitbook/assets/image%20%28329%29.png)
+
+![](../.gitbook/assets/image%20%28361%29.png)
 
 ## **Task2: EC2 생성하기**
 
