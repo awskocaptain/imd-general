@@ -34,13 +34,13 @@ Amazon EC2는 AWS Management Console을 사용해 다양한 운영 체제로 인
 
 * **"AWS Management Console - AWS 서비스"** 에서 **"서비스 찾기"** 창에 VPC를 탐색하고, VPC를 선택합니다.
 
-![](../.gitbook/assets/image%20%28190%29.png)
+![](../.gitbook/assets/image%20%28351%29.png)
 
 ### **2. VPC 선택**
 
 * **VPC를 선택**합니다.
 
-![](../.gitbook/assets/image%20%2824%29.png)
+![](../.gitbook/assets/image%20%28352%29.png)
 
 ### **3. "VPC 생성" 및 값 입력**
 
