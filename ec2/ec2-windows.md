@@ -200,10 +200,10 @@ $shell.Namespace("c:\inetpub\wwwroot\").copyhere($item)
 
 ### 14. 스토리지 추가.
 
-![](../.gitbook/assets/image%20%28281%29.png)
+![](../.gitbook/assets/image%20%28354%29.png)
 
 * AWS에서 제공하는 볼륨 유형들을 확인합니다.
-* **범용 SSD\(gp2\) 타입**을 선택합니다.
+* **범용 SSD\(gp3\) 타입**을 선택합니다.
 * **"다음-태그 추가"**를 선택합니다.
 
 ### **15. 태그 추가를 구성.**
@@ -221,7 +221,7 @@ $shell.Namespace("c:\inetpub\wwwroot\").copyhere($item)
 
 | 유형 | 프로토콜 | 포트범위 | 소스 |
 | :--- | :--- | :--- | :--- |
-| RDP | TCP | 22 | 위치무관 |
+| RDP | TCP | 3389 | 위치무관 |
 | HTTP | TCP | 80 | 위치무관 |
 | 모든 ICMP-IPv4 | ICMP | 0-65535 | 위치무관 |
 

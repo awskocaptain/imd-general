@@ -34,22 +34,22 @@ Amazon EC2는 AWS Management Console을 사용해 다양한 운영 체제로 인
 
 * **"AWS Management Console - AWS 서비스"** 에서 **"서비스 찾기"** 창에 VPC를 탐색하고, VPC를 선택합니다.
 
-![](../.gitbook/assets/image%20%28357%29.png)
+![](../.gitbook/assets/image%20%28358%29.png)
 
 ### **2. VPC 선택**
 
 * **VPC를 선택**합니다.
 
-![](../.gitbook/assets/image%20%28365%29.png)
+![](../.gitbook/assets/image%20%28367%29.png)
 
 ### **3. "VPC 생성" 및 값 입력**
 
-![](../.gitbook/assets/image%20%28374%29.png)
+![](../.gitbook/assets/image%20%28376%29.png)
 
 * **이름 태그** : VPC 이름 태그를 입력합니다.
 * **IPv4 CIDR 블록** : VPC에서 사용할 IPv4 주소 대역을 입력합니다.
 
-![](../.gitbook/assets/image%20%28359%29.png)
+![](../.gitbook/assets/image%20%28360%29.png)
 
 생성된 VPC 정보를 확인합니다.
 
@@ -57,7 +57,7 @@ Amazon EC2는 AWS Management Console을 사용해 다양한 운영 체제로 인
 
 * 생성되는 EC2 인스턴스의 DNS Name 서비스 활성화를 위해, **"작업"**을 선택하고 **"DNS 호스트 이름 편집"**을 선택합니다. **DNS 호스트 이름을 활성화**합니다. ****
 
-![](../.gitbook/assets/image%20%28371%29.png)
+![](../.gitbook/assets/image%20%28373%29.png)
 
 ![](../.gitbook/assets/image%20%28355%29.png)
 
@@ -81,7 +81,7 @@ Public 서브넷은 Internet Gateway와 1:1 NAT로 직접 연결 가능한 네�
 
 * 4개의 서브넷이 정상적으로 구성되어 있는지 확인합니다.
 
-![](../.gitbook/assets/image%20%28363%29.png)
+![](../.gitbook/assets/image%20%28364%29.png)
 
 ### **6. 라우팅 테이블을 생성.**
 
@@ -118,17 +118,17 @@ Public 서브넷은 Internet Gateway와 1:1 NAT로 직접 연결 가능한 네�
 인터넷 게이트웨이는 VPC 내부 네트워크가 외부와 연결되는 구성을 담당합니다. 인터넷 게이트웨이는 한개의 VPC에 연결되며, 퍼블릭 서브넷의 인스턴스들과 1:1  NAT를 완전 관리형으로 제공합니다.
 {% endhint %}
 
-![](../.gitbook/assets/image%20%28369%29.png)
+![](../.gitbook/assets/image%20%28371%29.png)
 
 * 인터넷 게이트웨이를 VPC에 연결합니다.
 
-![](../.gitbook/assets/image%20%28354%29.png)
+![](../.gitbook/assets/image%20%28356%29.png)
 
-![](../.gitbook/assets/image%20%28362%29.png)
+![](../.gitbook/assets/image%20%28363%29.png)
 
 * 인터넷 게이트웨이의 상태가 "Attached"로 변경되었는지 확인합니다.
 
-![](../.gitbook/assets/image%20%28358%29.png)
+![](../.gitbook/assets/image%20%28359%29.png)
 
 ### 8. 라우팅 테이블 업데이트
 
@@ -140,7 +140,7 @@ Public 서브넷은 Internet Gateway와 1:1 NAT로 직접 연결 가능한 네�
 
 ![](../.gitbook/assets/image%20%28329%29.png)
 
-![](../.gitbook/assets/image%20%28366%29.png)
+![](../.gitbook/assets/image%20%28368%29.png)
 
 ## **Task2: EC2 생성하기**
 
@@ -206,13 +206,13 @@ sudo systemctl restart httpd
 
 ```
 
-![](../.gitbook/assets/image%20%28364%29.png)
+![](../.gitbook/assets/image%20%28366%29.png)
 
 * "다음:스토리지 추가"를 선택합니다.
 
 ### 14. 스토리지 추가.
 
-![](../.gitbook/assets/image%20%28370%29.png)
+![](../.gitbook/assets/image%20%28372%29.png)
 
 * AWS에서 제공하는 볼륨 유형들을 확인합니다.
 * **범용 SSD\(gp3\) 타입**을 선택합니다.
@@ -224,7 +224,7 @@ sudo systemctl restart httpd
 * **키 : Name , 값: PUBLIC-01**
 * "다음:보안그룹구성"을 선택합니다.
 
-![](../.gitbook/assets/image%20%28368%29.png)
+![](../.gitbook/assets/image%20%28370%29.png)
 
 ### **16.보안그룹구성 구성.**
 
@@ -288,7 +288,7 @@ https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-0.73-installer.msi
 
 * **\(Window 사용자\)** 윈도우 사용자는 Putty 클라이언트 프로그램을 통해 접속하도록 설정합니다. \(Host Name : ec2-user@"Public IP or Public DNS\)
 
-![](../.gitbook/assets/image%20%28360%29.png)
+![](../.gitbook/assets/image%20%28362%29.png)
 
 * **\(Window 사용자\)** SSH-Auth에서 "Allow agent forwarding" 을 체크하고, 키페어 파일은 "8.EC2 키페어 생성" 에서 로컬로 다운로드한 ppk 파일을 선택합니다.
 
@@ -313,9 +313,9 @@ ssh -i ~/Downloads/IMD-PUB-OPENSSH.pem ec2-user@x.x.x.x
 * 웹기반 클라이언트로 접속이 가능합니다. 접속하려는 **EC2 인스턴스를 선택**하고, EC2 대시보드 상단의 메뉴에서 **"연결"**을 선택합니다. 
 * **"EC2 인스턴스 연결"**을 선택하고, 사용자 이름은 **"ec2-user"**를 입력합니다. **"연결"**을 선택합니다.
 
-![](../.gitbook/assets/image%20%28367%29.png)
+![](../.gitbook/assets/image%20%28369%29.png)
 
-![](../.gitbook/assets/image%20%28373%29.png)
+![](../.gitbook/assets/image%20%28375%29.png)
 
 * 정상적으로 웹브라우져 기반으로 SSH가 연결되는 것을 확인할 수 있습니다.
 
@@ -342,7 +342,7 @@ curl -s ifconfig.co
 curl http://169.254.169.254/latest/meta-data/public-ipv4
 ```
 
-![](../.gitbook/assets/image%20%28372%29.png)
+![](../.gitbook/assets/image%20%28374%29.png)
 
 ### 21. EC2 Instance Type 변경
 
