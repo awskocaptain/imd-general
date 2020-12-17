@@ -200,7 +200,7 @@ sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.
 sudo yum -y install iotop iperf3 iptraf tcpdump git bash-completion 
 sudo yum -y install httpd php mysql php-mysql 
 sudo yum -y install python-pip
-sudo yum -y install nethogs iftop lnav nmon tmux wireshark
+sudo yum -y install nethogs iftop lnav nmon tmux wireshark vsftpd ftp
 sudo systemctl start httpd
 sudo systemctl enable httpd
 cd /var/www/html/
