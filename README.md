@@ -1,5 +1,5 @@
 ---
-description: 'update : 2020-06-25'
+description: 'update : 2021-03-12'
 ---
 
 # General Immersion Day
@@ -58,7 +58,7 @@ AWS Immersion Day는 AWS Solutions Architect와 Account Manager가 제공하는 
 
 #### AWS aurora 설치와 기능 구현등을 LAB을 통해 구성해 봅니다.
 
-\*\*\*\*
+#### 해당 LAB의 질문 사항은 whchoi98@gmail.com/ whchoi@amazon.com 또는 🙋♂ [슬랙채널](https://whchoi-hol.slack.com/)\([https://whchoi-hol.slack.com/](https://whchoi-hol.slack.com/archives/C01QM79Q4BD) 초대 링크 [https://join.slack.com/t/whchoi-hol/shared\_invite/zt-necc66t1-n6pSgrVfGW1w6SLAQUTP8A](https://join.slack.com/t/whchoi-hol/shared_invite/zt-necc66t1-n6pSgrVfGW1w6SLAQUTP8A)\) \#aws-general-hol 에서 문의 가능합니다.
 
-**Contact Point : Woo Hyung Choi \(**[**whchoi98@gmail.com**](mailto:whchoi98@gmail.com)**\) , SangHyun Kim \(**[**real23.sh@gmail.com**](mailto:real23.sh@gmail.com)**\)**
+#### 
 

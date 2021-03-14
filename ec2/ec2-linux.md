@@ -36,6 +36,16 @@ Amazon EC2는 AWS Management Console을 사용해 다양한 운영 체제로 인
 
 ![](../.gitbook/assets/image%20%28358%29.png)
 
+![](../.gitbook/assets/image%20%28377%29.png)
+
+* 아래와 같은 결과를 볼 수 있습니다.
+
+![](../.gitbook/assets/image%20%28378%29.png)
+
+
+
+### \*\*\*\*
+
 ### **2. VPC 선택**
 
 * **VPC를 선택**합니다.
