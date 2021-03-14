@@ -25,6 +25,6 @@ AWS CLI를 사용하는 경우 운영체제별로 AWS Config 환경을 복사해
 ![](.gitbook/assets/image%20%2890%29.png)
 
 {% hint style="danger" %}
-접속이 원할하지 않을 경우, **발표자**에게 도움을 요청합니다.
+접속이 원할하지 않을 경우, **솔루션즈 아키텍트**에게 도움을 요청합니다.
 {% endhint %}
 
