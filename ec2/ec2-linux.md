@@ -390,14 +390,15 @@ ls /var/www/html/ec2meta-webpage/
 "ec2-public-ip or public DNS"/ec2meta-webpage/index.php
 ```
 
+![](../.gitbook/assets/image%20%28374%29.png)
+
 * 각 인스턴스의 Public IP 연결 주소는 아래 명령을 통해 확인 가능합니다.
 
 ```text
 curl -s ifconfig.co
 curl http://169.254.169.254/latest/meta-data/public-ipv4
-```
 
-![](../.gitbook/assets/image%20%28374%29.png)
+```
 
 ### 21. EC2 Instance Type 변경
 
