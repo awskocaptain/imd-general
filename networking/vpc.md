@@ -279,9 +279,32 @@ sudo systemctl restart httpd
 
 ### 19. NAT Gateway 생성
 
-![](../.gitbook/assets/image%20%28153%29.png)
+NAT Gateway는 Private Subnet의 외부 통신을 위한 Source NAT를 제공하는 AWS NAT 완전관리형 서비스 입니다.
 
-![](../.gitbook/assets/image%20%28240%29.png)
+* **VPC - 가상 프라이빗 클라우드 - NAT 게이트웨이 선택** 
+* **NAT 게이트웨이 생성** 
+
+![](../.gitbook/assets/image%20%28445%29.png)
+
+NAT 게이트웨이 생성 메뉴에서 아래와 같은 값을 입력합니다.
+
+* 이름
+
+```text
+IMD-NATGW
+```
+
+* **서브넷**
+
+```text
+IMD-PUBLIC-A
+```
+
+* **탄력적 IP 할당 ID - 탄력적 IP 할당 선택**
+
+
+
+![](../.gitbook/assets/image%20%28425%29.png)
 
 ![](../.gitbook/assets/image%20%28327%29.png)
 
