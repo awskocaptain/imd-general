@@ -1,7 +1,7 @@
 ---
 description: >-
   이 랩은 기본 VPC환경에서 EC2기반 Window Server를 설치 구성하는 랩입니다.PC Networking에 대한 기본 내용을 일부
-  포함하고 있습니다.  (update : 2020-05-05)
+  포함하고 있습니다.  (update : 2021-03-16)
 ---
 
 # EC2-Windows
