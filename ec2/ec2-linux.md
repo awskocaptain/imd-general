@@ -376,7 +376,7 @@ ssh -i ~/Downloads/IMD-PUB-OPENSSH.pem ec2-user@x.x.x.x
 
 ![](../.gitbook/assets/image%20%283%29.png)
 
-### **20. EC2 Linux Web 접속 및 Resize**
+### **20. EC2 메타 정보 확인**
 
 * 2개의 EC2 인스턴스에 SSH로 접속해서, Web 서비스가 정상적으로 설치되었는지 확인합니다. "index.php" 파일이 설치되었는지 확인합니다.
 
