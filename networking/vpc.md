@@ -413,7 +413,7 @@ ssh -i "target-key.pem" -p 22001 ec2-user@localhost
 pageant key  가 등록되어, 내부 Private Host로 간편하게 Bastion Host를 통해 접속 가능합니다.
 {% endhint %}
 
-## Task5. VPC Endpoint
+## Task5. VPC Endpoint \(Option\)
 
 VPC 엔드포인트를 통해 인터넷 게이트웨이, NAT 디바이스, VPN 연결 또는 AWS Direct Connect 연결을 필요로 하지 않고 AWS PrivateLink 구동 지원 AWS 서비스 및 VPC 엔드포인트 서비스에 비공개로 연결할 수 있습니다. VPC의 인스턴스는 서비스의 리소스와 통신하는 데 퍼블릭 IP 주소를 필요로 하지 않습니다.  랩에서 Private EC2로 연결할 수 있는 방법은 Bastion Host를 통해 연결하거나, VPC Endpoint를 연결하여 Session Manager로 접속하는 방법이 있습니다.
 
@@ -515,6 +515,7 @@ Session Manager에 최초 연결될때 , Linux 계정을 확인해 봅니다.**e
 ```text
 whoami
 sudo -u ec2-user bash
+
 ```
 {% endhint %}
 
@@ -524,6 +525,7 @@ sudo -u ec2-user bash
 
 ```text
 curl http://169.254.169.254/latest/meta-data/local-ipv4
+
 ```
 
 ## Task6: Security
