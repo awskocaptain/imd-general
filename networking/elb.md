@@ -133,8 +133,6 @@ sudo echo "<html><h2>My placement/availability-zone is: $(curl -s http://169.25
 
 ![](../.gitbook/assets/image%20%28143%29.png)
 
-Task2 : ALB 구성
-
 
 
 ## Task2 : ALB 생성
@@ -193,6 +191,6 @@ Task2 : ALB 구성
 ![](../.gitbook/assets/image%20%2868%29.png)
 
 {% hint style="success" %}
-**성공적으로 S3 랩을 마치셨습니다.**
+**성공적으로 ELB 랩을 마치셨습니다.**
 {% endhint %}
 
