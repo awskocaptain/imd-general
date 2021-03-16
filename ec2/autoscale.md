@@ -27,9 +27,9 @@ AWS Auto Scaling은 애플리케이션을 모니터링하고 용량을 자동으
 
 ### 1.시작 구성 생성
 
-* **EC2 대시보드 - Auto Scaling - 시작 구성**을 선택하고, **시작 구성 생성**을 선택합니다.
+* **EC2 대시보드 - 인스턴스 시작 을 선택합니다.**
 
-![](../.gitbook/assets/image%20%28405%29.png)
+![](../.gitbook/assets/image%20%28391%29.png)
 
 ### 2. AMI 선택
 

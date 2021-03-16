@@ -157,7 +157,7 @@ Amazon EC2는 AWS Management Console을 사용해 다양한 운영 체제로 인
 
 * **Microsoft Windows Server 2012R2 Base AMI\(Amazon Machine Image\)** 를 선택합니다. 
 
-![](../.gitbook/assets/image%20%28406%29.png)
+![](../.gitbook/assets/image%20%28407%29.png)
 
 ### **12. 인스턴스 유형을 선택.**
 
@@ -245,7 +245,7 @@ $shell.Namespace("c:\inetpub\wwwroot\").copyhere($item)
 * **"기존 키 페어 선택"을 선택하고 , 해당 키페어를 선택합니다.**\(예. W2K-Key\)
 * **"인스턴스 시작"**을 선택해서 인스턴스를 생성합니다.
 
-![](../.gitbook/assets/image%20%28397%29.png)
+![](../.gitbook/assets/image%20%28398%29.png)
 
 {% hint style="warning" %}
 **위의 과정을 반복하여, 서브넷 "IMD-PUBLIC-B" - 가용영역 "ap-northeast-2c"에 EC2 인스턴스를 한 개 더 만들어 봅니다.**
@@ -257,7 +257,7 @@ $shell.Namespace("c:\inetpub\wwwroot\").copyhere($item)
 
 * **정상적으로 EC2 인스턴스들이 구성되었는 지 확인해 봅니다. 인스턴스를 선택하면 Meta 정보들을 확인 할 수 있습니다.**
 
-![](../.gitbook/assets/image%20%28395%29.png)
+![](../.gitbook/assets/image%20%28396%29.png)
 
 * 웹기반 클라이언트로 접속이 가능합니다. 접속하려는 **EC2 인스턴스를 선택**하고, EC2 대시보드 상단의 메뉴에서 **"연결"**을 선택합니다. 
 
@@ -269,7 +269,7 @@ $shell.Namespace("c:\inetpub\wwwroot\").copyhere($item)
 
 * **로컬에 저장해 둔 키페어를 "키 페어 경로"** 에 선택하고, "**암호해독"** 을 선택합니다.
 
-![](../.gitbook/assets/image%20%28399%29.png)
+![](../.gitbook/assets/image%20%28400%29.png)
 
 ![](../.gitbook/assets/image%20%28381%29.png)
 
@@ -296,17 +296,17 @@ $shell.Namespace("c:\inetpub\wwwroot\").copyhere($item)
 * EC2 인스턴스의 자원이 추가적으로 요구 될 경우, 인스턴스 유형을 변경할 수 있습니다.
 * 실행 중인 인스턴스를 선택하고 EC2 대시보드 상단 메뉴 **"작업" - "인스턴스 상태" - "중지"**를 선택합니다.
 
-![](../.gitbook/assets/image%20%28398%29.png)
+![](../.gitbook/assets/image%20%28399%29.png)
 
 * **"Stopped"**된 인스턴스를 선택하고 EC2 대시보드 상단 메뉴 "작업" - "인스턴스 설정" - "인스턴스 유형 변경"을 선택합니다. **t2.xlarge 인스턴스 유형**으로 변경하고 **"적용"**을 선택합니다.
 
-![](../.gitbook/assets/image%20%28404%29.png)
+![](../.gitbook/assets/image%20%28405%29.png)
 
 ![](../.gitbook/assets/image%20%28386%29.png)
 
 정상적으로 변경되었는지 확인합니다.
 
-![](../.gitbook/assets/image%20%28402%29.png)
+![](../.gitbook/assets/image%20%28403%29.png)
 
 ### 22. EC2 Volume 크기 변경
 
@@ -314,7 +314,7 @@ $shell.Namespace("c:\inetpub\wwwroot\").copyhere($item)
 * 실행 중인 인스턴스를 선택하고 EC2 대시보드 좌측 메뉴에서 **"ELASTIC BLOCK STORE" - "볼륨"**을 선택합니다.
 * EC2 대시보드 상단 메뉴에서 "작업" - "볼륨 수정"을 선택합니다.
 
-![](../.gitbook/assets/image%20%28391%29.png)
+![](../.gitbook/assets/image%20%28392%29.png)
 
 * **볼륨 크기를 40GB**로 증가 시킵니다. 해당 메뉴에서 볼륨 유형을 변경할 수도 있습니다. 볼륨 크기를 변경하고, "**수정"** 을 선택합니다.
 
