@@ -82,7 +82,7 @@ IMD-VPC
 
 ![](../.gitbook/assets/image%20%28355%29.png)
 
-![](../.gitbook/assets/image%20%28381%29.png)
+![](../.gitbook/assets/image%20%28382%29.png)
 
 ### **5.Public ,Private 서브넷 생성.**
 
@@ -423,11 +423,13 @@ curl http://169.254.169.254/latest/meta-data/public-ipv4
 * 실행 중인 인스턴스를 선택하고 EC2 대시보드 좌측 메뉴에서 **"ELASTIC BLOCK STORE" - "볼륨"**을 선택합니다.
 * EC2 대시보드 상단 메뉴에서 "작업" - "볼륨 수정"을 선택합니다.
 
+![](../.gitbook/assets/image%20%28383%29.png)
+
 ![](../.gitbook/assets/image%20%284%29.png)
 
 * **볼륨 크기를 10GB**로 증가 시킵니다. 해당 메뉴에서 볼륨 유형을 변경할 수도 있습니다. 볼륨 크기를 변경하고, "**수정"** 을 선택한 후 **"예"**를 선택하고 수정합니다.
 
-![](../.gitbook/assets/image%20%28208%29.png)
+![](../.gitbook/assets/image%20%28381%29.png)
 
 ![](../.gitbook/assets/image%20%28200%29.png)
 
