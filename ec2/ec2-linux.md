@@ -82,7 +82,7 @@ IMD-VPC
 
 ![](../.gitbook/assets/image%20%28355%29.png)
 
-![](../.gitbook/assets/image%20%28387%29.png)
+![](../.gitbook/assets/image%20%28388%29.png)
 
 ### **5.Public ,Private 서브넷 생성.**
 
@@ -423,7 +423,7 @@ curl http://169.254.169.254/latest/meta-data/public-ipv4
 * 실행 중인 인스턴스를 선택하고 EC2 대시보드 좌측 메뉴에서 **"ELASTIC BLOCK STORE" - "볼륨"**을 선택합니다.
 * EC2 대시보드 상단 메뉴에서 "작업" - "볼륨 수정"을 선택합니다.
 
-![](../.gitbook/assets/image%20%28388%29.png)
+![](../.gitbook/assets/image%20%28389%29.png)
 
 ![](../.gitbook/assets/image%20%284%29.png)
 
@@ -552,11 +552,11 @@ yum list installed | grep "git"
 
 * EC2 대쉬보드에서 "ELASTIC BLOCK STORE" - "볼륨"을 선택합니다. "PUBLIC-02" 볼륨을 선택하고 연결정보에서 루트 디바이스의 이름을 확인해 둡니다. 상단 메뉴 "작업"-"볼륨분리"를 선택합니다. 
 
-![](../.gitbook/assets/image%20%28385%29.png)
+![](../.gitbook/assets/image%20%28386%29.png)
 
 * EC2 대쉬보드에서 **"ELASTIC BLOCK STORE" - "볼륨"**을 선택하고 새로 만든 볼륨을 선택합니다. 상단 메뉴 **"작업"-"볼륨연결"**를 선택합니다. Stop되어 있는 **"PUBLIC-02" 인스턴스 ID**를 선택합니다. 디바이스는 **기존에 루트 디바이스 이름**을 입력합니다. **\(dev/xvda\)**
 
-![](../.gitbook/assets/image%20%28386%29.png)
+![](../.gitbook/assets/image%20%28387%29.png)
 
 ![](../.gitbook/assets/image%20%28115%29.png)
 
@@ -566,12 +566,15 @@ yum list installed | grep "git"
 
 * Stop 시켜둔 "PUBLIC-02" EC2 인스턴스를 다시 "시작"하고 SSH로 접속합니다. 스냅샷 이후 삭제된 "git" 패키지가 보이는지 확인합니다.
 
+![](../.gitbook/assets/image%20%28384%29.png)
+
 {% hint style="danger" %}
 인스턴스를 중지하고 다시 시작할 경우 IP 주소가 변경됩니다. 확인하고 SSH에 접속합니다.
 {% endhint %}
 
 ```text
 yum list installed | grep "git"
+
 ```
 
 ![](../.gitbook/assets/image%20%28234%29.png)
