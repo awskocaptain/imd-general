@@ -27,79 +27,73 @@ AWS Auto Scaling은 애플리케이션을 모니터링하고 용량을 자동으
 
 ### 1.시작 구성 생성
 
-* **EC2 대시보드 - 인스턴스 시작 을 선택합니다.**
+* **EC2 대시보드 - AutoScaling - Launch Configuration \(새로 만들기\) 를 선택합니다.**
 
-![](../.gitbook/assets/image%20%28391%29.png)
+![](../.gitbook/assets/image%20%28401%29.png)
 
-### 2. AMI 선택
+### **2. 상세 구성** 
 
-* Auto Scaling 구성에 포함 EC2 인스턴스의 이미지를 선택합니다. \(랩에서는 Amazon Linux 2 AMI 선택\)
-
-![](../.gitbook/assets/image%20%28264%29.png)
-
-### 3.인스턴스 유형 선택
-
-* Auto Scaling 구성에 포함 EC2 인스턴스의 유형을 선택합니다. \(랩에서는 T2.micro를 선택\)
-
-![](../.gitbook/assets/image%20%28131%29.png)
-
-### 4. 세부정보 구성
-
-* Auto Scaling 시작 구성의 이름을 생성합니다.
-* User Data를 작성합니다.
+* 시작 구성 이름
 
 ```text
-#!/bin/sh
-sudo yum -y update
-sudo yum -y install yum-util
-sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm 
-sudo yum -y install httpd php mysql php-mysql git stress tmux
-sudo systemctl start httpd
-sudo systemctl enable httpd
-cd /var/www/html/
-sudo git clone https://github.com/whchoi98/ec2meta-webpage.git
-sudo systemctl restart httpd
-exit
-
+IMD-ASG-Config
 ```
 
-* Public IP 할당 유무를 선택합니다. Public Subnet에 할당될 EC2 인스턴스일 경우에는 **"모든 인스턴스에 퍼블릭 IP 주소 할당"**을 선택합니다.
+* AMI
 
-![](../.gitbook/assets/image%20%28157%29.png)
+```text
+ami-0e17ad9abf7e5c818
+```
 
-### 5. 스토리지 추가
+* 인스턴스 유형
 
-* AutoScaling 그룹에 포함되는 EC2의 디스크를 유형을 선택합니다.
+```text
+t2.micro
+```
 
-![](../.gitbook/assets/image%20%28144%29.png)
+![](../.gitbook/assets/image%20%28405%29.png)
 
-### 6. 보안 그룹 구성
+* 보안그룹 \(기존 생성한 보안 그룹 선택\)
 
-* 새롭게 보안 그룹을 생성하거나 , **기존에 생성된 보안 그룹을 선택**합니다. \(랩에서는 앞서 EC2-LINUX 랩에서 생성한 Security Group - **IMD-PUB-SG**를 선택\)
+```text
+IMD-PUB-SG
+```
 
-![](../.gitbook/assets/image%20%28121%29.png)
+![](../.gitbook/assets/image%20%28394%29.png)
 
-### 7. 키페어 생성 또는 선택
+* 키 페어 - 기존 키 페어 \(기존 생성한 키 페어 선택\)
 
-* EC2에 포함될 키 페어를 선택합니다. \(랩에서는 앞서 EC2-LINUX랩에서 생성한 키페어를 선택합니다.\)
+```text
+IMD-PUB-PUTTY
+```
 
-![](../.gitbook/assets/image%20%28343%29.png)
-
-Auto Scaling  시작 구성 생성을 선택하고, 완료합니다.
+![](../.gitbook/assets/image%20%28404%29.png)
 
 ## Task2: Auto Scaling 그룹
 
-### 8. Auto Scaling 그룹 생성
+### 3. Auto Scaling 그룹 생성
 
 * Auto Scaling 그룹 생성을 선택합니다.
 
-![](../.gitbook/assets/image%20%28254%29.png)
+![](../.gitbook/assets/image%20%28397%29.png)
 
-### 9. Auto Scaling 그룹 생성과 시작 구성 선
+### 9. Auto Scaling 그룹 생성과 시작 구성 선택 
 
 * 앞서 생성한 **Auto Scaling 시작 구성 \(AS-Config01\)을 선택**하고, **시작 구성을 선택**합니다.
 
-![](../.gitbook/assets/image%20%28123%29.png)
+![](../.gitbook/assets/image%20%28403%29.png)
+
+
+
+![](../.gitbook/assets/image%20%28415%29.png)
+
+![](../.gitbook/assets/image%20%28411%29.png)
+
+![](../.gitbook/assets/image%20%28391%29.png)
+
+![](../.gitbook/assets/image%20%28380%29.png)
+
+![](../.gitbook/assets/image%20%28386%29.png)
 
 ### 10. Auto Scaling 그룹 세부 정보 구성
 
