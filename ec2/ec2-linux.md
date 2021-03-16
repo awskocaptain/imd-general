@@ -82,7 +82,7 @@ IMD-VPC
 
 ![](../.gitbook/assets/image%20%28355%29.png)
 
-![](../.gitbook/assets/image%20%28382%29.png)
+![](../.gitbook/assets/image%20%28383%29.png)
 
 ### **5.Public ,Private 서브넷 생성.**
 
@@ -423,7 +423,7 @@ curl http://169.254.169.254/latest/meta-data/public-ipv4
 * 실행 중인 인스턴스를 선택하고 EC2 대시보드 좌측 메뉴에서 **"ELASTIC BLOCK STORE" - "볼륨"**을 선택합니다.
 * EC2 대시보드 상단 메뉴에서 "작업" - "볼륨 수정"을 선택합니다.
 
-![](../.gitbook/assets/image%20%28383%29.png)
+![](../.gitbook/assets/image%20%28384%29.png)
 
 ![](../.gitbook/assets/image%20%284%29.png)
 
@@ -512,6 +512,8 @@ tmpfs            99M     0   99M   0% /run/user/0
 ![](../.gitbook/assets/image%20%28103%29.png)
 
 * EC2 대시보드 좌측 메뉴에서 "ELASTIC BLOCK STORE" - "스냅샷"을 선택하고 , "스냅샷 생성"을 선택합니다.
+
+![](../.gitbook/assets/image%20%28382%29.png)
 
 ![](../.gitbook/assets/image%20%28174%29.png)
 
