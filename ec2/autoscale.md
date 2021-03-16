@@ -31,7 +31,7 @@ AWS Auto Scaling은 애플리케이션을 모니터링하고 용량을 자동으
 
 * **AMI - Amazon Linux 2 AMI \(HVM\), SSD Volume Type - ami-0e17ad9abf7e5c818 \(64비트 x86\)**
 
-![](../.gitbook/assets/image%20%28439%29.png)
+![](../.gitbook/assets/image%20%28442%29.png)
 
 * **인스턴스 유형 선택 - t2.micro**
 
@@ -62,9 +62,9 @@ exit
 
 ```
 
-![](../.gitbook/assets/image%20%28440%29.png)
+![](../.gitbook/assets/image%20%28443%29.png)
 
-![](../.gitbook/assets/image%20%28449%29.png)
+![](../.gitbook/assets/image%20%28452%29.png)
 
 * **스토리지 추가 - 볼륨유형 gp3**
 
@@ -72,7 +72,7 @@ exit
 
 * **태그 추가 - 키 : Name , 값 : ASG-EC2**
 
-![](../.gitbook/assets/image%20%28444%29.png)
+![](../.gitbook/assets/image%20%28447%29.png)
 
 * **보안 그룹 구성 - 기존 보안 그룹 선택 - IMD-PUB-SG**
 
@@ -80,30 +80,30 @@ exit
 
 * 기존 키 페어 선택 - IMD-PUB-PUTTY 
 
-![](../.gitbook/assets/image%20%28437%29.png)
+![](../.gitbook/assets/image%20%28440%29.png)
 
 ### 2. 생성된 AutoScale Group 용 인스턴스 확인
 
 AutoScale Group 용으로 생성된 인스턴스를 확인합니다. 해당 인스턴스는 AutoScale Group을 위한 인스턴스 템플릿으로 생성할 것입니다.
 
-![](../.gitbook/assets/image%20%28432%29.png)
+![](../.gitbook/assets/image%20%28433%29.png)
 
 ### 3. EC2 시작 템플릿 만들기
 
 인스턴스 메뉴에서 생성한 인스턴스를 선택 - 작업 - 이미지 및 템플릿 - 인스턴스에서 템플릿 생성을 선택합니다.
 
-![](../.gitbook/assets/image%20%28431%29.png)
+![](../.gitbook/assets/image%20%28432%29.png)
 
 **아래에서 처럼 시작 템플릿 이름을 선언하고, 나머지 값은 그대로 사용합니다.**
 
 * **시작 템플릿 이름 - MyTemplate**
 * **나머지 값은 기본 값을 그대로 사용하고, 시작 템플릿을 선택합니다.**
 
-![](../.gitbook/assets/image%20%28435%29.png)
+![](../.gitbook/assets/image%20%28438%29.png)
 
 * 시작 템플릿이 완성되었습니다. 해당 템플릿을 이용해서 Auto Scaling Group을 만들 것입니다.
 
-![](../.gitbook/assets/image%20%28434%29.png)
+![](../.gitbook/assets/image%20%28437%29.png)
 
 
 
@@ -113,7 +113,7 @@ AutoScale Group 용으로 생성된 인스턴스를 확인합니다. 해당 인�
 
 * **EC2 대시보드 - AutoScaling - Auto Scaling Groups \(새로 만들기\) 를 선택합니다.**
 
-![](../.gitbook/assets/image%20%28448%29.png)
+![](../.gitbook/assets/image%20%28451%29.png)
 
 ### **5. 시작 템플릿 구성** 
 
@@ -123,11 +123,11 @@ AutoScale Group 용으로 생성된 인스턴스를 확인합니다. 해당 인�
 ASG-Template
 ```
 
-![](../.gitbook/assets/image%20%28445%29.png)
+![](../.gitbook/assets/image%20%28448%29.png)
 
 ### 6. Auto Scaling 설정 구성 
 
-![](../.gitbook/assets/image%20%28442%29.png)
+![](../.gitbook/assets/image%20%28445%29.png)
 
 * 시작 템플릿 준수 선택
 * VPC - IMD-VPC 선택
@@ -141,7 +141,7 @@ ASG-Template
 
 테스트를 위해서 상태 확인 유예 기간을 10초로 조정하고, 모니터링 Cloudwatch 내에서 그룹 지표 수집 활성화를 선택합니다.
 
-![](../.gitbook/assets/image%20%28447%29.png)
+![](../.gitbook/assets/image%20%28450%29.png)
 
 {% hint style="info" %}
 대부분의 경우, 서비스 상태가 된 직후의 Auto Scaling 인스턴스는 웜 업을 거쳐야 상태 확인을 통과할 수 있습니다. Amazon EC2 Auto Scaling은 상태 확인 유예 기간이 끝날 때까지 기다린 후 인스턴스의 상태를 확인합니다. Amazon EC2 상태 확인과 Elastic Load Balancing 상태 확인은 상태 확인 유예 기간이 끝나기 전에 완료될 수 있습니다. 하지만 Amazon EC2 Auto Scaling은 상태 확인 유예 기간이 종료되기 전에는 그러한 상태를 반영하지 않습니다. 인스턴스에 충분한 웜 업 시간을 제공하려면 상태 확인 유예 기간이 애플리케이션의 예상 시작 시간을 포함하도록 해야 합니다. 수명 주기 후크를 추가할 경우 유예 기간은 수명 주기 후크 작업이 완료되고 인스턴스가 `InService` 상태로 전환되기까지 시작되지 않습니다.
@@ -151,7 +151,7 @@ ASG-Template
 
 ### 8. 그룹 크기 및 조정 정책 구성
 
-![](../.gitbook/assets/image%20%28443%29.png)
+![](../.gitbook/assets/image%20%28446%29.png)
 
 ### 9. 알림 추가
 
@@ -159,20 +159,20 @@ ASG-Template
 
 ### 10. 태그 추가
 
-![](../.gitbook/assets/image%20%28438%29.png)
+![](../.gitbook/assets/image%20%28441%29.png)
 
 ### 11. 검토
 
 * **AutoScaling 그룹 생성을 완료합니다.**
 * 알림 수신을 설정한 이메일에 **SNS 승인요청**이 기다리고 있습니다. 수락하시기 바랍니다.
 
-![](../.gitbook/assets/image%20%28436%29.png)
+![](../.gitbook/assets/image%20%28439%29.png)
 
 ![](../.gitbook/assets/image%20%28426%29.png)
 
 잠시 후 아래와 같이 인스턴스가 생성된 것을 확인 할 수 있습니다.
 
-![](../.gitbook/assets/image%20%28451%29.png)
+![](../.gitbook/assets/image%20%28454%29.png)
 
 Auto Scaling 그룹에 생성된 그룹을 선택하고 , 인스턴스 관리 탭을 확인 해 봅니다.
 
@@ -212,7 +212,7 @@ AutoScaling Group에 할당한 인스턴스 타입의 CPU 숫자에 맞추어서
 
 앞서 생성한 Auto Scaling Group의 SNS가 계속해서 메세지를 통보하게 됩니다.
 
-![](../.gitbook/assets/image%20%28441%29.png)
+![](../.gitbook/assets/image%20%28444%29.png)
 
 {% hint style="success" %}
 성공적으로 Auto Scaling 그룹 랩을 마치셨습니다. 

@@ -284,11 +284,11 @@ NAT Gateway는 Private Subnet의 외부 통신을 위한 Source NAT를 제공하
 * **VPC - 가상 프라이빗 클라우드 - NAT 게이트웨이 선택** 
 * **NAT 게이트웨이 생성** 
 
-![](../.gitbook/assets/image%20%28446%29.png)
+![](../.gitbook/assets/image%20%28449%29.png)
 
 NAT 게이트웨이 생성 메뉴에서 아래와 같은 값을 입력합니다.
 
-* 이름
+* **이름**
 
 ```text
 IMD-NATGW
@@ -302,21 +302,23 @@ IMD-PUBLIC-A
 
 * **탄력적 IP 할당 ID - 탄력적 IP 할당 선택**
 
-
-
 ![](../.gitbook/assets/image%20%28425%29.png)
 
-![](../.gitbook/assets/image%20%28327%29.png)
+NAT 게이트웨이 생성이 완료되면 다음과 같은 화면을 확인 할 수 있습니다.
 
-
+![](../.gitbook/assets/image%20%28435%29.png)
 
 ### 20. Private Routing Table 구성
 
-![](../.gitbook/assets/image%20%28270%29.png)
+Private Subnet을 위해서 라우팅 테이블에 NAT 게이트웨이 경로를 추가합니다.
+
+* **VPC - 가상 프라이빗 클라우드 - 라우팅 테이블 - PRIVATE-RT 선택 - 라우팅 탭 - 라우팅 편집 선택** 
+
+![](../.gitbook/assets/image%20%28431%29.png)
 
 ![](../.gitbook/assets/image%20%28133%29.png)
 
-![](../.gitbook/assets/image%20%28267%29.png)
+![](../.gitbook/assets/image%20%28436%29.png)
 
 {% hint style="info" %}
 **Task4. Private Network 연결을 완료한 이후에는 NAT Gateway를 통해 Private EC2에서 외부망으로 연결이 가능하지 확인 할 수 있습니다.**
