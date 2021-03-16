@@ -144,6 +144,10 @@ Public 서브넷은 Internet Gateway와 1:1 NAT로 직접 연결 가능한 네�
 * 좌측 VPC 대시보드에서 **"가상 프라이빗 클라우드" - "인터넷 게이트웨이"** 메뉴를 선택하고, **"인터넷 게이트웨이 생성"**을 선택합니다.
 * 인터넷 게이트웨이 이름을 정의합니다.
 
+```text
+IMD-IGW
+```
+
 {% hint style="info" %}
 인터넷 게이트웨이는 VPC 내부 네트워크가 외부와 연결되는 구성을 담당합니다. 인터넷 게이트웨이는 한개의 VPC에 연결되며, 퍼블릭 서브넷의 인스턴스들과 1:1  NAT를 완전 관리형으로 제공합니다.
 {% endhint %}
@@ -256,6 +260,9 @@ sudo systemctl restart httpd
 ![](../.gitbook/assets/image%20%28372%29.png)
 
 * AWS에서 제공하는 볼륨 유형들을 확인합니다.
+
+> [https://docs.aws.amazon.com/ko\_kr/AWSEC2/latest/UserGuide/ebs-volume-types.html](https://docs.aws.amazon.com/ko_kr/AWSEC2/latest/UserGuide/ebs-volume-types.html)
+
 * **범용 SSD\(gp3\) 타입**을 선택합니다.
 * **"다음-태그 추가"**를 선택합니다.
 
@@ -282,12 +289,6 @@ sudo systemctl restart httpd
 * 보안 그룹 이름 : IMD-PUB-SG
 * 설명 : Security Group for IMD-PUB
 
-{% hint style="info" %}
-VPC LAB에서 사용할 Private EC2들을 위한 보안 그룹도 설정합니다. 인바운드,아웃바운드 규칙은 동일하게 구성합니다.
-
-**보안그룹 이름 : IMD-PRI-SG**
-{% endhint %}
-
 ![](../.gitbook/assets/image%20%28162%29.png)
 
 * "검토 및 시작"을 선택합니다.
@@ -308,6 +309,8 @@ VPC LAB에서 사용할 Private EC2들을 위한 보안 그룹도 설정합니�
 {% hint style="warning" %}
 **위의 과정을 반복하여, 서브넷 "IMD-PUBLIC-B" - 가용영역 "ap-northeast-2c"에 EC2 인스턴스를 한 개 더 만들어 봅니다.**
 {% endhint %}
+
+#### IMD-Private-A,B 에 PRIVATE-01,PRIVATE-02 인스턴스도 각각 구성해 봅니다. Security Group은 동일한 방법으로 IMD-PRIVATE-SG로 생성합니다.
 
 ## Task3: EC2 연결 및 속성 변경
 
