@@ -395,11 +395,11 @@ ssh -i "target-key.pem" -p 22001 ec2-user@localhost
 
 ![](../.gitbook/assets/image%20%28184%29.png)
 
-**Pagent Key list에  Private pem key를 미리 업로드 해 둡니다.**
+* **Pagent Key list에  Private pem key를 미리 업로드 해 둡니다.**
 
 ![](../.gitbook/assets/image%20%28423%29.png)
 
-Bastion Hostdㅔ 
+* **Bastion Host 에 먼저 SSH로 접속합니다.** 
 
 ![](../.gitbook/assets/image%20%28135%29.png)
 
@@ -409,7 +409,9 @@ Bastion Hostdㅔ
 
 ![](../.gitbook/assets/image%20%28253%29.png)
 
-![](../.gitbook/assets/image%20%28449%29.png)
+{% hint style="info" %}
+pageant key  가 등록되어, 내부 Private Host로 간편하게 Bastion Host를 통해 접속 가능합니다.
+{% endhint %}
 
 ## Task5. VPC Endpoint
 
