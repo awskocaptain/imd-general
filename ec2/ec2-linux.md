@@ -99,9 +99,9 @@ Public 서브넷은 Internet Gateway와 1:1 NAT로 직접 연결 가능한 네�
 | **서브넷 이름 태그** | 가용영역 | **IPv4 CIDR 블록** |
 | :--- | :--- | :--- |
 | IMD-PUBLIC-A | ap-northeast-2a | 10.1.1.0/24 |
-| IMD-PUBLIC-B | ap-northeast-2**b** | 10.1.2.0/24 |
+| IMD-PUBLIC-B | ap-northeast-2c | 10.1.2.0/24 |
 | IMD-PRIVATE-A | ap-northeast-2a | 10.1.11.0/24 |
-| IMD-PRIVATE-B | ap-northeast-2b | 10.1.12.0/24 |
+| IMD-PRIVATE-B | ap-northeast-2c | 10.1.12.0/24 |
 
 ![](../.gitbook/assets/image%20%28353%29.png)
 
@@ -113,8 +113,8 @@ Public 서브넷은 Internet Gateway와 1:1 NAT로 직접 연결 가능한 네�
 
 | 라우팅 테이블 이름 태그 | 서브넷 연결 |
 | :--- | :--- |
-| PUBLIC-RT | IMD-PUBLIC-A , IMD-PUBLIC-B |
-| PRIVATE-RT | IMD-PRIVATE-A, IMD-PRIVATE-B |
+| PUBLIC-RT | IMD-PUBLIC-A , IMD-PUBLIC-C |
+| PRIVATE-RT | IMD-PRIVATE-A, IMD-PRIVATE-C |
 
 * 좌측 VPC 대시보드에서 **"가상 프라이빗 클라우드" - "라우팅 테이블"** 메뉴를 선택하고, **"라우팅 테이블 생성"**을 선택합니다.
 * 2개의 라우팅 테이블을 각각 생성하고, 속성을 정의합니다.
