@@ -93,7 +93,9 @@ IMD-PUB-PUTTY
 
 ![](../.gitbook/assets/image%20%28380%29.png)
 
-![](../.gitbook/assets/image%20%28386%29.png)
+![](../.gitbook/assets/image%20%28421%29.png)
+
+![](../.gitbook/assets/image%20%28422%29.png)
 
 ### 10. Auto Scaling 그룹 세부 정보 구성
 
