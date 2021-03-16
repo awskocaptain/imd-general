@@ -178,9 +178,9 @@ Auto Scaling 그룹에 생성된 그룹을 선택하고 , 인스턴스 관리 �
 
 ![](../.gitbook/assets/image%20%28421%29.png)
 
-### 15. Auto Scaling 증가 확인
+### 12. Auto Scaling 증가 확인
 
-* 생성된 각각의 EC2 인스턴스에서 CPU 로드를 생성합니다. "top" 명령을 통해 CPU Load를 확인합니다.
+* 생성된 각각의 EC2 인스턴스에서 CPU 로드를 생성합니다. 화면을 분할하고 "top" 명령을 통해 CPU Load를 확인합니다.
 
 {% hint style="info" %}
 생성된 EC2 인스턴스에 tmux 가 설치되어 있습니다. 화면 분할을 통해 명령을 top 를 입력해 봅니다. 
