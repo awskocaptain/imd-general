@@ -40,11 +40,11 @@ Amazon EC2는 AWS Management Console을 사용해 다양한 운영 체제로 인
 
 * 아래와 같은 결과를 볼 수 있습니다.
 
-![](../.gitbook/assets/image%20%28378%29.png)
+![](../.gitbook/assets/image%20%28379%29.png)
 
-
-
-### \*\*\*\*
+{% hint style="info" %}
+각 계정에 최대 5개까지 VPC를 제공하며, Service Quotas 메뉴를 통해서 추가 요청 가능합니다. 또한 Default VPC가 1개 자동으로 구성되어 있습니다.
+{% endhint %}
 
 ### **2. VPC 선택**
 
@@ -54,26 +54,42 @@ Amazon EC2는 AWS Management Console을 사용해 다양한 운영 체제로 인
 
 ### **3. "VPC 생성" 및 값 입력**
 
-![](../.gitbook/assets/image%20%28376%29.png)
-
 * **이름 태그** : VPC 이름 태그를 입력합니다.
+
+```text
+IMD-VPC
+```
+
 * **IPv4 CIDR 블록** : VPC에서 사용할 IPv4 주소 대역을 입력합니다.
 
-![](../.gitbook/assets/image%20%28360%29.png)
+```text
+10.1.0.0/16
+```
+
+![](../.gitbook/assets/image%20%28376%29.png)
 
 생성된 VPC 정보를 확인합니다.
 
+![](../.gitbook/assets/image%20%28360%29.png)
+
+
+
 ### **4. DNS 호스트 이름을 활성화**
 
-* 생성되는 EC2 인스턴스의 DNS Name 서비스 활성화를 위해, **"작업"**을 선택하고 **"DNS 호스트 이름 편집"**을 선택합니다. **DNS 호스트 이름을 활성화**합니다. ****
+* 생성되는 EC2 인스턴스의 DNS Name 서비스 활성화를 위해, 화면 우측 상단에서 **"작업"**을 선택하고 **"DNS 호스트 이름 편집"**을 선택합니다. **DNS 호스트 이름을 활성화를 선택하고, 변경사항을 저장** 합니다. ****
 
 ![](../.gitbook/assets/image%20%28373%29.png)
 
 ![](../.gitbook/assets/image%20%28355%29.png)
 
+![](../.gitbook/assets/image%20%28380%29.png)
+
 ### **5.Public ,Private 서브넷 생성.**
 
 * 좌측 VPC 대시보드에서 `"가상 프라이빗 클라우드" - "서브넷"` 메뉴를 선택하고, **`"서브넷 생성"`**을 선택합니다.
+
+![](../.gitbook/assets/image%20%28378%29.png)
+
 * 4개의 서브넷을 각각 생성하고, 속성을 정의합니다.
 
 {% hint style="info" %}
@@ -83,9 +99,9 @@ Public 서브넷은 Internet Gateway와 1:1 NAT로 직접 연결 가능한 네�
 | **서브넷 이름 태그** | 가용영역 | **IPv4 CIDR 블록** |
 | :--- | :--- | :--- |
 | IMD-PUBLIC-A | ap-northeast-2a | 10.1.1.0/24 |
-| IMD-PUBLIC-B | ap-northeast-2c | 10.1.2.0/24 |
+| IMD-PUBLIC-B | ap-northeast-2**b** | 10.1.2.0/24 |
 | IMD-PRIVATE-A | ap-northeast-2a | 10.1.11.0/24 |
-| IMD-PRIVATE-B | ap-northeast-2c | 10.1.12.0/24 |
+| IMD-PRIVATE-B | ap-northeast-2b | 10.1.12.0/24 |
 
 ![](../.gitbook/assets/image%20%28353%29.png)
 
@@ -111,7 +127,11 @@ Public 서브넷은 Internet Gateway와 1:1 NAT로 직접 연결 가능한 네�
 
 * 각 라우팅 테이블에 서브넷을 연결합니다.  PUBLIC-RT, PRIVATE-RT 모두 구성합니다.
 
+**`VPC - 라우팅 테이블 - 서브넷 연결 탭 - 서브넷 연결 편집`**  선택 
+
 ![](../.gitbook/assets/image%20%28212%29.png)
+
+
 
 ![](../.gitbook/assets/image%20%28313%29.png)
 
@@ -132,7 +152,11 @@ Public 서브넷은 Internet Gateway와 1:1 NAT로 직접 연결 가능한 네�
 
 * 인터넷 게이트웨이를 VPC에 연결합니다.
 
+생성된 인터넷 게이트웨어 **"IMD-IGW"** 를 선택하고, 우측 상단의 작업을 선택하고 **`VPC에 연결`**을 선택합니다. 
+
 ![](../.gitbook/assets/image%20%28356%29.png)
+
+앞서 생성한 VPC를 선택합니다.
 
 ![](../.gitbook/assets/image%20%28363%29.png)
 
@@ -166,6 +190,10 @@ Public 서브넷은 Internet Gateway와 1:1 NAT로 직접 연결 가능한 네�
 ![](../.gitbook/assets/image%20%28237%29.png)
 
 * Mac OS , Linux 계열의 OpenSSH 사용자는 파일형식을 pem을 선택하고, Window OS 계열의 Putty 사용자는 파일형식을 ppk를 선택합니다.
+
+```text
+IMD-PUB-PUTTY
+```
 
 ![](../.gitbook/assets/image%20%2822%29.png)
 
