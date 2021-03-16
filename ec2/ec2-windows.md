@@ -315,7 +315,7 @@ $shell.Namespace("c:\inetpub\wwwroot\").copyhere($item)
 * 잠시 후 EC2 대시보드에서 확인하면 아래와 같이 볼륨이 증가 한 것을 확인 할 수 있습니다.
 
 {% hint style="danger" %}
-볼륨 변경은 시간이 20분 이상 필요합니다. EC2 인스턴스의 볼륨 상태가 "In-Use"로 활성화 될 때까지 기다린 후에 , EC2 인스턴스를 다시 시작합니다.
+윈도우의 경우 볼륨을 크게 선택했기 때문 변경은 시간이 20분 이상 필요합니다. EC2 인스턴스의 볼륨 상태가 "In-Use"로 활성화 될 때까지 기다린 후에 , EC2 인스턴스를 다시 시작합니다.
 {% endhint %}
 
 ![](../.gitbook/assets/image%20%28149%29.png)
