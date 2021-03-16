@@ -31,7 +31,7 @@ AWS Auto Scaling은 애플리케이션을 모니터링하고 용량을 자동으
 
 * **AMI - Amazon Linux 2 AMI \(HVM\), SSD Volume Type - ami-0e17ad9abf7e5c818 \(64비트 x86\)**
 
-![](../.gitbook/assets/image%20%28427%29.png)
+![](../.gitbook/assets/image%20%28428%29.png)
 
 * **인스턴스 유형 선택 - t2.micro**
 
@@ -62,9 +62,9 @@ exit
 
 ```
 
-![](../.gitbook/assets/image%20%28428%29.png)
+![](../.gitbook/assets/image%20%28429%29.png)
 
-![](../.gitbook/assets/image%20%28430%29.png)
+![](../.gitbook/assets/image%20%28431%29.png)
 
 * **스토리지 추가 - 볼륨유형 gp3**
 
@@ -72,7 +72,7 @@ exit
 
 * **태그 추가 - 키 : Name , 값 : ASG-EC2**
 
-![](../.gitbook/assets/image%20%28429%29.png)
+![](../.gitbook/assets/image%20%28430%29.png)
 
 * **보안 그룹 구성 - 기존 보안 그룹 선택 - IMD-PUB-SG**
 
@@ -80,13 +80,25 @@ exit
 
 * 기존 키 페어 선택 - IMD-PUB-PUTTY 
 
-![](../.gitbook/assets/image%20%28426%29.png)
+![](../.gitbook/assets/image%20%28427%29.png)
 
 ### 2. 생성된 AutoScale Group 용 인스턴스 확인
 
+![](../.gitbook/assets/image%20%28426%29.png)
+
+3. EC2 시작 템플릿 만들기
+
 ![](../.gitbook/assets/image%20%28425%29.png)
 
-## Task1 : Auto Scaling 시작 구성 \(Auto Scaling Launch Config\)
+
+
+* 시작 템플릿 이름 - MyTemplate
+* 나머지 값은 기본 값을 사용합니다.
+
+
+
+* 
+## Task2 : Auto Scaling 시작 구성 \(Auto Scaling Launch Config\)
 
 ### 1.시작 구성 생성
 
@@ -176,7 +188,7 @@ IMD-PUB-PUTTY
 
 ![](../.gitbook/assets/image%20%28422%29.png)
 
-![](../.gitbook/assets/image%20%28431%29.png)
+![](../.gitbook/assets/image%20%28432%29.png)
 
 ### 10. Auto Scaling 그룹 세부 정보 구성
 
