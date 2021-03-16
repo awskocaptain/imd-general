@@ -31,7 +31,7 @@ AWS Auto Scaling은 애플리케이션을 모니터링하고 용량을 자동으
 
 * **AMI - Amazon Linux 2 AMI \(HVM\), SSD Volume Type - ami-0e17ad9abf7e5c818 \(64비트 x86\)**
 
-![](../.gitbook/assets/image%20%28429%29.png)
+![](../.gitbook/assets/image%20%28430%29.png)
 
 * **인스턴스 유형 선택 - t2.micro**
 
@@ -62,9 +62,9 @@ exit
 
 ```
 
-![](../.gitbook/assets/image%20%28430%29.png)
+![](../.gitbook/assets/image%20%28431%29.png)
 
-![](../.gitbook/assets/image%20%28432%29.png)
+![](../.gitbook/assets/image%20%28436%29.png)
 
 * **스토리지 추가 - 볼륨유형 gp3**
 
@@ -72,7 +72,7 @@ exit
 
 * **태그 추가 - 키 : Name , 값 : ASG-EC2**
 
-![](../.gitbook/assets/image%20%28431%29.png)
+![](../.gitbook/assets/image%20%28433%29.png)
 
 * **보안 그룹 구성 - 기존 보안 그룹 선택 - IMD-PUB-SG**
 
@@ -80,49 +80,64 @@ exit
 
 * 기존 키 페어 선택 - IMD-PUB-PUTTY 
 
-![](../.gitbook/assets/image%20%28428%29.png)
+![](../.gitbook/assets/image%20%28429%29.png)
 
 ### 2. 생성된 AutoScale Group 용 인스턴스 확인
+
+AutoScale Group 용으로 생성된 인스턴스를 확인합니다. 해당 인스턴스는 AutoScale Group을 위한 인스턴스 템플릿으로 생성할 것입니다.
 
 ![](../.gitbook/assets/image%20%28426%29.png)
 
 ### 3. EC2 시작 템플릿 만들기
 
+인스턴스 메뉴에서 생성한 인스턴스를 선택 - 작업 - 이미지 및 템플릿 - 인스턴스에서 템플릿 생성을 선택합니다.
+
 ![](../.gitbook/assets/image%20%28425%29.png)
+
+**아래에서 처럼 시작 템플릿 이름을 선언하고, 나머지 값은 그대로 사용합니다.**
 
 * **시작 템플릿 이름 - MyTemplate**
 * **나머지 값은 기본 값을 그대로 사용하고, 시작 템플릿을 선택합니다.**
 
+![](../.gitbook/assets/image%20%28428%29.png)
+
+* 시작 템플릿이 완성되었습니다. 해당 템플릿을 이용해서 Auto Scaling Group을 만들 것입니다.
+
 ![](../.gitbook/assets/image%20%28427%29.png)
 
-* 
+
+
 ## Task2 : Auto Scaling 시작 구성 \(Auto Scaling Launch Config\)
 
 ### 1.시작 구성 생성
 
-* **EC2 대시보드 - AutoScaling - Launch Configuration \(새로 만들기\) 를 선택합니다.**
+* **EC2 대시보드 - AutoScaling - Auto Scaling Groups \(새로 만들기\) 를 선택합니다.**
 
-![](../.gitbook/assets/image%20%28401%29.png)
+![](../.gitbook/assets/image%20%28435%29.png)
 
-### **2. 상세 구성** 
+### **2. 시작 템플릿 구**
 
-* 시작 구성 이름
-
-```text
-IMD-ASG-Config
-```
-
-* AMI
+* Auto Scaling 그룹 이름을 선언하고, 앞서 생성한 시작 템플릿을 선택합니다.
 
 ```text
-ami-0e17ad9abf7e5c818
+ASG-Template
 ```
 
-* 인스턴스 유형
+![](../.gitbook/assets/image%20%28434%29.png)
 
-```text
-t2.micro
-```
+### 3. Auto Scaling 설정 구성 
+
+![](../.gitbook/assets/image%20%28432%29.png)
+
+* 시작 템플릿 준수 선택
+* VPC - IMD-VPC 선택
+* 서브넷 - AutoScaling Group을 배포할 Subnet 선
+
+{% hint style="info" %}
+여러개 서브넷에 배포하는 방식은 ELB와 함께 구성합니다. 여기에서는 AutoScaling Group 동작 방식을 보기 위해 구성하는 것입니다.
+{% endhint %}
+
+
 
 ![](../.gitbook/assets/image%20%28405%29.png)
 
@@ -186,7 +201,7 @@ IMD-PUB-PUTTY
 
 ![](../.gitbook/assets/image%20%28422%29.png)
 
-![](../.gitbook/assets/image%20%28433%29.png)
+![](../.gitbook/assets/image%20%28437%29.png)
 
 ### 10. Auto Scaling 그룹 세부 정보 구성
 
