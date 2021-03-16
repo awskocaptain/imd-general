@@ -286,7 +286,7 @@ NAT Gateway는 Private Subnet의 외부 통신을 위한 Source NAT를 제공하
 * **VPC - 가상 프라이빗 클라우드 - NAT 게이트웨이 선택** 
 * **NAT 게이트웨이 생성** 
 
-![](../.gitbook/assets/image%20%28451%29.png)
+![](../.gitbook/assets/image%20%28458%29.png)
 
 NAT 게이트웨이 생성 메뉴에서 아래와 같은 값을 입력합니다.
 
@@ -304,11 +304,11 @@ IMD-PUBLIC-A
 
 * **탄력적 IP 할당 ID - 탄력적 IP 할당 선택**
 
-![](../.gitbook/assets/image%20%28426%29.png)
+![](../.gitbook/assets/image%20%28429%29.png)
 
 NAT 게이트웨이 생성이 완료되면 다음과 같은 화면을 확인 할 수 있습니다.
 
-![](../.gitbook/assets/image%20%28436%29.png)
+![](../.gitbook/assets/image%20%28440%29.png)
 
 ### 20. Private Routing Table 구성
 
@@ -316,11 +316,11 @@ Private Subnet을 위해서 라우팅 테이블에 NAT 게이트웨이 경로를
 
 * **VPC - 가상 프라이빗 클라우드 - 라우팅 테이블 - PRIVATE-RT 선택 - 라우팅 탭 - 라우팅 편집 선택** 
 
-![](../.gitbook/assets/image%20%28432%29.png)
+![](../.gitbook/assets/image%20%28436%29.png)
 
 ![](../.gitbook/assets/image%20%28133%29.png)
 
-![](../.gitbook/assets/image%20%28437%29.png)
+![](../.gitbook/assets/image%20%28441%29.png)
 
 {% hint style="info" %}
 **Task4. Private Network 연결을 완료한 이후에는 NAT Gateway를 통해 Private EC2에서 외부망으로 연결이 가능하지 확인 할 수 있습니다.**
@@ -552,32 +552,43 @@ curl http://169.254.169.254/latest/meta-data/local-ipv4
 
 * **이름태그를 입력**하고, **VPC를 선택**합니다.
 
-![](../.gitbook/assets/image%20%2879%29.png)
+![](../.gitbook/assets/image%20%28424%29.png)
 
-* **NACL 인바운드 규칙**을 편집 합니다. **소스 주소**를 입력하고 **모든 트래픽 유형**을 선택합니다. 또한 **허용/거부에 "ALLOW**"를 선택합니다. 이때 소스 주소는 **Public Subnet-A \(가용영역 :ap-northeast-2a\) 주소를 입력**합니다.
+* **NACL 인바운드 규칙**을 편집 합니다. 
+  * 규칙번호 : 10
+  * 유형 : 모든트래픽
+  * 프로토콜 : 모두
+  * 포트범위: 모두
+  * 소스 : 10.1.1.0/24
+  * 허용/거부 : Allow
 
-![](../.gitbook/assets/image%20%28307%29.png)
+![](../.gitbook/assets/image%20%28464%29.png)
 
 * NACL은 상태비저장 방식으로 트래픽 반환시에도 정책이 필요합니다. 트래픽 반환은 모두 허용하기 위해 **대상을 모두로 정의**하고, **유형도 모두 트래픽을 선택**합니다.
 
-![](../.gitbook/assets/image%20%2858%29.png)
+![](../.gitbook/assets/image%20%28432%29.png)
 
 * **서브넷 연결 편집은 Private-A,B** 모두 적용합니다.
 
-![](../.gitbook/assets/image%20%2832%29.png)
+![](../.gitbook/assets/image%20%28431%29.png)
 
-* 3개의 콘솔 창을 열어서 트래픽이 어떻게 제어되는지 확인합니다. Public-01, Public-02 인스턴스에서 Private-01 인스턴스로 Ping을 적용해 봅니다. 또한 Private-01에 접속하여 외부로 Ping이 가능한지 확인합니다.
-* 아래와 같이 Public-01\(10.1.1.0/24\)는 Private-01로 Ping이 가능하고, Public-02\(10.1.2.0/24\)는 Private-01,02로 어떠한 연결도 불가능합니다. 또한 Private-01,02는 NACL로 인해서 트래픽을 받지 못합니다.
+* 2개의 콘솔 창을 열어서 트래픽이 어떻게 제어되는지 확인합니다. Public-01, Public-02 인스턴스에서 Private-01 인스턴스로 Ping을 적용해 봅니다. 
 
-![](../.gitbook/assets/image%20%28189%29.png)
-
-![](../.gitbook/assets/image%20%2881%29.png)
-
-![](../.gitbook/assets/image%20%28117%29.png)
+![](../.gitbook/assets/image%20%28452%29.png)
 
 {% hint style="info" %}
 **Network ACL은 사용자가 정의하지 않아도 기본 NACL이 인바운드,아웃바운드 모두 허용입니다. 랩에서는 별도의 NACL을 적용해서 서브넷에 적용한 것입니다.**
 {% endhint %}
+
+적용한 NACL을 삭제합니다.
+
+* 네트워크 ACL 선택 - 서브넷 연결 선택 - 서브넷 연결 편집 선택 - 해제
+
+![](../.gitbook/assets/image%20%28450%29.png)
+
+* 네트워크 ACL 선택 - 작업 선택 - 네트워크 ACL 삭제
+
+![](../.gitbook/assets/image%20%28427%29.png)
 
 ### **25.보안 그룹 - Security Group 구성**
 
