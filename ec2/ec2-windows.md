@@ -157,7 +157,7 @@ Amazon EC2는 AWS Management Console을 사용해 다양한 운영 체제로 인
 
 * **Microsoft Windows Server 2012R2 Base AMI\(Amazon Machine Image\)** 를 선택합니다. 
 
-![](../.gitbook/assets/image%20%28405%29.png)
+![](../.gitbook/assets/image%20%28406%29.png)
 
 ### **12. 인스턴스 유형을 선택.**
 

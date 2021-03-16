@@ -29,7 +29,7 @@ AWS Auto Scaling은 애플리케이션을 모니터링하고 용량을 자동으
 
 * **EC2 대시보드 - Auto Scaling - 시작 구성**을 선택하고, **시작 구성 생성**을 선택합니다.
 
-![](../.gitbook/assets/image%20%2863%29.png)
+![](../.gitbook/assets/image%20%28405%29.png)
 
 ### 2. AMI 선택
 
@@ -59,6 +59,8 @@ sudo systemctl enable httpd
 cd /var/www/html/
 sudo git clone https://github.com/whchoi98/ec2meta-webpage.git
 sudo systemctl restart httpd
+exit
+
 ```
 
 * Public IP 할당 유무를 선택합니다. Public Subnet에 할당될 EC2 인스턴스일 경우에는 **"모든 인스턴스에 퍼블릭 IP 주소 할당"**을 선택합니다.
@@ -121,7 +123,7 @@ Auto Scaling  시작 구성 생성을 선택하고, 완료합니다.
 * Auto Scaling 그룹 내의 EC2가 증가하거나 축소되는 조건을 설정합니다.
 * 최소 2개에서 최대 8개까지 증가 또는 감소 조건으로 구성합니다.
 * EC2가 증가하는 조건 - EC2 의 1분간 평균 CPU 70% 이상이면 , 2개씩 EC2 증가
-* EC2가 감소하는 조건 - EC2 의 1분간 평균 CPU 20% 이하이면 , 1개씩 EC2 감
+* EC2가 감소하는 조건 - EC2 의 1분간 평균 CPU 20% 이하이면 , 1개씩 EC2 감소 
 
 ![](../.gitbook/assets/image%20%28294%29.png)
 
