@@ -284,7 +284,7 @@ NAT Gateway는 Private Subnet의 외부 통신을 위한 Source NAT를 제공하
 * **VPC - 가상 프라이빗 클라우드 - NAT 게이트웨이 선택** 
 * **NAT 게이트웨이 생성** 
 
-![](../.gitbook/assets/image%20%28445%29.png)
+![](../.gitbook/assets/image%20%28446%29.png)
 
 NAT 게이트웨이 생성 메뉴에서 아래와 같은 값을 입력합니다.
 
