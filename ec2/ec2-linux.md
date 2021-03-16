@@ -321,6 +321,8 @@ exit
 
 ![](../.gitbook/assets/image%20%28352%29.png)
 
+⚙ **Windows 사용자를 위한 EC2 연결 환경 구성** 
+
 * **\(Window 사용자\)** EC2 접속 환경을 위해 로컬 PC에 Putty를 다운로드 받습니다.
 
 ```text
@@ -347,6 +349,8 @@ Allow agent forwarding은 Private 인스턴스 접속시에 사용됩니다.
 
 ![](../.gitbook/assets/image%20%28285%29.png)
 
+⚙ **Mac OS 사용자를 위한 EC2 연결 환경 구성** 
+
 * **\(Mac OS 사용자\)** 다운로드 받은 키 페어 pem 파일에 대한 권한 수정을 합니다.
 
 ```text
@@ -358,6 +362,8 @@ chmod 400 ~/Downloads/IMD-PUB-OPENSSH.pem
 ```text
 ssh -i ~/Downloads/IMD-PUB-OPENSSH.pem ec2-user@x.x.x.x
 ```
+
+⚙ **AWS Web 관리 콘솔 기반 EC2 접속 방법** 
 
 * 웹기반 클라이언트로 접속이 가능합니다. 접속하려는 **EC2 인스턴스를 선택**하고, EC2 대시보드 상단의 메뉴에서 **"연결"**을 선택합니다. 
 * **"EC2 인스턴스 연결"**을 선택하고, 사용자 이름은 **"ec2-user"**를 입력합니다. **"연결"**을 선택합니다.
