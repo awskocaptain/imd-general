@@ -248,6 +248,7 @@ sudo systemctl enable httpd
 cd /var/www/html/
 sudo git clone https://github.com/whchoi98/ec2meta-webpage.git
 sudo systemctl restart httpd
+exit
 
 ```
 
