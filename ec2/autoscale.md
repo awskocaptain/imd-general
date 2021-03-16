@@ -23,6 +23,69 @@ AWS Auto Scaling은 애플리케이션을 모니터링하고 용량을 자동으
 * **Auto Scaling Group 생성**
 * **Auto Scaling Group 을 통한 EC2 증가와 감소 이**
 
+## Task1. AutoScaling 을 위한 EC2 생성
+
+### 1. AutoScaling Group을 위한 EC2 인스턴스 생성
+
+앞서 생성한 [EC2-LINUX](ec2-linux.md) 에서 처럼 EC2를 생성합니다.
+
+* **AMI - Amazon Linux 2 AMI \(HVM\), SSD Volume Type - ami-0e17ad9abf7e5c818 \(64비트 x86\)**
+
+![](../.gitbook/assets/image%20%28427%29.png)
+
+* **인스턴스 유형 선택 - t2.micro**
+
+![](../.gitbook/assets/image%20%28424%29.png)
+
+* **인스턴스 세부 정보 구성** 
+  * 개수 - 1
+  * 네트워크 - IMD-VPC
+  * 서브넷 - IMD-PUBLIC-A
+  * 퍼블릭 IP 자동 활당 - 활성화
+  * 사용자 데이터
+
+```text
+#!/bin/sh
+sudo yum -y update
+sudo yum -y install yum-utils 
+sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+sudo yum -y install iotop iperf3 iptraf tcpdump git bash-completion 
+sudo yum -y install httpd php mysql php-mysql 
+sudo yum -y install python-pip
+sudo yum -y install nethogs iftop lnav nmon tmux wireshark vsftpd ftp stress
+sudo systemctl start httpd
+sudo systemctl enable httpd
+cd /var/www/html/
+sudo git clone https://github.com/whchoi98/ec2meta-webpage.git
+sudo systemctl restart httpd
+exit
+
+```
+
+![](../.gitbook/assets/image%20%28428%29.png)
+
+![](../.gitbook/assets/image%20%28430%29.png)
+
+* **스토리지 추가 - 볼륨유형 gp3**
+
+![](../.gitbook/assets/image%20%28423%29.png)
+
+* **태그 추가 - 키 : Name , 값 : ASG-EC2**
+
+![](../.gitbook/assets/image%20%28429%29.png)
+
+* **보안 그룹 구성 - 기존 보안 그룹 선택 - IMD-PUB-SG**
+
+![](../.gitbook/assets/image%20%28421%29.png)
+
+* 기존 키 페어 선택 - IMD-PUB-PUTTY 
+
+![](../.gitbook/assets/image%20%28426%29.png)
+
+### 2. 생성된 AutoScale Group 용 인스턴스 확인
+
+![](../.gitbook/assets/image%20%28425%29.png)
+
 ## Task1 : Auto Scaling 시작 구성 \(Auto Scaling Launch Config\)
 
 ### 1.시작 구성 생성
@@ -52,6 +115,24 @@ t2.micro
 ```
 
 ![](../.gitbook/assets/image%20%28405%29.png)
+
+```text
+#!/bin/sh
+sudo yum -y update
+sudo yum -y install yum-utils 
+sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+sudo yum -y install iotop iperf3 iptraf tcpdump git bash-completion 
+sudo yum -y install httpd php mysql php-mysql 
+sudo yum -y install python-pip
+sudo yum -y install nethogs iftop lnav nmon tmux wireshark vsftpd ftp stress
+sudo systemctl start httpd
+sudo systemctl enable httpd
+cd /var/www/html/
+sudo git clone https://github.com/whchoi98/ec2meta-webpage.git
+sudo systemctl restart httpd
+exit
+
+```
 
 * 보안그룹 \(기존 생성한 보안 그룹 선택\)
 
@@ -93,9 +174,9 @@ IMD-PUB-PUTTY
 
 ![](../.gitbook/assets/image%20%28380%29.png)
 
-![](../.gitbook/assets/image%20%28421%29.png)
-
 ![](../.gitbook/assets/image%20%28422%29.png)
+
+![](../.gitbook/assets/image%20%28431%29.png)
 
 ### 10. Auto Scaling 그룹 세부 정보 구성
 
