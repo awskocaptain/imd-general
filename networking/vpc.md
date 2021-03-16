@@ -202,6 +202,8 @@ sudo systemctl enable httpd
 cd /var/www/html/
 sudo git clone https://github.com/whchoi98/ec2meta-webpage.git
 sudo systemctl restart httpd
+exit
+
 ```
 
 * 위의 "사용자 데이터 예"를 복사해서 값을 입력합니다.
@@ -284,7 +286,7 @@ NAT Gateway는 Private Subnet의 외부 통신을 위한 Source NAT를 제공하
 * **VPC - 가상 프라이빗 클라우드 - NAT 게이트웨이 선택** 
 * **NAT 게이트웨이 생성** 
 
-![](../.gitbook/assets/image%20%28449%29.png)
+![](../.gitbook/assets/image%20%28451%29.png)
 
 NAT 게이트웨이 생성 메뉴에서 아래와 같은 값을 입력합니다.
 
@@ -302,11 +304,11 @@ IMD-PUBLIC-A
 
 * **탄력적 IP 할당 ID - 탄력적 IP 할당 선택**
 
-![](../.gitbook/assets/image%20%28425%29.png)
+![](../.gitbook/assets/image%20%28426%29.png)
 
 NAT 게이트웨이 생성이 완료되면 다음과 같은 화면을 확인 할 수 있습니다.
 
-![](../.gitbook/assets/image%20%28435%29.png)
+![](../.gitbook/assets/image%20%28436%29.png)
 
 ### 20. Private Routing Table 구성
 
@@ -314,11 +316,11 @@ Private Subnet을 위해서 라우팅 테이블에 NAT 게이트웨이 경로를
 
 * **VPC - 가상 프라이빗 클라우드 - 라우팅 테이블 - PRIVATE-RT 선택 - 라우팅 탭 - 라우팅 편집 선택** 
 
-![](../.gitbook/assets/image%20%28431%29.png)
+![](../.gitbook/assets/image%20%28432%29.png)
 
 ![](../.gitbook/assets/image%20%28133%29.png)
 
-![](../.gitbook/assets/image%20%28436%29.png)
+![](../.gitbook/assets/image%20%28437%29.png)
 
 {% hint style="info" %}
 **Task4. Private Network 연결을 완료한 이후에는 NAT Gateway를 통해 Private EC2에서 외부망으로 연결이 가능하지 확인 할 수 있습니다.**
@@ -374,10 +376,8 @@ ssh -i "key_path/IMD-PUB-OPENSSH.pem" ec2-user@PUBLIC_DNS -A
 ![](../.gitbook/assets/image%20%28160%29.png)
 
 {% hint style="info" %}
-Linux/Mac OS에서 처럼 로컬에 Key를 임시저장해서, Putty에서 Private key파일을 선택하지 않아도 됩니다. [Pageat](https://the.earth.li/~sgtatham/putty/latest/w64/pageant.exe) 프로그램에서 Private Key를 업로드 할 수 있습니다. 
+Linux/Mac OS에서 처럼 로컬에 Key를 임시저장해서, Putty에서 Private key파일을 선택하지 않아도 됩니다. [Pageant key](https://the.earth.li/~sgtatham/putty/latest/w64/pageant.exe) 프로그램에서 Private Key를 업로드 할 수 있습니다. 
 {% endhint %}
-
-![](../.gitbook/assets/image%20%2883%29.png)
 
 * \(option- Mac OS /Linux 사용자를 위한 Bastion Tunneling\)  SSH Tunneling을 통해 접속 할 수 있습니다. Bastion Host로 22번 포트를 연결 한 이후, 별도의 포트 번호로 터널링 하는 방식입니다. 먼저 아래와 같이 터미널에서 백그라운드 또는 포그라운드로 실행하고, 터미널을 닫지 않습니다.
 
@@ -395,6 +395,12 @@ ssh -i "target-key.pem" -p 22001 ec2-user@localhost
 
 ![](../.gitbook/assets/image%20%28184%29.png)
 
+**Pagent Key list에  Private pem key를 미리 업로드 해 둡니다.**
+
+![](../.gitbook/assets/image%20%28423%29.png)
+
+Bastion Hostdㅔ 
+
 ![](../.gitbook/assets/image%20%28135%29.png)
 
 * 터널링 구성이 완성되었으므로, 이제 다시 Putty 창을 한개 더 열고, 아래와 같이 22번 포트로 접속하면, 터널링으로 내부 접속이 가능해 집니다.
@@ -402,6 +408,8 @@ ssh -i "target-key.pem" -p 22001 ec2-user@localhost
 ![](../.gitbook/assets/image%20%28165%29.png)
 
 ![](../.gitbook/assets/image%20%28253%29.png)
+
+![](../.gitbook/assets/image%20%28449%29.png)
 
 ## Task5. VPC Endpoint
 
