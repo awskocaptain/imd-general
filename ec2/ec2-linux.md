@@ -339,6 +339,10 @@ https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-0.73-installer.msi
 
 ![](../.gitbook/assets/image%20%2896%29.png)
 
+{% hint style="info" %}
+Allow agent forwarding은 Private 인스턴스 접속시에 사용됩니다.
+{% endhint %}
+
 * **\(Window 사용자\)** Open 을 선택하면 정상적으로 SSH 접속이 이뤄집니다.
 
 ![](../.gitbook/assets/image%20%28285%29.png)
