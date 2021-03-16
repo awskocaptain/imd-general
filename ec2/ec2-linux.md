@@ -82,7 +82,7 @@ IMD-VPC
 
 ![](../.gitbook/assets/image%20%28355%29.png)
 
-![](../.gitbook/assets/image%20%28380%29.png)
+![](../.gitbook/assets/image%20%28381%29.png)
 
 ### **5.Public ,Private 서브넷 생성.**
 
@@ -410,6 +410,12 @@ curl http://169.254.169.254/latest/meta-data/public-ipv4
 * **"Stopped"**된 인스턴스를 선택하고 EC2 대시보드 상단 메뉴 "작업" - "인스턴스 설정" - "인스턴스 유형 변경"을 선택합니다. **t2.small 인스턴스 유형**으로 변경하고 **"적용"**을 선택합니다.
 
 ![](../.gitbook/assets/image%20%28231%29.png)
+
+인스턴스 상태 - 인스턴스 시작 을 선택해 봅니다.
+
+![](../.gitbook/assets/image%20%28380%29.png)
+
+해당 인스턴스의 Web을 접속해서 정보를 확인해 봅니다. 인스턴스를 중지하고 다시 시작하게 되면 Public IP가 변경됩니다. 해당 인스턴스에서 확인 후에 접속합니다.
 
 ### 22. EC2 Volume 크기 변경
 
