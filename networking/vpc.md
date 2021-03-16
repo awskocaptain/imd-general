@@ -287,7 +287,7 @@ sudo systemctl restart httpd
 
 
 
-### 20. Priavet Routing Table 구성
+### 20. Private Routing Table 구성
 
 ![](../.gitbook/assets/image%20%28270%29.png)
 
