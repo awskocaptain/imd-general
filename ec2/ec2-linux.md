@@ -82,7 +82,7 @@ IMD-VPC
 
 ![](../.gitbook/assets/image%20%28355%29.png)
 
-![](../.gitbook/assets/image%20%28385%29.png)
+![](../.gitbook/assets/image%20%28387%29.png)
 
 ### **5.Public ,Private 서브넷 생성.**
 
@@ -423,7 +423,7 @@ curl http://169.254.169.254/latest/meta-data/public-ipv4
 * 실행 중인 인스턴스를 선택하고 EC2 대시보드 좌측 메뉴에서 **"ELASTIC BLOCK STORE" - "볼륨"**을 선택합니다.
 * EC2 대시보드 상단 메뉴에서 "작업" - "볼륨 수정"을 선택합니다.
 
-![](../.gitbook/assets/image%20%28386%29.png)
+![](../.gitbook/assets/image%20%28388%29.png)
 
 ![](../.gitbook/assets/image%20%284%29.png)
 
@@ -546,21 +546,17 @@ yum list installed | grep "git"
 
 * 이제 "PUBLIC-02" 인스턴스에서 기존 볼륨을 제거하고, 스냅샷을 통해서 생성한 새로운 볼륨을 "PUBLIC-02" 인스턴스에 연결합니다. 먼저 "PUBLIC-02" 인스턴스를 중지합니다.
 
+**"PUBLIC-02" 인스턴스 선택 - 인스턴스 상태 - 인스턴스 중지 선택** 
+
 ![](../.gitbook/assets/image%20%28314%29.png)
 
 * EC2 대쉬보드에서 "ELASTIC BLOCK STORE" - "볼륨"을 선택합니다. "PUBLIC-02" 볼륨을 선택하고 연결정보에서 루트 디바이스의 이름을 확인해 둡니다. 상단 메뉴 "작업"-"볼륨분리"를 선택합니다. 
 
-![](../.gitbook/assets/image%20%28283%29.png)
-
-![](../.gitbook/assets/image%20%2827%29.png)
-
-![](../.gitbook/assets/image%20%28140%29.png)
+![](../.gitbook/assets/image%20%28385%29.png)
 
 * EC2 대쉬보드에서 **"ELASTIC BLOCK STORE" - "볼륨"**을 선택하고 새로 만든 볼륨을 선택합니다. 상단 메뉴 **"작업"-"볼륨연결"**를 선택합니다. Stop되어 있는 **"PUBLIC-02" 인스턴스 ID**를 선택합니다. 디바이스는 **기존에 루트 디바이스 이름**을 입력합니다. **\(dev/xvda\)**
 
-![](../.gitbook/assets/image%20%2869%29.png)
-
-![](../.gitbook/assets/image%20%2820%29.png)
+![](../.gitbook/assets/image%20%28386%29.png)
 
 ![](../.gitbook/assets/image%20%28115%29.png)
 
