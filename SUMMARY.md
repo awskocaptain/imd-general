@@ -11,6 +11,7 @@
   * [ELB](networking/elb.md)
 * [Storage](storage/README.md)
   * [S3](storage/s3.md)
+  * [EFS](storage/efs.md)
 * [DataBase](db/README.md)
   * [RDS](db/rds.md)
 * [Cheat Sheet](cheatsheet/README.md)
