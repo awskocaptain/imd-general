@@ -85,11 +85,11 @@ exit
 
 * 로드밸런서 구성에서 이름을 선택하고, 체계는 인터넷 연결 \(Public Subnet\)을 선택합니다. Private 의 경우에는 내부를 선택하면 됩니다.
 
-![](../.gitbook/assets/image%20%28482%29.png)
+![](../.gitbook/assets/image%20%28484%29.png)
 
 * 가용영역 및 서브넷을 선택합니다. 또한 IPv4 주소는 "탄력적 IP 선택"을 선택하고, 미리 할당해 놓은 EIP를 선택합니다.
 
-![](../.gitbook/assets/image%20%28472%29.png)
+![](../.gitbook/assets/image%20%28473%29.png)
 
 {% hint style="info" %}
 가용 영역과 서브넷을 신중하게 선택하십시오. 로드 밸런서를 생성한 후에는 활성화된 서브넷을 비활성화할 수 없지만, 서브넷을 추가로 활성화할 수 있습니다.
@@ -97,7 +97,7 @@ exit
 
 * 리스너 및 라우팅에서 대상 그룹을 생성을 선택하고, 대상 그룹을 생성합니다. 생성이 완료되면 다시 생성된 대상 그룹을 찾아서 선택합니다.
 
-![](../.gitbook/assets/image%20%28478%29.png)
+![](../.gitbook/assets/image%20%28480%29.png)
 
 * 대상 그룹 생성을 선택하면 아래와 같은 화면이 보입니다. 대상 유형 선택에서 인스턴스를 선택하고, 대상 그룹 이름을 선언합니다. 다음 단계를 선택합니다.
 
@@ -105,15 +105,15 @@ exit
 
 * 대상 그룹에 포함될 인스턴스를 등록하는 화면이 보이고, 여기에서 앞서 생성한 인스턴스 4개를 선택하고, "아래에 보류 중인 것으로 포함"을 선택하면 대상 그룹에 등록됩니다. 
 
-![](../.gitbook/assets/image%20%28479%29.png)
+![](../.gitbook/assets/image%20%28481%29.png)
 
 * 대상 그룹에 인스턴스들이 등록 된 것을 확인하고, 대상 그룹 생성을 선택합니다.
 
-![](../.gitbook/assets/image%20%28466%29.png)
+![](../.gitbook/assets/image%20%28467%29.png)
 
 * 대상 그룹이 정상적으로 등록된 것을 확인합니다.
 
-![](../.gitbook/assets/image%20%28449%29.png)
+![](../.gitbook/assets/image%20%28450%29.png)
 
 * 이제 다시 로드  밸런서 생성 단계로 전환해서 "생성한 대상그룹을 선택" 합니다. 태그에 키 "Name", 값 "IMD-NLB"를 입력하고, "로드밸런서 생성" 을 선택합니다.
 
@@ -124,7 +124,7 @@ exit
 * NLB가 대상 그룹에 대한 Healthy 체크를 시작합니다. 대상 그룹 상태를 확인합니다.
 * 교차영역 로드밸런싱을 활성화 합니다.
 
-![](../.gitbook/assets/image%20%28463%29.png)
+![](../.gitbook/assets/image%20%28464%29.png)
 
 * 앞서 생성한 EC2 인스턴스\(NLB 대상 그룹 인스턴스\)에 SSH로 접속해서 아래 Script를 복사합니다.
 
@@ -142,7 +142,7 @@ sudo echo "<html><h2>My placement/availability-zone is: $(curl -s http://169.25
 
 **EC2 대시보드 - 로드 밸런싱 - 대상 그룹** 
 
-![](../.gitbook/assets/image%20%28441%29.png)
+![](../.gitbook/assets/image%20%28442%29.png)
 
 * NLB는 서로 다른 리전간의 LB를 속성 편집에서 구성해야 합니다. 비용은 ALB와 다르게 부과 됩니다.
 
@@ -150,9 +150,9 @@ sudo echo "<html><h2>My placement/availability-zone is: $(curl -s http://169.25
 
 * NLB DNS Name 또는 EIP에 접속하여 결과를 확인합니다.
 
-![](../.gitbook/assets/image%20%28458%29.png)
+![](../.gitbook/assets/image%20%28459%29.png)
 
-![](../.gitbook/assets/image%20%28451%29.png)
+![](../.gitbook/assets/image%20%28452%29.png)
 
 {% hint style="info" %}
 로드 밸런서는 프로토콜, 원본 IP 주소, 원본 포트, 대상 IP 주소, 대상 포트, TCP 시퀀스 번호에 따라 흐름 해시 알고리즘을 사용하여 대상을 선택합니다. 클라이언트로부터의 TCP 연결은 소스 포트와 시퀀스 번호가 서로 다르므로 다른 대상에 라우팅될 수 있습니다. 각 TCP 연결은 연결 수명 동안 하나의 대상에 라우팅됩니다.
@@ -205,11 +205,11 @@ sudo echo "<html><h2>My placement/availability-zone is: $(curl -s http://169.25
 
 * 생성된 ALB 의 상태를 확인하고, DNS A 레코드를 확인합니다.
 
-![](../.gitbook/assets/image%20%28445%29.png)
+![](../.gitbook/assets/image%20%28446%29.png)
 
 * 대상서버가 **"Healthy" 상태**인지를 확인합니다.
 
-![](../.gitbook/assets/image%20%28473%29.png)
+![](../.gitbook/assets/image%20%28474%29.png)
 
 ### 11. 웹서비스 확인
 
