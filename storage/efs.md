@@ -67,7 +67,7 @@ Amazon EFS에서는 기존 보안 인프라를 사용하여 파일에 안전하�
   * 유형 - NFS
   * 소스 - 위치무
 
-![](../.gitbook/assets/image%20%28465%29.png)
+![](../.gitbook/assets/image%20%28468%29.png)
 
 ### 2. EFS 구성
 
@@ -78,7 +78,7 @@ Amazon EFS에서는 기존 보안 인프라를 사용하여 파일에 안전하�
   * 가용성 및 내구성 : 리전
   * 사용자 지정 선
 
-![](../.gitbook/assets/image%20%28459%29.png)
+![](../.gitbook/assets/image%20%28462%29.png)
 
 ### 3. EFS 파일시스템 설정
 
@@ -91,7 +91,7 @@ Amazon EFS에서는 기존 보안 인프라를 사용하여 파일에 안전하�
 * 암호화 - 유휴 시 데이터 암호화 활성화 선택
 * 태그 설
 
-![](../.gitbook/assets/image%20%28446%29.png)
+![](../.gitbook/assets/image%20%28449%29.png)
 
 ### 4. EFS 네트워크 액세스
 
@@ -103,19 +103,19 @@ Amazon EFS에서는 기존 보안 인프라를 사용하여 파일에 안전하�
   * IP 주소 - 10.1.11.201, 10.1.12.201 
   * 보안그룹 - 이전 단계에서 생성한 EFS-SG 선
 
-![](../.gitbook/assets/image%20%28484%29.png)
+![](../.gitbook/assets/image%20%28487%29.png)
 
 ### 5.파일 시스템 정책 \(선택사항\)
 
 * 정책 옵션을 다양하게 추가할 수 있습니다.
 
-![](../.gitbook/assets/image%20%28490%29.png)
+![](../.gitbook/assets/image%20%28493%29.png)
 
 ### 6. 생성된 EFS 확인
 
 * 파일 시스템 상태가 **사용가능**으로 변경되었는지 확인합니다.
 
-![](../.gitbook/assets/image%20%28457%29.png)
+![](../.gitbook/assets/image%20%28460%29.png)
 
 ### 7. EC2 보안 그룹 변경
 
@@ -123,7 +123,7 @@ Amazon EFS에서는 기존 보안 인프라를 사용하여 파일에 안전하�
 
 ![](../.gitbook/assets/image%20%28426%29.png)
 
-![](../.gitbook/assets/image%20%28496%29.png)
+![](../.gitbook/assets/image%20%28499%29.png)
 
 ## Task2. EFS Mount
 
@@ -167,15 +167,47 @@ fs-36892f56.efs.ap-northeast-2.amazonaws.com:/  8.0E     0  8.0E   0% /home/ec2-
 
 ### 9.  S3 VPC Endpoint 구성
 
-![](../.gitbook/assets/image%20%28471%29.png)
+![](../.gitbook/assets/image%20%28474%29.png)
 
-![](../.gitbook/assets/image%20%28443%29.png)
+![](../.gitbook/assets/image%20%28446%29.png)
 
 ### 10. EC2에 S3 접근 권한 설정
 
+AWS 관리 콘솔 - IAM
+
+IAM - 역할 - 역할 만들
+
+![](../.gitbook/assets/image%20%28433%29.png)
+
+![](../.gitbook/assets/image%20%28515%29.png)
+
+![](../.gitbook/assets/image%20%28427%29.png)
+
+* Private-01,02 EC2에 IAM 정책을 부여합니다.
+* EC2 대시보드 - 인스턴스 - Private-01,02 선택 - 작업 - 보안 - IAM역할 수
+
+![](../.gitbook/assets/image%20%28513%29.png)
+
+![](../.gitbook/assets/image%20%28504%29.png)
+
 ### 11. EC2에서 S3 파일을 EFS로 Copy
 
+```text
+aws s3 ls s3://"s3-bucket-name"
+sudo aws s3 cp s3://"S3-bucket-name"/image.png /home/ec2-user/aws-efs
+ls /home/ec2-user/aws-efs/
 
+```
 
+아래와 같이 S3에서 EFS로 정상적으로 Copy 되었는지 확인합니다.
 
+```text
+[ec2-user@ip-10-1-11-101 ~]$ ls /home/ec2-user/aws-efs/
+image.png
+
+```
+
+{% hint style="success" %}
+EFS 랩을 정상적으로 완료하셨습니다. !!!
+{% endhint %}
 
