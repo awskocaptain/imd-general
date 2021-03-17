@@ -286,7 +286,7 @@ NAT Gateway는 Private Subnet의 외부 통신을 위한 Source NAT를 제공하
 * **VPC - 가상 프라이빗 클라우드 - NAT 게이트웨이 선택** 
 * **NAT 게이트웨이 생성** 
 
-![](../.gitbook/assets/image%20%28496%29.png)
+![](../.gitbook/assets/image%20%28498%29.png)
 
 NAT 게이트웨이 생성 메뉴에서 아래와 같은 값을 입력합니다.
 
@@ -308,7 +308,7 @@ IMD-PUBLIC-A
 
 NAT 게이트웨이 생성이 완료되면 다음과 같은 화면을 확인 할 수 있습니다.
 
-![](../.gitbook/assets/image%20%28462%29.png)
+![](../.gitbook/assets/image%20%28463%29.png)
 
 ### 20. Private Routing Table 구성
 
@@ -316,11 +316,11 @@ Private Subnet을 위해서 라우팅 테이블에 NAT 게이트웨이 경로를
 
 * **VPC - 가상 프라이빗 클라우드 - 라우팅 테이블 - PRIVATE-RT 선택 - 라우팅 탭 - 라우팅 편집 선택** 
 
-![](../.gitbook/assets/image%20%28452%29.png)
+![](../.gitbook/assets/image%20%28453%29.png)
 
 ![](../.gitbook/assets/image%20%28133%29.png)
 
-![](../.gitbook/assets/image%20%28465%29.png)
+![](../.gitbook/assets/image%20%28466%29.png)
 
 {% hint style="info" %}
 **Task4. Private Network 연결을 완료한 이후에는 NAT Gateway를 통해 Private EC2에서 외부망으로 연결이 가능하지 확인 할 수 있습니다.**
@@ -562,7 +562,7 @@ curl http://169.254.169.254/latest/meta-data/local-ipv4
   * 소스 : 10.1.1.0/24
   * 허용/거부 : Allow
 
-![](../.gitbook/assets/image%20%28507%29.png)
+![](../.gitbook/assets/image%20%28509%29.png)
 
 * NACL은 상태비저장 방식으로 트래픽 반환시에도 정책이 필요합니다. 트래픽 반환은 모두 허용하기 위해 **대상을 모두로 정의**하고, **유형도 모두 트래픽을 선택**합니다.
 
@@ -574,7 +574,7 @@ curl http://169.254.169.254/latest/meta-data/local-ipv4
 
 * 2개의 콘솔 창을 열어서 트래픽이 어떻게 제어되는지 확인합니다. Public-01, Public-02 인스턴스에서 Private-01 인스턴스로 Ping을 적용해 봅니다. 
 
-![](../.gitbook/assets/image%20%28484%29.png)
+![](../.gitbook/assets/image%20%28486%29.png)
 
 {% hint style="info" %}
 **Network ACL은 사용자가 정의하지 않아도 기본 NACL이 인바운드,아웃바운드 모두 허용입니다. 랩에서는 별도의 NACL을 적용해서 서브넷에 적용한 것입니다.**
@@ -584,7 +584,7 @@ curl http://169.254.169.254/latest/meta-data/local-ipv4
 
 * 네트워크 ACL 선택 - 서브넷 연결 선택 - 서브넷 연결 편집 선택 - 해제
 
-![](../.gitbook/assets/image%20%28480%29.png)
+![](../.gitbook/assets/image%20%28482%29.png)
 
 * 네트워크 ACL 선택 - 작업 선택 - 네트워크 ACL 삭제
 
