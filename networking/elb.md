@@ -85,11 +85,11 @@ exit
 
 * 로드밸런서 구성에서 이름을 선택하고, 체계는 인터넷 연결 \(Public Subnet\)을 선택합니다. Private 의 경우에는 내부를 선택하면 됩니다.
 
-![](../.gitbook/assets/image%20%28476%29.png)
+![](../.gitbook/assets/image%20%28479%29.png)
 
 * 가용영역 및 서브넷을 선택합니다. 또한 IPv4 주소는 "탄력적 IP 선택"을 선택하고, 미리 할당해 놓은 EIP를 선택합니다.
 
-![](../.gitbook/assets/image%20%28467%29.png)
+![](../.gitbook/assets/image%20%28469%29.png)
 
 {% hint style="info" %}
 가용 영역과 서브넷을 신중하게 선택하십시오. 로드 밸런서를 생성한 후에는 활성화된 서브넷을 비활성화할 수 없지만, 서브넷을 추가로 활성화할 수 있습니다.
@@ -97,7 +97,7 @@ exit
 
 * 리스너 및 라우팅에서 대상 그룹을 생성을 선택하고, 대상 그룹을 생성합니다. 생성이 완료되면 다시 생성된 대상 그룹을 찾아서 선택합니다.
 
-![](../.gitbook/assets/image%20%28472%29.png)
+![](../.gitbook/assets/image%20%28475%29.png)
 
 * 대상 그룹 생성을 선택하면 아래와 같은 화면이 보입니다. 대상 유형 선택에서 인스턴스를 선택하고, 대상 그룹 이름을 선언합니다. 다음 단계를 선택합니다.
 
@@ -105,11 +105,11 @@ exit
 
 * 대상 그룹에 포함될 인스턴스를 등록하는 화면이 보이고, 여기에서 앞서 생성한 인스턴스 4개를 선택하고, "아래에 보류 중인 것으로 포함"을 선택하면 대상 그룹에 등록됩니다. 
 
-![](../.gitbook/assets/image%20%28473%29.png)
+![](../.gitbook/assets/image%20%28476%29.png)
 
 * 대상 그룹에 인스턴스들이 등록 된 것을 확인하고, 대상 그룹 생성을 선택합니다.
 
-![](../.gitbook/assets/image%20%28461%29.png)
+![](../.gitbook/assets/image%20%28463%29.png)
 
 * 대상 그룹이 정상적으로 등록된 것을 확인합니다.
 
@@ -124,7 +124,7 @@ exit
 * NLB가 대상 그룹에 대한 Healthy 체크를 시작합니다. 대상 그룹 상태를 확인합니다.
 * 교차영역 로드밸런싱을 활성화 합니다.
 
-![](../.gitbook/assets/image%20%28458%29.png)
+![](../.gitbook/assets/image%20%28460%29.png)
 
 * 앞서 생성한 EC2 인스턴스\(NLB 대상 그룹 인스턴스\)에 SSH로 접속해서 아래 Script를 복사합니다.
 
@@ -149,6 +149,10 @@ sudo echo "<html><h2>My placement/availability-zone is: $(curl -s http://169.25
 ### 5. NLB 서비스 확인 
 
 * NLB DNS Name 또는 EIP에 접속하여 결과를 확인합니다.
+
+![](../.gitbook/assets/image%20%28455%29.png)
+
+![](../.gitbook/assets/image%20%28448%29.png)
 
 {% hint style="info" %}
 로드 밸런서는 프로토콜, 원본 IP 주소, 원본 포트, 대상 IP 주소, 대상 포트, TCP 시퀀스 번호에 따라 흐름 해시 알고리즘을 사용하여 대상을 선택합니다. 클라이언트로부터의 TCP 연결은 소스 포트와 시퀀스 번호가 서로 다르므로 다른 대상에 라우팅될 수 있습니다. 각 TCP 연결은 연결 수명 동안 하나의 대상에 라우팅됩니다.
@@ -205,11 +209,18 @@ sudo echo "<html><h2>My placement/availability-zone is: $(curl -s http://169.25
 
 * 대상서버가 **"Healthy" 상태**인지를 확인합니다.
 
-![](../.gitbook/assets/image%20%28163%29.png)
+![](../.gitbook/assets/image%20%28470%29.png)
 
 ### 11. 웹서비스 확인
 
-* ELB DNS A레코드 주소로 정상적으로 웹서비스가 제공되는 지 확인합니다. 웹페이지를 Refresh 할 때 마다 페이지의 정보가 다르게 변경됩니다. 라운드로빈으로 로드밸런싱이 이뤄지기 때문입니다.
+* ELB DNS A레코드 주소로 정상적으로 웹서비스가 제공되는 지 확인합니다. 앞서 ALB 정보에서 제공되는 DNS A 레코드를 복사해서 웹 브라우저 창에 붙여 넣고 확인합니다.
+
+```text
+ALB-DNS-A-Record/ec2meta-webpage/index.php
+
+```
+
+* 웹페이지를 Refresh 할 때 마다 페이지의 정보가 다르게 변경됩니다. 라운드로빈으로 로드밸런싱이 이뤄지기 때문입니다.
 
 ![](../.gitbook/assets/image%20%28337%29.png)
 
