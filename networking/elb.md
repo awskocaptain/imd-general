@@ -30,6 +30,8 @@ NLB 랩에서는 새로운 인스턴스 4개를 구성하여 TCP 포트 기반�
 * NLB 시험용 인스턴스 4개를 구성합니다.
 * AMI - Amazon Linux 2
 * 인스턴스 유형 - t2.micro
+* 볼륨 유형 - gp3
+* 보안그룹 \(Security Group\) - IMD-PUB-SG
 * 네트워크 - IMD-VPC / 각 Public Subnet 별 2개 EC2 인스턴스 / 퍼블릭 IP 자동할당 활성화
 * 사용자 데이터
 
@@ -46,6 +48,8 @@ find /var/www -type f -exec sudo chmod 0664 {} \;
 sudo touch /var/www/index.html
 sudo systemctl start httpd
 sudo systemctl enable httpd
+exit
+
 ```
 
 * 보안그룹을 새로 작성합니다. \(보안그룹 이름 - NLB-SG : 보안 정책은 22번, 80포트를 허용합니다.\)
