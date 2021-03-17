@@ -64,7 +64,7 @@ exit
 
 ![](../.gitbook/assets/image%20%28472%29.png)
 
-![](../.gitbook/assets/image%20%28493%29.png)
+![](../.gitbook/assets/image%20%28494%29.png)
 
 * **스토리지 추가 - 볼륨유형 gp3**
 
@@ -172,7 +172,7 @@ ASG-Template
 
 잠시 후 아래와 같이 인스턴스가 생성된 것을 확인 할 수 있습니다.
 
-![](../.gitbook/assets/image%20%28495%29.png)
+![](../.gitbook/assets/image%20%28496%29.png)
 
 Auto Scaling 그룹에 생성된 그룹을 선택하고 , 인스턴스 관리 탭을 확인 해 봅니다.
 
