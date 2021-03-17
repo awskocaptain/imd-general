@@ -50,7 +50,7 @@ AWS Immersion Day는 AWS Solutions Architect와 Account Manager가 제공하는 
 
 ### [S3](storage/s3.md) \(40min\)
 
-**ALB, NLB 등의 기술들을 LAB을 통해 구성해 봅니다.**
+**S3와 ALB 등의 기술들을 LAB을 통해 구성해 봅니다.**
 
 ## \*\*\*\*[**DataBase**](db/) **\(40min\)**
 
