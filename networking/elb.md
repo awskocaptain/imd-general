@@ -75,43 +75,58 @@ exit
 
 * NLB 생성을 위해 로드밸런서 생성을 선택합니다.
 
+**EC2 대시보드 - 로드밸런싱 - 로드밸런서 - 로드밸런서 생성 선택 - Netwwork Load Balancer 선택** 
+
 ![](../.gitbook/assets/image%20%28141%29.png)
 
 * 로드밸런서 유형을 NLB를 선택합니다.
 
 ![](../.gitbook/assets/image%20%28251%29.png)
 
-* 1단계  로드밸런서 구성에서 이름을 선택하고, 체계는 인터넷 연결 \(Public Subnet\)을 선택합니다. Private 의 경우에는 내부를 선택하면 됩니다.
+* 로드밸런서 구성에서 이름을 선택하고, 체계는 인터넷 연결 \(Public Subnet\)을 선택합니다. Private 의 경우에는 내부를 선택하면 됩니다.
 
-![](../.gitbook/assets/image%20%28138%29.png)
+![](../.gitbook/assets/image%20%28472%29.png)
 
-* 가용영역은 2개의 서브넷을 선택합니다. 또한 IPv4 주소는 "탄력적 IP 선택"을 선택하고, 미리 할당해 놓은 EIP를 선택합니다.
+* 가용영역 및 서브넷을 선택합니다. 또한 IPv4 주소는 "탄력적 IP 선택"을 선택하고, 미리 할당해 놓은 EIP를 선택합니다.
 
-![](../.gitbook/assets/image%20%2838%29.png)
+![](../.gitbook/assets/image%20%28464%29.png)
 
 {% hint style="info" %}
 가용 영역과 서브넷을 신중하게 선택하십시오. 로드 밸런서를 생성한 후에는 활성화된 서브넷을 비활성화할 수 없지만, 서브넷을 추가로 활성화할 수 있습니다.
 {% endhint %}
 
-* 3단계 라우팅 구성에서는 대상 그룹을 선택합니다. 대상 유형을 인스턴스를 선택합니다.
+* 리스너 및 라우팅에서 대상 그룹을 생성을 선택하고, 대상 그룹을 생성합니다. 생성이 완료되면 다시 생성된 대상 그룹을 찾아서 선택합니다.
 
-![](../.gitbook/assets/image%20%28195%29.png)
+![](../.gitbook/assets/image%20%28468%29.png)
 
-* 상태검사에서는 간격을 Default 30초에서 10초로 변경합니다.
+* 대상 그룹 생성을 선택하면 아래와 같은 화면이 보입니다. 대상 유형 선택에서 인스턴스를 선택하고, 대상 그룹 이름을 선언합니다. 다음 단계를 선택합니다.
 
-![](../.gitbook/assets/image%20%28268%29.png)
+![](../.gitbook/assets/image%20%28424%29.png)
 
-* 4단계 대상 등록에서 미리 만들어 놓은 NLB 대상의 **EC2 인스턴스들의 보안그룹을 선택**합니다. **상단의 등록된 항목에 추가 버튼을 선택**해서 대상등록을 마칩니다.
+* 대상 그룹에 포함될 인스턴스를 등록하는 화면이 보이고, 여기에서 앞서 생성한 인스턴스 4개를 선택하고, "아래에 보류 중인 것으로 포함"을 선택하면 대상 그룹에 등록됩니다. 
 
-![](../.gitbook/assets/image%20%28324%29.png)
+![](../.gitbook/assets/image%20%28469%29.png)
+
+* 대상 그룹에 인스턴스들이 등록 된 것을 확인하고, 대상 그룹 생성을 선택합니다.
+
+![](../.gitbook/assets/image%20%28458%29.png)
+
+* 대상 그룹이 정상적으로 등록된 것을 확인합니다.
+
+![](../.gitbook/assets/image%20%28443%29.png)
+
+* 이제 다시 로드  밸런서 생성 단계로 전환해서 "생성한 대상그룹을 선택" 합니다. 태그에 키 "Name", 값 "IMD-NLB"를 입력하고, "로드밸런서 생성" 을 선택합니다.
+
+![](../.gitbook/assets/image%20%28430%29.png)
 
 ### 4. NLB 대상그룹 활성화 확인
 
 * NLB가 대상 그룹에 대한 Healthy 체크를 시작합니다. 대상 그룹 상태를 확인합니다.
+* 교차영역 로드밸런싱을 활성화 합니다.
 
-![](../.gitbook/assets/image%20%28341%29.png)
+![](../.gitbook/assets/image%20%28455%29.png)
 
-* 앞서 생성한 EC2 인스턴스에 SSH로 접속해서 아래 Script를 복사합니다.
+* 앞서 생성한 EC2 인스턴스\(NLB 대상 그룹 인스턴스\)에 SSH로 접속해서 아래 Script를 복사합니다.
 
 ```text
 sudo echo "<html><h2>My Public IP is: $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4/)</h2></html>" >> /var/www/html/index.html 
@@ -125,11 +140,11 @@ sudo echo "<html><h2>My placement/availability-zone is: $(curl -s http://169.25
 
 * NLB가 대상 그룹에 대한 Healthy 체크가 정상인지 확인합니다.
 
-![](../.gitbook/assets/image%20%28308%29.png)
+**EC2 대시보드 - 로드 밸런싱 - 대상 그룹** 
+
+![](../.gitbook/assets/image%20%28436%29.png)
 
 * NLB는 서로 다른 리전간의 LB를 속성 편집에서 구성해야 합니다. 비용은 ALB와 다르게 부과 됩니다.
-
-![](../.gitbook/assets/image%20%28145%29.png)
 
 5. NLB 시험
 
@@ -140,10 +155,6 @@ sudo echo "<html><h2>My placement/availability-zone is: $(curl -s http://169.25
 
 따라서 ALB와 같은 결과 처럼 LB가 원하는 결과가 아닐 수 있습니다.
 {% endhint %}
-
-![](../.gitbook/assets/image%20%28143%29.png)
-
-
 
 ## Task2 : ALB 생성
 
