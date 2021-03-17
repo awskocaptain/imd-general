@@ -10,7 +10,9 @@ Elastic Load Balancing은 들어오는 애플리케이션 트래픽을 Amazon EC
 
 ##  목적
 
-본 랩은 아래와 같은 구성을 통해 NLB와 ALB 구성을 통해 차이점과 구성 방
+본 랩은 아래와 같은 구성을 통해 NLB와 ALB 구성을 통해 차이점과 구성 방식을 이해하기 위해 아래와 같이 구성합니다.
+
+NLB 랩에서는 새로운 인스턴스 4개를 구성하여 TCP 포트 기반으로 Loadbalancing을 구성하며, ALB는 앞서 구성한 인스턴스를 활용합니다.
 
 ![NLB &#xBAA9;&#xD45C; &#xAD6C;&#xC131;&#xB3C4;](../.gitbook/assets/image%20%28276%29.png)
 
