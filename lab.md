@@ -4,6 +4,10 @@ description: Hands on Lab을 시작하기 전에 확인합니다.
 
 # LAB 시작에 앞서
 
+{% hint style="info" %}
+**랩 시작전에 , AWS Web 콘솔 URL과 ID를 제공한 경우에는 이 단계를 참조하지 않아도 됩니다.**
+{% endhint %}
+
 ## **1.Team Dashboard 접속**
 
 사전에 배포한 이름과 Dashboard URL을 확인하고, 웹브라우져를 통해 접속합니다.
