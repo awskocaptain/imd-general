@@ -64,7 +64,7 @@ exit
 
 ![](../.gitbook/assets/image%20%28483%29.png)
 
-![](../.gitbook/assets/image%20%28509%29.png)
+![](../.gitbook/assets/image%20%28510%29.png)
 
 * **스토리지 추가 - 볼륨유형 gp3**
 
@@ -72,7 +72,7 @@ exit
 
 * **태그 추가 - 키 : Name , 값 : ASG-EC2**
 
-![](../.gitbook/assets/image%20%28492%29.png)
+![](../.gitbook/assets/image%20%28493%29.png)
 
 * **보안 그룹 구성 - 기존 보안 그룹 선택 - IMD-PUB-SG**
 
@@ -113,7 +113,7 @@ AutoScale Group 용으로 생성된 인스턴스를 확인합니다. 해당 인�
 
 * **EC2 대시보드 - AutoScaling - Auto Scaling Groups \(새로 만들기\) 를 선택합니다.**
 
-![](../.gitbook/assets/image%20%28506%29.png)
+![](../.gitbook/assets/image%20%28507%29.png)
 
 ### **5. 시작 템플릿 구성** 
 
@@ -123,11 +123,11 @@ AutoScale Group 용으로 생성된 인스턴스를 확인합니다. 해당 인�
 ASG-Template
 ```
 
-![](../.gitbook/assets/image%20%28498%29.png)
+![](../.gitbook/assets/image%20%28499%29.png)
 
 ### 6. Auto Scaling 설정 구성 
 
-![](../.gitbook/assets/image%20%28490%29.png)
+![](../.gitbook/assets/image%20%28491%29.png)
 
 * 시작 템플릿 준수 선택
 * VPC - IMD-VPC 선택
@@ -141,7 +141,7 @@ ASG-Template
 
 테스트를 위해서 상태 확인 유예 기간을 10초로 조정하고, 모니터링 Cloudwatch 내에서 그룹 지표 수집 활성화를 선택합니다.
 
-![](../.gitbook/assets/image%20%28505%29.png)
+![](../.gitbook/assets/image%20%28506%29.png)
 
 {% hint style="info" %}
 대부분의 경우, 서비스 상태가 된 직후의 Auto Scaling 인스턴스는 웜 업을 거쳐야 상태 확인을 통과할 수 있습니다. Amazon EC2 Auto Scaling은 상태 확인 유예 기간이 끝날 때까지 기다린 후 인스턴스의 상태를 확인합니다. Amazon EC2 상태 확인과 Elastic Load Balancing 상태 확인은 상태 확인 유예 기간이 끝나기 전에 완료될 수 있습니다. 하지만 Amazon EC2 Auto Scaling은 상태 확인 유예 기간이 종료되기 전에는 그러한 상태를 반영하지 않습니다. 인스턴스에 충분한 웜 업 시간을 제공하려면 상태 확인 유예 기간이 애플리케이션의 예상 시작 시간을 포함하도록 해야 합니다. 수명 주기 후크를 추가할 경우 유예 기간은 수명 주기 후크 작업이 완료되고 인스턴스가 `InService` 상태로 전환되기까지 시작되지 않습니다.
@@ -151,7 +151,7 @@ ASG-Template
 
 ### 8. 그룹 크기 및 조정 정책 구성
 
-![](../.gitbook/assets/image%20%28491%29.png)
+![](../.gitbook/assets/image%20%28492%29.png)
 
 ### 9. 알림 추가
 
@@ -172,7 +172,7 @@ ASG-Template
 
 잠시 후 아래와 같이 인스턴스가 생성된 것을 확인 할 수 있습니다.
 
-![](../.gitbook/assets/image%20%28511%29.png)
+![](../.gitbook/assets/image%20%28512%29.png)
 
 Auto Scaling 그룹에 생성된 그룹을 선택하고 , 인스턴스 관리 탭을 확인 해 봅니다.
 
@@ -212,7 +212,7 @@ AutoScaling Group에 할당한 인스턴스 타입의 CPU 숫자에 맞추어서
 
 앞서 생성한 Auto Scaling Group의 SNS가 계속해서 메세지를 통보하게 됩니다.
 
-![](../.gitbook/assets/image%20%28488%29.png)
+![](../.gitbook/assets/image%20%28489%29.png)
 
 {% hint style="success" %}
 성공적으로 Auto Scaling 그룹 랩을 마치셨습니다. 

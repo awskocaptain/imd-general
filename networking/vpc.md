@@ -286,7 +286,7 @@ NAT Gateway는 Private Subnet의 외부 통신을 위한 Source NAT를 제공하
 * **VPC - 가상 프라이빗 클라우드 - NAT 게이트웨이 선택** 
 * **NAT 게이트웨이 생성** 
 
-![](../.gitbook/assets/image%20%28501%29.png)
+![](../.gitbook/assets/image%20%28502%29.png)
 
 NAT 게이트웨이 생성 메뉴에서 아래와 같은 값을 입력합니다.
 
@@ -562,7 +562,7 @@ curl http://169.254.169.254/latest/meta-data/local-ipv4
   * 소스 : 10.1.1.0/24
   * 허용/거부 : Allow
 
-![](../.gitbook/assets/image%20%28514%29.png)
+![](../.gitbook/assets/image%20%28515%29.png)
 
 * NACL은 상태비저장 방식으로 트래픽 반환시에도 정책이 필요합니다. 트래픽 반환은 모두 허용하기 위해 **대상을 모두로 정의**하고, **유형도 모두 트래픽을 선택**합니다.
 
@@ -574,7 +574,7 @@ curl http://169.254.169.254/latest/meta-data/local-ipv4
 
 * 2개의 콘솔 창을 열어서 트래픽이 어떻게 제어되는지 확인합니다. Public-01, Public-02 인스턴스에서 Private-01 인스턴스로 Ping을 적용해 봅니다. 
 
-![](../.gitbook/assets/image%20%28489%29.png)
+![](../.gitbook/assets/image%20%28490%29.png)
 
 {% hint style="info" %}
 **Network ACL은 사용자가 정의하지 않아도 기본 NACL이 인바운드,아웃바운드 모두 허용입니다. 랩에서는 별도의 NACL을 적용해서 서브넷에 적용한 것입니다.**
