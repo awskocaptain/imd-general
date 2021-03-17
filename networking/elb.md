@@ -146,7 +146,7 @@ sudo echo "<html><h2>My placement/availability-zone is: $(curl -s http://169.25
 
 * NLB는 서로 다른 리전간의 LB를 속성 편집에서 구성해야 합니다. 비용은 ALB와 다르게 부과 됩니다.
 
-5. NLB 시험
+### 5. NLB 서비스 확인 
 
 * NLB DNS Name 또는 EIP에 접속하여 결과를 확인합니다.
 
