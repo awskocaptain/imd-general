@@ -2,7 +2,7 @@
 description: 'Update : 2021-03-15'
 ---
 
-# ELB
+# ELB \(NLB & ALB\)
 
 ## 소개
 

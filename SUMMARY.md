@@ -8,7 +8,7 @@
   * [AutoScale](ec2/autoscale.md)
 * [Networking](networking/README.md)
   * [VPC](networking/vpc.md)
-  * [ELB](networking/elb.md)
+  * [ELB \(NLB & ALB\)](networking/elb.md)
 * [Storage](storage/README.md)
   * [S3](storage/s3.md)
   * [EFS](storage/efs.md)
