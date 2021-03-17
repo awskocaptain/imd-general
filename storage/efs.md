@@ -125,14 +125,13 @@ Amazon EFS에서는 기존 보안 인프라를 사용하여 파일에 안전하�
 
 ![](../.gitbook/assets/image%20%28494%29.png)
 
-Task2. EFS Mount
+## Task2. EFS Mount
 
-8. EC2 NFS Mount
+### 8. EC2 NFS Mount
 
+* Bastion Host 에서 Private-01,02로 접속하거나, Session Manager를 통해서 접속합니다.
 * 아래 명령을 통해 Private-01,02 인스턴스가 EFS에 마운트 합니다.
-  * efs의 파일 시스템 ID는 6. 생성된 EFS 확인 에서 복사합니다.
-
-
+  * efs의 파일 시스템 ID는[ 6. 생성된 EFS 확인](efs.md#6-efs) 에서 복사합니다.
 
 ```text
 ssh ec2-user@10.1.11.101
@@ -141,9 +140,15 @@ sudo yum install -y amazon-efs-utils
 sudo mount -t efs fs-36892f56:/ ~/aws-efs/
 df -h
 
+ssh ec2-user@10.1.12.101
+mkdir ~/aws-efs
+sudo yum install -y amazon-efs-utils
+sudo mount -t efs fs-36892f56:/ ~/aws-efs/
+df -h
+
 ```
 
-
+각 Private01,02 EC2에서 아래와 같이 EFS가 마운트 된 것을 확인합니다.
 
 ```text
 [ec2-user@ip-10-1-11-101 ~]$ df -h
@@ -157,6 +162,16 @@ tmpfs                                            99M     0   99M   0% /run/user/
 fs-36892f56.efs.ap-northeast-2.amazonaws.com:/  8.0E     0  8.0E   0% /home/ec2-user/aws-efs
 
 ```
+
+## Task3. S3 와 EFS 연
+
+### 9.  S3 VPC Endpoint 구성
+
+### 10. EC2에 S3 접근 권한 설정
+
+### 11. EC2에서 S3 파일을 EFS로 Copy
+
+
 
 
 
