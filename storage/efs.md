@@ -1,3 +1,7 @@
+---
+description: 'Update : 2021-03-17'
+---
+
 # EFS
 
 ## EFS
@@ -52,6 +56,50 @@ Amazon EFS에서는 기존 보안 인프라를 사용하여 파일에 안전하�
 * **S3내의 Object 이동**
 * **버킷 버전 활성화**
 * **S3내의 Object 및 버킷 삭제**
+
+![](../.gitbook/assets/image%20%28464%29.png)
+
+![](../.gitbook/assets/image%20%28458%29.png)
+
+![](../.gitbook/assets/image%20%28445%29.png)
+
+![](../.gitbook/assets/image%20%28482%29.png)
+
+![](../.gitbook/assets/image%20%28488%29.png)
+
+![](../.gitbook/assets/image%20%28456%29.png)
+
+![](../.gitbook/assets/image%20%28426%29.png)
+
+![](../.gitbook/assets/image%20%28494%29.png)
+
+
+
+
+
+```text
+ssh ec2-user@10.1.11.101
+mkdir ~/aws-efs
+sudo yum install -y amazon-efs-utils
+sudo mount -t efs fs-36892f56:/ ~/aws-efs/
+df -h
+
+```
+
+
+
+```text
+[ec2-user@ip-10-1-11-101 ~]$ df -h
+Filesystem                                      Size  Used Avail Use% Mounted on
+devtmpfs                                        482M     0  482M   0% /dev
+tmpfs                                           492M     0  492M   0% /dev/shm
+tmpfs                                           492M  404K  492M   1% /run
+tmpfs                                           492M     0  492M   0% /sys/fs/cgroup
+/dev/xvda1                                      8.0G  1.5G  6.6G  19% /
+tmpfs                                            99M     0   99M   0% /run/user/1000
+fs-36892f56.efs.ap-northeast-2.amazonaws.com:/  8.0E     0  8.0E   0% /home/ec2-user/aws-efs
+
+```
 
 
 
