@@ -175,7 +175,7 @@ DB 생성까지는 10분 이상 시간이 발생할 수 있습니다.
 database
 
 ```text
-imd
+imdrds
 ```
 
 username
