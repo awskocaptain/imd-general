@@ -12,11 +12,11 @@ Amazon RDS는 여러 [데이터베이스 인스턴스 유형](https://aws.amazon
 
 ![](../.gitbook/assets/image%20%28205%29.png)
 
-* [ ] **RDS를 위한 보안 그룹\(Security Group\) 생성**
-* [ ] **RDS 인스턴스 생성**
-* [ ] **EC2 인스턴스에서의 접근 설정**
-* [ ] **Web Server에서 RDS 연결 확인**
-* [ ] **RDS Failover , RDS Snapshot**
+* **RDS를 위한 보안 그룹\(Security Group\) 생성**
+* **RDS 인스턴스 생성**
+* **EC2 인스턴스에서의 접근 설정**
+* **Web Server에서 RDS 연결 확인**
+* **RDS Failover , RDS Snapshot**
 
 ## **Task1.RDS 연결용 WebServer 만들기**
 
@@ -53,6 +53,7 @@ tar xvf bootcamp-app.tar
 chown apache:root /var/www/html/rds.conf.php
 fi
 yum -y update
+
 ```
 
 ![](../.gitbook/assets/image%20%2839%29.png)
@@ -61,27 +62,29 @@ yum -y update
 
 * 단계4 - 스토리지를 추가합니다.
 
-![](../.gitbook/assets/image%20%2830%29.png)
+![](../.gitbook/assets/image%20%28522%29.png)
 
 * 단계5 - 태그를 추가합니다.
+* Key - Name , Value\(값\) - PUBLIC-RDS-01
+* Key - Name , Value\(값\) - PUBLIC-RDS-02
 
-![](../.gitbook/assets/image%20%28187%29.png)
+![](../.gitbook/assets/image%20%28519%29.png)
 
 * 단계6 - 보안그룹을 구성합니다.
 
-![](../.gitbook/assets/image%20%28245%29.png)
+![](../.gitbook/assets/image%20%28523%29.png)
 
 * 단계7 - 검토와 키페어 선택을 합니다.앞서 랩에서 만들어 둔 키페어를 선택합니다.
 
-![](../.gitbook/assets/image%20%2851%29.png)
+![](../.gitbook/assets/image%20%28521%29.png)
 
 ### 2. RDS연결을 위한 보안그룹 수정
 
 * RDS연결을 위한 보안 그룹을 수정합니다.
 
-![](../.gitbook/assets/image%20%2835%29.png)
+![](../.gitbook/assets/image%20%28520%29.png)
 
-![](../.gitbook/assets/image%20%2860%29.png)
+![](../.gitbook/assets/image%20%28518%29.png)
 
 ## **Task2. RDS 만들기**
 
