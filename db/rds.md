@@ -62,29 +62,29 @@ yum -y update
 
 * 단계4 - 스토리지를 추가합니다.
 
-![](../.gitbook/assets/image%20%28522%29.png)
+![](../.gitbook/assets/image%20%28529%29.png)
 
 * 단계5 - 태그를 추가합니다.
 * Key - Name , Value\(값\) - PUBLIC-RDS-01
 * Key - Name , Value\(값\) - PUBLIC-RDS-02
 
-![](../.gitbook/assets/image%20%28519%29.png)
+![](../.gitbook/assets/image%20%28524%29.png)
 
 * 단계6 - 보안그룹을 구성합니다.
 
-![](../.gitbook/assets/image%20%28523%29.png)
+![](../.gitbook/assets/image%20%28530%29.png)
 
 * 단계7 - 검토와 키페어 선택을 합니다.앞서 랩에서 만들어 둔 키페어를 선택합니다.
 
-![](../.gitbook/assets/image%20%28521%29.png)
+![](../.gitbook/assets/image%20%28527%29.png)
 
 ### 2. RDS연결을 위한 보안그룹 수정
 
 * RDS연결을 위한 보안 그룹을 수정합니다.
 
-![](../.gitbook/assets/image%20%28520%29.png)
+![](../.gitbook/assets/image%20%28526%29.png)
 
-![](../.gitbook/assets/image%20%28518%29.png)
+![](../.gitbook/assets/image%20%28523%29.png)
 
 ## **Task2. RDS 만들기**
 
@@ -94,7 +94,9 @@ AWS RDS를 구성하기 위해 설정하는 속성 값들을 아래에서 참조
 
 * AWS서비스에서 RDS를 선택하고 Amazon Aurora의 **데이터베이스 생성을** 선택합니다.
 
-![](../.gitbook/assets/image%20%28342%29.png)
+![](../.gitbook/assets/image%20%28518%29.png)
+
+![](../.gitbook/assets/image%20%28520%29.png)
 
 ### **4. RDS-데이터베이스 생성**
 
@@ -105,29 +107,27 @@ AWS RDS를 구성하기 위해 설정하는 속성 값들을 아래에서 참조
 | 생성방식 | 표준생성 |
 | 엔진유형 | Amazon Aurora |
 | 에디션 | MySQL과 호환되는 Amazon Aurora |
-| 버전 | Aurora \(MySQL\)-5.6.10a |
+| 용량유형 | 프로비저 |
+| 버전 | Aurora \(MySQL 5.7\) - 2.07.2 |
 | 데이터베이스위치 | 리전 |
 | 데이터베이스 기능 | 단일 쓰기 및 다중 읽기 |
 | 템플릿 | 프로덕션 |
 | DB 클러스터 식별자 | rdscluster |
 | 마스터 사용자 이름 | awsuser |
 | 마스터 암호 | awspassword |
-| DB 인스턴스 크기 | 버스터블 클래스 |
-| 가용성 및 내구성 | 다른 AZ에 Aurora 복제본/읽기 노드 생성 |
+| DB 인스턴스 크기 | 버스터블 클래스 \(db.t3.medium\) |
+| 가용성 및 내구성 | 다른 AZ에 Aurora 복제본/리 노드 생성 |
 | VPC | IMD-VPC |
 | 서브넷 그룹 | 새 DB 서브넷 그룹 생성 |
 | 퍼블릭 액세스 가능 | 아니오 |
-| VPC 보안 그룹 | 기존 항목 선택: IMD-PRI-SG |
+| VPC 보안 그룹 | 기존 항목 선택: PRIVATE-SG \(앞서 수정한 보안그룹\) |
+| 데이터베이스 인증 | 암호인 |
 | 데이터베이스포트 | 3306 |
 | DB인스턴스 식별자 | awsdb |
-| 초기 데이터베이스 이름 | imd |
-| DB 클러스터 파라미터 그룹 | default.aurora5.6 |
-| DB 파라미터 그룹 | default.aurora5.6 |
-| 옵션그룹 | default:aurora-5-6 |
-
-![](../.gitbook/assets/image%20%28262%29.png)
-
-![](../.gitbook/assets/image%20%28111%29.png)
+| 초기 데이터베이스 이름 | imdrds |
+| DB 클러스터 파라미터 그룹 | default.aurora5.7 |
+| DB 파라미터 그룹 | default.aurora5.7 |
+| 옵션그룹 | default:aurora-5-7 |
 
 * 마스터 사용자 이름  
 
@@ -141,14 +141,17 @@ awsuser
 awspassword
 ```
 
-![](../.gitbook/assets/image%20%28129%29.png)
+![](../.gitbook/assets/image%20%28519%29.png)
 
-![](../.gitbook/assets/image%20%2817%29.png)
+![](../.gitbook/assets/image%20%28521%29.png)
 
-![](../.gitbook/assets/image%20%2847%29.png)
+![](../.gitbook/assets/image%20%28528%29.png)
 
-![](../.gitbook/assets/image%20%28139%29.png)
+![](../.gitbook/assets/image%20%28525%29.png)
 
+![](../.gitbook/assets/image%20%28522%29.png)
+
+* 설정이 완료되면, **" 데이터베이스 생성"**을 선택합니다.
 * 구성이 완료되면 아래와 같이 **"사용가능"**으로 변경됩니다.
 
 ![](../.gitbook/assets/image%20%28316%29.png)
