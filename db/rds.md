@@ -62,29 +62,29 @@ yum -y update
 
 * 단계4 - 스토리지를 추가합니다.
 
-![](../.gitbook/assets/image%20%28533%29.png)
+![](../.gitbook/assets/image%20%28534%29.png)
 
 * 단계5 - 태그를 추가합니다.
 * Key - Name , Value\(값\) - PUBLIC-RDS-01
 * Key - Name , Value\(값\) - PUBLIC-RDS-02
 
-![](../.gitbook/assets/image%20%28528%29.png)
+![](../.gitbook/assets/image%20%28529%29.png)
 
 * 단계6 - 보안그룹을 구성합니다.
 
-![](../.gitbook/assets/image%20%28535%29.png)
+![](../.gitbook/assets/image%20%28536%29.png)
 
 * 단계7 - 검토와 키페어 선택을 합니다.앞서 랩에서 만들어 둔 키페어를 선택합니다.
 
-![](../.gitbook/assets/image%20%28531%29.png)
+![](../.gitbook/assets/image%20%28532%29.png)
 
 ### 2. RDS연결을 위한 보안그룹 수정
 
 * RDS연결을 위한 보안 그룹을 수정합니다.
 
-![](../.gitbook/assets/image%20%28530%29.png)
+![](../.gitbook/assets/image%20%28531%29.png)
 
-![](../.gitbook/assets/image%20%28526%29.png)
+![](../.gitbook/assets/image%20%28527%29.png)
 
 ## **Task2. RDS 만들기**
 
@@ -96,7 +96,7 @@ AWS RDS를 구성하기 위해 설정하는 속성 값들을 아래에서 참조
 
 ![](../.gitbook/assets/image%20%28518%29.png)
 
-![](../.gitbook/assets/image%20%28520%29.png)
+![](../.gitbook/assets/image%20%28521%29.png)
 
 ### **4. RDS-데이터베이스 생성**
 
@@ -143,22 +143,22 @@ awspassword
 
 ![](../.gitbook/assets/image%20%28519%29.png)
 
-![](../.gitbook/assets/image%20%28523%29.png)
+![](../.gitbook/assets/image%20%28524%29.png)
 
-![](../.gitbook/assets/image%20%28532%29.png)
+![](../.gitbook/assets/image%20%28533%29.png)
 
-![](../.gitbook/assets/image%20%28529%29.png)
+![](../.gitbook/assets/image%20%28530%29.png)
 
-![](../.gitbook/assets/image%20%28525%29.png)
+![](../.gitbook/assets/image%20%28526%29.png)
 
 * 설정이 완료되면, **" 데이터베이스 생성"**을 선택합니다.
 * 구성이 완료되면 아래와 같이 **"사용가능"**으로 변경됩니다.
 
-![](../.gitbook/assets/image%20%28536%29.png)
+![](../.gitbook/assets/image%20%28537%29.png)
 
 * RDS를 선택하고, RDS Endpoint\(엔드포인트\) 의 **"유형-쓰기"** 의 엔드포인트 주소를 복사해 둡니다.
 
-![](../.gitbook/assets/image%20%28524%29.png)
+![](../.gitbook/assets/image%20%28525%29.png)
 
 {% hint style="warning" %}
 DB 생성까지는 10분 이상 시간이 발생할 수 있습니다.
@@ -168,7 +168,7 @@ DB 생성까지는 10분 이상 시간이 발생할 수 있습니다.
 
 * RDS연결을 위해 구성한 EC2 인스턴스의 Public DNS 주소를 확인하고 입력해서 접속합니다. 웹 화면에서 RDS를 클릭합니다.
 
-![](../.gitbook/assets/image%20%28534%29.png)
+![](../.gitbook/assets/image%20%28535%29.png)
 
 ![](../.gitbook/assets/image%20%28223%29.png)
 
@@ -198,7 +198,7 @@ password
 awspassword
 ```
 
-![](../.gitbook/assets/image%20%28527%29.png)
+![](../.gitbook/assets/image%20%28528%29.png)
 
 * Submit을 클릭하면 새로운 DB 값이 입력되는 것을 확인 할 수 있습니다.
 
@@ -214,13 +214,13 @@ awspassword
 
 * 현재 사용중인 DB의 Master를 Failover로 넘겨봅니다. Read Mode의 DB가 정상적으로 Failover 되는지 확인합니다. 쓰기 역할의 DB를 선택하고 "작업"-"장애조치"를 선택합니다.
 
-![](../.gitbook/assets/image%20%28537%29.png)
+![](../.gitbook/assets/image%20%28538%29.png)
 
 ![](../.gitbook/assets/image%20%28203%29.png)
 
 * 정상적으로 Failover가 일어나는 지 확인합니다.
 
-![](../.gitbook/assets/image%20%28522%29.png)
+![](../.gitbook/assets/image%20%28523%29.png)
 
 ### 7. DB Snapshot
 
@@ -234,7 +234,7 @@ awspassword
 
 * DB Cluster가 백업중으로 상태가 표시됩니다.
 
-![](../.gitbook/assets/image%20%28521%29.png)
+![](../.gitbook/assets/image%20%28522%29.png)
 
 * 백업이 완료되면 스냅샷 목록에서 사용가능을 확인 할 수 있습니다. 복원을 원하면 스냅샷 작업을 선택하고 복원 할 수 있습니다.
 
