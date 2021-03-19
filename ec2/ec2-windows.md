@@ -18,7 +18,7 @@ Amazon EC2는 AWS Management Console을 사용해 다양한 운영 체제로 인
 
 본 랩은 아래와 같은 구성을 통해 EC2 기반의 운영체제와 어플리케이션을 구성하는 데 도움을 드립니다.
 
-![](../.gitbook/assets/image%20%28539%29.png)
+![](../.gitbook/assets/image%20%28540%29.png)
 
 * **간단한 VPC 자원의 생성과 구성**
 * **EC2 생성을 위한 키페어 생성**

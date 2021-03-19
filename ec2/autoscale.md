@@ -16,7 +16,7 @@ AWS Auto Scaling은 애플리케이션을 모니터링하고 용량을 자동으
 
 본 랩은 아래와 같은 구성을 통해 EC2 인스턴스들의 Auto Scaling을 확인하는 데 도움을 드립니다.
 
-![](../.gitbook/assets/image%20%28126%29.png)
+![](../.gitbook/assets/image%20%28539%29.png)
 
 * **EC2 생성**
 * **Auto Scaling 시작 구성 방법**
