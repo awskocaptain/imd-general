@@ -85,10 +85,10 @@ ssh-keygen
 
 ```
 
-key이름은 gwlbkey 로 설정합니다.
+key이름은 imdkey 또는 원하는 key 이름으 설정합니다.
 
 ```text
-awsaccess
+imdkey
 ```
 
 아래와 같이 ssh key가 구성됩니다.
@@ -120,7 +120,8 @@ The key's randomart image is:
 이제 생성된 Public Key를 계정으로 업로드 합니다. **`"--region {AWS Region}"`** 리전 옵션에서 각 리전을 지정하게 되면 해당 리전으로 생성한 Public Key를 전송합니다. 아래에서는 서리전으로 전송하는 예제입니다.
 
 ```text
-aws ec2 import-key-pair --key-name "gwlbkey" --public-key-material fileb://gwlbkey.pub --region ap-northeast-2
+mv imdkey ./imdkey.pem
+aws ec2 import-key-pair --key-name "imdkey" --public-key-material fileb://imdkey.pub --region ap-northeast-2
 ```
 
 아래와 같이 업로드가 완료됩니다.
