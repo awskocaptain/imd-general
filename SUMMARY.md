@@ -2,6 +2,7 @@
 
 * [General Immersion Day](README.md)
 * [LAB 시작에 앞서](lab.md)
+* [Cloud9 환경 생성](cloud9.md)
 * [EC2 Computing](ec2/README.md)
   * [EC2-Linux](ec2/ec2-linux.md)
   * [EC2-Windows](ec2/ec2-windows.md)
