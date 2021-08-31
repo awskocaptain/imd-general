@@ -436,7 +436,16 @@ curl http://169.254.169.254/latest/meta-data
 
 ![](../.gitbook/assets/image%20%28388%29.png)
 
-해당 인스턴스의 Web을 접속해서 정보를 확인해 봅니다. 인스턴스를 중지하고 다시 시작하게 되면 Public IP가 변경됩니다. 해당 인스턴스에서 확인 후에 접속합니다.
+해당 인스턴스의 Web을 접속해서 정보를 확인해 봅니다. 인스턴스를 중지하고 다시 시작하게 되면 Public IP가 변경됩니다. 해당 인스턴스에서 확인 후에 접속합니다. 인스턴스 타입이 변경되었는지 확인해 봅니다.
+
+Cloud9 의 경우 예시.
+
+```text
+ssh -i ./imdkey.pem ec2-user@x.x.x.x
+curl http://169.254.169.254/latest/meta-data/instance-type
+```
+
+
 
 ### 22. EC2 Volume 크기 변경
 
