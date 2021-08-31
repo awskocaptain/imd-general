@@ -88,7 +88,7 @@ ssh-keygen
 key이름은 gwlbkey 로 설정합니다.
 
 ```text
-gwlbkey
+awsaccess
 ```
 
 아래와 같이 ssh key가 구성됩니다.
@@ -96,7 +96,7 @@ gwlbkey
 ```text
 ssh-keygen
 Generating public/private rsa key pair.
-Enter file in which to save the key (/home/ec2-user/.ssh/id_rsa): gwlbkey
+Enter file in which to save the key (/home/ec2-user/.ssh/id_rsa): awsaccess
 Enter passphrase (empty for no passphrase): 
 Enter same passphrase again: 
 Your identification has been saved in gwlbkey.
@@ -117,10 +117,10 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-이제 생성된 Public Key를 계정으로 업로드 합니다. **`"--region {AWS Region}"`** 리전 옵션에서 각 리전을 지정하게 되면 해당 리전으로 생성한 Public Key를 전송합니다. 아래에서는 도쿄리전으로 전송하는 예제입니다.
+이제 생성된 Public Key를 계정으로 업로드 합니다. **`"--region {AWS Region}"`** 리전 옵션에서 각 리전을 지정하게 되면 해당 리전으로 생성한 Public Key를 전송합니다. 아래에서는 서리전으로 전송하는 예제입니다.
 
 ```text
-aws ec2 import-key-pair --key-name "gwlbkey" --public-key-material fileb://gwlbkey.pub --region ap-northeast-1
+aws ec2 import-key-pair --key-name "gwlbkey" --public-key-material fileb://gwlbkey.pub --region ap-northeast-2
 ```
 
 아래와 같이 업로드가 완료됩니다.
