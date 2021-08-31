@@ -29,7 +29,7 @@ AWS Auto Scaling은 애플리케이션을 모니터링하고 용량을 자동으
 
 앞서 생성한 [EC2-LINUX](ec2-linux.md) 에서 처럼 EC2를 생성합니다.
 
-* **AMI - Amazon Linux 2 AMI \(HVM\), SSD Volume Type - ami-0e17ad9abf7e5c818 \(64비트 x86\)**
+* **AMI - Amazon Linux 2 AMI \(HVM\), SSD Volume Type - ami \(64비트 x86\)**
 
 ![](../.gitbook/assets/image%20%28480%29.png)
 
