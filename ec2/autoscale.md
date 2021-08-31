@@ -208,7 +208,7 @@ AutoScaling Group에 할당한 인스턴스 타입의 CPU 숫자에 맞추어서
 
 ![](../.gitbook/assets/image%20%28428%29.png)
 
-* CPU Stress가 종료된 수분 뒤에 인스턴스가 감하는 지 확인합니다.  \(Auto Scaling 그룹과 EC2 대쉬보드에서 확인\)
+* CPU Stress가 종료된 수분 뒤에 인스턴스가 감소 하는 지 확인합니다.  \(Auto Scaling 그룹과 EC2 대쉬보드에서 확인\)
 
 앞서 생성한 Auto Scaling Group의 SNS가 계속해서 메세지를 통보하게 됩니다.
 
