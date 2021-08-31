@@ -24,7 +24,7 @@ Cloud9을 실행하기 위해 아래와 같이 AWS 관리콘솔에서 **`"Cloud9
 
 * name : userid-console \(고유의 이름을 입력 해야 합니. 예 : username-console\)
 
-![](.gitbook/assets/image%20%28542%29.png)
+![](.gitbook/assets/image%20%28543%29.png)
 
 모든 설정을 기본값으로 사용하고, 인스턴스타입은 t3.small ,Cost-Saving Setting Never로 변경합니다. 절전모드로 변경되는 것을 방지하게 됩니다. 다음 진행 버튼을 계속 누르고 Cloud9을 생성합니다.
 
@@ -36,7 +36,7 @@ Cloud9을 실행하기 위해 아래와 같이 AWS 관리콘솔에서 **`"Cloud9
 
 2~3분 후에 Cloud9 이 동작하는 것을 확인 할 수 있습니다. Cloud9 창에서 "+" 버튼을 누르고 New Terminal을 띄워서 터미널을 생성합니다. 추가로 "+"를 계속 생성하게 되면 Terminal을 다중으로 사용할 수 있습니다.
 
-[![](https://github.com/whchoi98/aws-gwlb/raw/master/.gitbook/assets/image%20%2829%29.png)](https://github.com/whchoi98/aws-gwlb/blob/master/.gitbook/assets/image%20%2829%29.png)
+![](.gitbook/assets/image%20%28542%29.png)
 
 Cloud9 IDE는 이미 AWS CLI가 설치되어 있습니다. 하지만 기본 1.x 버전이 설치되어 있습니다.
 
@@ -139,7 +139,7 @@ whchoi:~/environment $ aws ec2 import-key-pair --key-name "gwlbkey" --public-key
 
 **`AWS 관리 콘솔 - EC2 - 네트워크 및 보안 - 키페어`**
 
-[![](https://github.com/whchoi98/aws-gwlb/raw/master/.gitbook/assets/image%20%283%29.png)](https://github.com/whchoi98/aws-gwlb/blob/master/.gitbook/assets/image%20%283%29.png)
+![](.gitbook/assets/image%20%28544%29.png)
 
 이제 사전 구성이 완료되었습니다.
 
