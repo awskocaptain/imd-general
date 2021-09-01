@@ -121,6 +121,7 @@ The key's randomart image is:
 
 ```text
 mv imdkey ./imdkey.pem
+chmod 400 ./imdkey.pem
 aws ec2 import-key-pair --key-name "imdkey" --public-key-material fileb://imdkey.pub --region ap-northeast-2
 ```
 
