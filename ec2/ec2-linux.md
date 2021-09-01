@@ -500,7 +500,7 @@ tmpfs            99M     0   99M   0% /run/user/1000
 **growpart** 명령을 사용하여 파티션을 확장하고, 볼륨에서 파일 시스템을 확장하기 위 **xfs\_growfs** 명령을 사용합니다.
 
 ```text
-## 파티션 확
+## 파티션 확장 
 sudo growpart /dev/xvda 1
 ## 파일 시스템 확장
 sudo xfs_growfs -d /

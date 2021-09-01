@@ -1,7 +1,3 @@
----
-description: 'Update : 2021-09-01'
----
-
 # Cloud9 환경 생성
 
 ## 사전 준비
@@ -125,7 +121,6 @@ The key's randomart image is:
 
 ```text
 mv imdkey ./imdkey.pem
-chmod 400 ./imdkey.pem
 aws ec2 import-key-pair --key-name "imdkey" --public-key-material fileb://imdkey.pub --region ap-northeast-2
 ```
 
