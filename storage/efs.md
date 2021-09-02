@@ -175,18 +175,18 @@ fs-36892f56.efs.ap-northeast-2.amazonaws.com:/  8.0E     0  8.0E   0% /home/ec2-
 
 ![](../.gitbook/assets/image%20%28475%29.png)
 
-* VPC - 라우팅 테이블에서 정상적으로 S3용 라우팅 테이블이 추가 되었는지 확
+* VPC - 라우팅 테이블에서 정상적으로 S3용 라우팅 테이블이 추가 되었는지 확인 
 
 ![](../.gitbook/assets/image%20%28447%29.png)
 
 ### 10. EC2에 S3 접근 권한 설정
 
 * AWS 관리 콘솔 - IAM 에서 Private-01,02 EC2 인스턴스가 S3에 접근 하도록 권한을 설정해 줍니다.
-* IAM - 역할 - 역할 만들기 선
+* IAM - 역할 - 역할 만들기 선택 
 
 ![](../.gitbook/assets/image%20%28434%29.png)
 
-* **역할 만들기 - AWS 서비스 - EC2 선**
+* **역할 만들기 - AWS 서비스 - EC2 선택** 
 
 ![](../.gitbook/assets/image%20%28517%29.png)
 
@@ -199,7 +199,7 @@ fs-36892f56.efs.ap-northeast-2.amazonaws.com:/  8.0E     0  8.0E   0% /home/ec2-
 ![](../.gitbook/assets/image%20%28429%29.png)
 
 * Private-01,02 EC2에 IAM 정책을 부여합니다.
-* EC2 대시보드 - 인스턴스 - Private-01,02 선택 - 작업 - 보안 - IAM역할 수
+* EC2 대시보드 - 인스턴스 - Private-01,02 선택 - 작업 - 보안 - IAM역할 수행 
 
 ![](../.gitbook/assets/image%20%28515%29.png)
 
