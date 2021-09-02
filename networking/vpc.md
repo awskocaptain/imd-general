@@ -528,6 +528,23 @@ curl http://169.254.169.254/latest/meta-data/local-ipv4
 
 ```
 
+* Cloud9에서는 아래와 같이 Session Manager Plugin을 설치하여 접속 할 수 있습니다.
+
+```text
+#session manager plugin 설치
+curl "https://s3.amazonaws.com/session-manager-downloads/plugin/latest/linux_64bit/session-manager-plugin.rpm" -o "session-manager-plugin.rpm"
+sudo yum install -y session-manager-plugin.rpm
+#인스턴스 목록 확
+git clone https://github.com/whchoi98/useful-shell.git
+
+```
+
+* Cloud9 터미널에서 아래와 같이 접속 할 수 있습니다.
+
+```text
+aws ssm start-session --target {Instance ID}
+```
+
 ## Task6: Security
 
 **보안 그룹**은 인스턴스에 대한 인바운드 및 아웃바운드 트래픽을 제어하는 가상 방화벽 역할을 합니다. VPC에서 인스턴스를 시작할 때 최대 5개의 보안 그룹에 인스턴스를 할당할 수 있습니다. 보안 그룹은 서브넷 수준이 아니라 인스턴스 수준에서 작동하므로 VPC에 있는 서브넷의 각 인스턴스를 서로 다른 보안 그룹 세트에 할당할 수 있습니다.
